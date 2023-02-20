@@ -1,0 +1,16 @@
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: var(--nav-bar-w);
+  height: 100vh;
+
+  background: rgba(24, 26, 33, 0.9);
+
+  border-right: 1px solid #2F333B;
+
+  backdrop-filter: blur(28px);
+
+  z-index: 1;
+}

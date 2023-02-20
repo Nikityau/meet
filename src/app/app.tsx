@@ -1,11 +1,24 @@
 import React from "react";
 
-const App = (props) => {
+import {RoutesApp, WithRouter} from "../routes";
+
+import {Header} from "../modules/header";
+import {NavBar} from "../modules/nav-bar";
+
+import './style/app.scss'
+
+const App = () => {
 
     return (
-        <div>
-            Hello :)
-        </div>
+        <WithRouter>
+            <div className={'meet'}>
+                <Header/>
+                <NavBar/>
+                <div className={'meet__main meet__workspace'}>
+                     <RoutesApp/>
+                </div>
+            </div>
+        </WithRouter>
     );
 };
 

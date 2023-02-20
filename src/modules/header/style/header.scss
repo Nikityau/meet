@@ -1,0 +1,27 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+
+  z-index: 1;
+}
+
+.header__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: calc(100% - 100px);
+
+  padding: 25px 50px;
+
+  transform: translate(var(--nav-bar-w), 0);
+
+  background: rgba(22, 25, 32, 0.9);
+
+  border-bottom: 1px solid #2F333B;
+
+  backdrop-filter: blur(60px);
+}

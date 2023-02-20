@@ -1,0 +1,19 @@
+.meet {
+  position: relative;
+
+  width: 100vw;
+  height: auto;
+
+  background: var(--meet-bg);
+}
+.meet__workspace {
+  max-width: calc(100% - var(--nav-bar-w));
+}
+.meet__main {
+  transform: translate(var(--nav-bar-w), 100px);
+
+  width: auto;
+  height: 2000px;
+
+  background: red;
+}
