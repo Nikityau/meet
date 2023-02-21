@@ -1,0 +1,1 @@
+export {default as MeetLogo} from './logo'
