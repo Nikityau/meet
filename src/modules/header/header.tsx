@@ -1,6 +1,9 @@
 import React from 'react';
 
-import {Search} from "../search";
+import {Search} from "../../features/search";
+import {Theme} from "../../features/theme";
+import {Notification} from "../../features/notification";
+import {User} from "../../features/user";
 
 import './style/header.scss'
 
@@ -13,8 +16,12 @@ const Header = () => {
                 </div>
                 <div className={'header__other'}>
                     <div className={'header__block'}>
-
+                        <Theme/>
                     </div>
+                    <div className={'header__block'}>
+                        <Notification/>
+                    </div>
+                    <User/>
                 </div>
             </div>
         </div>

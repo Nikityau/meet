@@ -1,7 +1,11 @@
 .search {
   position: relative;
+}
+.search__container {
+  position: relative;
 
   width: fit-content;
+  height: fit-content;
 }
 .search__input {
   position: relative;
@@ -31,7 +35,25 @@
 .search__input:focus {
   background: rgba(255, 255, 255, 0.1);
 
-  border: 1px solid #5C4EFE;
+  border: 1px solid var(--color-purple);
 
   border-radius: 50px;
+}
+.search__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50px;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none;
+
+  //background: var(--color-purple);
+
+  border-radius: 0 40px 40px 0;
 }

@@ -26,12 +26,17 @@ const Search = () => {
 
     return (
         <div className={'search'}>
-            <input
-                ref={input}
-                className={'search__input'}
-                type={'text'}
-                placeholder={'Поиск'}
-            />
+            <div className={'search__container'}>
+                <input
+                    ref={input}
+                    className={'search__input'}
+                    type={'text'}
+                    placeholder={'Поиск'}
+                />
+                <div className={'search__icon'}>
+                    <img src={search_icon} alt={'icon'}/>
+                </div>
+            </div>
         </div>
     );
 };
