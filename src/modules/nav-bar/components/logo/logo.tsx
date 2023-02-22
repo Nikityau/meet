@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-import {ROUTE_MEETS} from "../../routes";
+import {ROUTE_MEETS} from "../../../../routes";
 
 import './style/logo.scss'
-
 const Logo = () => {
     return (
         <div className={'meet-logo'}>

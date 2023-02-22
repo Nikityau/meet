@@ -31,5 +31,7 @@
   padding: 17px 50px 17px 80px;
 
   display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 40% 50%;
   gap: 20px;
 }
