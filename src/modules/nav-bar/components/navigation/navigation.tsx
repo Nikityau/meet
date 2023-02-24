@@ -10,6 +10,7 @@ import {
 } from "../../../../routes";
 
 import meet_icon from './assets/meet.png'
+import community_icon from './assets/community.png'
 
 import './style/navigation.scss'
 import EventEmitter from "../../../../helpers/event/event-emitter";
@@ -32,7 +33,7 @@ const Navigation = () => {
                 onActive={onActive}
             />
             <Nav
-                icon={meet_icon}
+                icon={community_icon}
                 title={'Сообщества'}
                 url={ROUTE_COMMUNITIES}
                 onActive={onActive}

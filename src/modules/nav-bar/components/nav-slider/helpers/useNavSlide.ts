@@ -14,7 +14,6 @@ export const useNavSlide = () => {
     }, [])
 
     const computeTT = (top: number) => {
-        console.log(top)
         setTT(top)
     }
 

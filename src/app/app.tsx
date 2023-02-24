@@ -15,7 +15,9 @@ const App = () => {
                 <Header/>
                 <NavBar/>
                 <div className={'meet__main meet__workspace'}>
-                     <RoutesApp/>
+                     <div className={'meet__wrapper'}>
+                         <RoutesApp/>
+                     </div>
                 </div>
             </div>
         </WithRouter>

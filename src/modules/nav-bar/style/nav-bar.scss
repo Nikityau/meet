@@ -32,6 +32,10 @@
 
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 10% 40% 50%;
+  grid-template-rows: 10% 40% 30%;
   gap: 20px;
+}
+.nav-bar__bottom {
+  justify-self: start;
+  align-self: end;
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import NavSlider from "./components/nav-slider/nav-slider";
 import {MeetLogo} from "./components/logo";
 import {Navigation} from "./components/navigation";
+import UserBar from "./components/user-bar/user-bar";
 
 import './style/nav-bar.scss'
 
@@ -14,6 +15,9 @@ const NavBar = () => {
                     <MeetLogo/>
                     <NavSlider/>
                     <Navigation/>
+                    <div className={'nav-bar__bottom'}>
+                        <UserBar/>
+                    </div>
                 </div>
             </div>
         </div>
