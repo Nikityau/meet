@@ -1,11 +1,13 @@
 export interface DateCalendar {
-    weekday: number,
-    date: number,
+    day: number,
     month: number,
+    year: number
+    date: number,
     timestamp: number
 }
 
 export interface Calendar {
     dateNow: DateCalendar,
-    chosenDate: DateCalendar
+    chosenDate: DateCalendar,
+    chosenMonth: number
 }

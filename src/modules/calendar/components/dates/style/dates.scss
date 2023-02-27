@@ -1,0 +1,16 @@
+.dates {
+  width: 100%;
+}
+.dates__container {
+  width: 85%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 8px 10px;
+
+  background: rgba(18, 20, 27, 0.5);
+  border-radius: 15px;
+}

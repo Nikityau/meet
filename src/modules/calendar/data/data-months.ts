@@ -53,12 +53,12 @@ export const dataMonths = [
     },
     {
         id: nanoid(),
-        title: 'Декабрь',
+        title: 'Ноябрь',
         number: 10
     },
     {
         id: nanoid(),
-        title: 'Ноябрь',
+        title: 'Декабрь',
         number: 11
     },
 ]
