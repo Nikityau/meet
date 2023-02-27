@@ -1,28 +1,22 @@
 .month {
   font-family: 'Poppins', sans-serif;
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 27px;
 
   color: #3E424A;
 
   cursor: pointer;
 
   transition: all .3s linear;
-
-  border-radius: 25px;
 }
 
 .month_current {
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 20px;
-  line-height: 30px;
 
   color: #FFFFFF;
 
-  padding: 0 20px;
+  //padding: 0 24px;
 
   //background-color: #1D1F25;
 }

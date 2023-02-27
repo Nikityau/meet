@@ -6,14 +6,15 @@ export const useMonthSlider = () => {
     const [offsetLeft, setOffsetLeft] = useState<number>(0)
 
     useEffect(() => {
-       const unsub = EventEmitter.on('change-month', onChangMonth)
+       const unsub = EventEmitter.on('change-month', onChangeMonth)
 
         return () => {
            unsub()
         }
     }, [])
 
-    const onChangMonth = (element: HTMLElement) => {
+    const onChangeMonth = (element: HTMLElement) => {
+        console.log(element.offsetLeft)
         setOffsetLeft(element.offsetLeft)
     }
 

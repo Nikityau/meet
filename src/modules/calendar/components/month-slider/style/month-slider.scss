@@ -1,12 +1,12 @@
 .month-slider {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
 
   width: 117px;
   height: 38px;
 
-  transform: translate(0, -13%);
+  transform: translate(0, -50%);
 
   background: #1D1F25;
   border-radius: 25px;

@@ -11,7 +11,7 @@ const MonthSlider = () => {
     return (
         <div className={'month-slider'}
             style={{
-                transform: `translate(${offsetLeft}px, -13%)`
+                transform: `translate(${offsetLeft}px, -50%)`
             }}
         >
         </div>
