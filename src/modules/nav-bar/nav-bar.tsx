@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AfterUserLogin from "../../helpers/hoc/after-user-login";
+
 import NavSlider from "./components/nav-slider/nav-slider";
 import {MeetLogo} from "./components/logo";
 import {Navigation} from "./components/navigation";
@@ -15,9 +17,11 @@ const NavBar = () => {
                     <MeetLogo/>
                     <NavSlider/>
                     <Navigation/>
-                    <div className={'nav-bar__bottom'}>
-                        <UserBar/>
-                    </div>
+                    <AfterUserLogin fallback={null}>
+                        <div className={'nav-bar__bottom'}>
+                            <UserBar/>
+                        </div>
+                    </AfterUserLogin>
                 </div>
             </div>
         </div>

@@ -28,11 +28,11 @@
   width: auto;
   height: calc(100% - 34px);
 
-  padding: 17px 50px 17px 80px;
+  padding: 0 50px 17px 80px;
 
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 10% 40% 43%;
+  grid-template-rows: 80px 40% 43%;
   gap: 20px;
 }
 .nav-bar__bottom {

@@ -1,17 +1,14 @@
 import React from 'react';
 
-import {dataEvents} from "../../data/data-event";
-
 import EventSwiper from "../../../../ui/components/event-swiper/event-swiper";
 import Event from "../event/event";
 
-import 'swiper/css'
-import './style/event.scss'
+import {dataEvent} from '../../data/data-event'
 
 const Events = () => {
     return (
-        <div className={'nearest-events__events'}>
-            <EventSwiper Element={Event} data={dataEvents}/>
+        <div className={'my-subscription__events'}>
+            <EventSwiper Element={Event} data={dataEvent}/>
         </div>
     );
 };

@@ -1,0 +1,22 @@
+.login-btn {
+  padding: 0 45px;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+.login-btn__btn {
+  padding: 14px 30px;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #E2E2E2;
+
+  background: rgba(92, 78, 254, 0.1);
+  border-radius: 16px;
+}

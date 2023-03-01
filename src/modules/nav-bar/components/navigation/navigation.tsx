@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Nav from "../../../../ui/components/nav/nav";
+import AfterUserLogin from "../../../../helpers/hoc/after-user-login";
+import NewPost from "../new-post/new-post";
 
 import {
     ROUTE_ARCHIVE,
@@ -9,11 +11,13 @@ import {
     ROUTE_MEETS
 } from "../../../../routes";
 
+import EventEmitter from "../../../../helpers/event/event-emitter";
+
 import meet_icon from './assets/meet.png'
 import community_icon from './assets/community.png'
 
 import './style/navigation.scss'
-import EventEmitter from "../../../../helpers/event/event-emitter";
+
 
 const Navigation = () => {
     const onActive = (is: boolean, el: HTMLElement) => {
@@ -26,6 +30,9 @@ const Navigation = () => {
 
     return (
         <div className={'navigation'}>
+            <AfterUserLogin fallback={null}>
+                <NewPost/>
+            </AfterUserLogin>
             <Nav
                 icon={meet_icon}
                 title={'Афиша'}
@@ -38,18 +45,20 @@ const Navigation = () => {
                 url={ROUTE_COMMUNITIES}
                 onActive={onActive}
             />
-            <Nav
-                icon={meet_icon}
-                title={'Избранное'}
-                url={ROUTE_FAVORITES}
-                onActive={onActive}
-            />
-            <Nav
-                icon={meet_icon}
-                title={'Архив'}
-                url={ROUTE_ARCHIVE}
-                onActive={onActive}
-            />
+            <AfterUserLogin fallback={null}>
+                <Nav
+                    icon={meet_icon}
+                    title={'Избранное'}
+                    url={ROUTE_FAVORITES}
+                    onActive={onActive}
+                />
+                <Nav
+                    icon={meet_icon}
+                    title={'Архив'}
+                    url={ROUTE_ARCHIVE}
+                    onActive={onActive}
+                />
+            </AfterUserLogin>
         </div>
     );
 };

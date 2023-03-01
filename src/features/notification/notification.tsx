@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WithGreyBg from "../../ui/components/withGreyBg/withGreyBg";
+import WithGreyBg from "../../ui/components/with-grey-bg/with-grey-bg";
 import NotifCircle from "./components/notif-circle/notif-circle";
 
 import ring_icon from './assets/ring.png'

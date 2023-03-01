@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WithGreyBg from "../../ui/components/withGreyBg/withGreyBg";
+import WithGreyBg from "../../ui/components/with-grey-bg/with-grey-bg";
 
 import moon_icon from './assets/moon.png'
 

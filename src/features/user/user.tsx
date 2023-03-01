@@ -1,9 +1,10 @@
 import React from 'react';
 
+import Dot from "./components/dot/dot";
+
 import user_img from './assets/full-18+.png'
 
 import './style/user.scss'
-import Dot from "./components/dot/dot";
 
 const User = () => {
     return (
