@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style/withGreyBg.scss'
+import './style/with-grey-bg.scss'
 
 const WithGreyBg = ({children}:React.PropsWithChildren) => {
     return (
