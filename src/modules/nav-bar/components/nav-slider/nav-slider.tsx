@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 import {useNavSlide} from "./helpers/useNavSlide";
 
@@ -7,6 +7,7 @@ import './style/nav-slider.scss'
 const NavSlider = () => {
 
     const top = useNavSlide()
+
 
     return (
         <div className={'nav-slider'}

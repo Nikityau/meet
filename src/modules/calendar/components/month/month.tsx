@@ -24,7 +24,9 @@ const Month = ({number, title}:MonthProps) => {
 
     useEffect(() => {
         if(isCurrent) {
-            EventEmitter.emit('change-month', ref.current)
+            setTimeout(() => {
+                EventEmitter.emit('change-month', ref.current)
+            }, 300)
         }
     }, [isCurrent])
 

@@ -18,13 +18,14 @@ import community_icon from './assets/community.png'
 
 import './style/navigation.scss'
 
-
 const Navigation = () => {
     const onActive = (is: boolean, el: HTMLElement) => {
         if(is) {
-            const fromTop = el.offsetTop
+           setTimeout(() => {
+               const fromTop = el.offsetTop
 
-            EventEmitter.emit('nav-slide', fromTop)
+               EventEmitter.emit('nav-slide', fromTop)
+           }, 200)
         }
     }
 

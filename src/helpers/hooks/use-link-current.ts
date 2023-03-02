@@ -1,22 +1,12 @@
-import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 
-export const useLinkCurrent = (url:string) => {
-    const [is, setIs] = useState<boolean>(false)
+import {useIs} from "./useIs";
 
+export const useLinkCurrent = (url: string) => {
     const location = useLocation()
 
-    useEffect(() => {
-        if(location.pathname == url) {
-            setIs(true)
-
-            return
-        }
-
-        if(is) {
-            setIs(false)
-        }
-    }, [location])
+    const is = useIs(location.pathname,() => location.pathname == url)
 
     return is
 }
+

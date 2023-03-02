@@ -6,12 +6,13 @@ import './style/month-slider.scss'
 
 const MonthSlider = () => {
 
-    const offsetLeft = useMonthSlider()
+    const data = useMonthSlider()
 
     return (
         <div className={'month-slider'}
             style={{
-                transform: `translate(${offsetLeft}px, -50%)`
+                width: `${data?.clientWidth}px`,
+                transform: `translate(${data?.offsetLeft}px, -50%)`
             }}
         >
         </div>

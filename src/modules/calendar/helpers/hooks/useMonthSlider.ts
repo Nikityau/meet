@@ -2,8 +2,14 @@ import {useEffect, useState} from "react";
 
 import EventEmitter from "../../../../helpers/event/event-emitter";
 
+type HtmlElData = {
+    offsetLeft: number,
+    clientWidth: number,
+    scaleX: number
+}
+
 export const useMonthSlider = () => {
-    const [offsetLeft, setOffsetLeft] = useState<number>(0)
+    const [data, setData] = useState<HtmlElData>(null)
 
     useEffect(() => {
        const unsub = EventEmitter.on('change-month', onChangeMonth)
@@ -14,9 +20,16 @@ export const useMonthSlider = () => {
     }, [])
 
     const onChangeMonth = (element: HTMLElement) => {
-        console.log(element.offsetLeft)
-        setOffsetLeft(element.offsetLeft)
+        const monthSlider = document.querySelector('.month-slider')
+
+        console.log(element.clientWidth / monthSlider.clientWidth)
+
+        setData({
+            clientWidth: element.clientWidth,
+            offsetLeft: element.offsetLeft,
+            scaleX: element.clientWidth / monthSlider.clientWidth
+        })
     }
 
-    return offsetLeft
+    return data
 }

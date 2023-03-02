@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {debounce, fromEvent, timer} from "rxjs";
+import cn from 'classnames'
 
 import search_icon from './assets/search-icon.png'
 
@@ -8,6 +9,8 @@ import './style/search.scss'
 const Search = () => {
 
     const input = useRef<HTMLInputElement>()
+
+    const [isFocused, setIsFocused] = useState<boolean>(false)
 
     useEffect(() => {
         const subscriber = fromEvent(input.current, 'input')
@@ -20,6 +23,14 @@ const Search = () => {
         }
     }, [])
 
+    const onFocus = () => {
+        setIsFocused(true)
+    }
+
+    const onBlur = () => {
+        setIsFocused(false)
+    }
+
     const changeInput = () => {
         console.log('input change')
     }
@@ -28,12 +39,20 @@ const Search = () => {
         <div className={'search'}>
             <div className={'search__container'}>
                 <input
-                    ref={input}
                     className={'search__input'}
                     type={'text'}
-                    placeholder={'Поиск'}
+                    placeholder={isFocused ? 'Введите запрос' : 'Поиск'}
+                    defaultValue={''}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    ref={input}
                 />
-                <div className={'search__icon'}>
+                <div className={cn(
+                    'search__icon',
+                    {
+                        'search__icon_focused': isFocused
+                    }
+                    )}>
                     <img src={search_icon} alt={'icon'}/>
                 </div>
             </div>
