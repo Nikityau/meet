@@ -6,10 +6,10 @@ export const useNavSlide = () => {
     const [translateTop, setTT] = useState<number>(0)
 
     useEffect(() => {
-       const unsub = EventEmitter.on('nav-slide', computeTT)
+        const unsub = EventEmitter.on('nav-slide', computeTT)
 
         return () => {
-           unsub()
+            unsub()
         }
     }, [])
 

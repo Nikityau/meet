@@ -22,8 +22,6 @@ export const useMonthSlider = () => {
     const onChangeMonth = (element: HTMLElement) => {
         const monthSlider = document.querySelector('.month-slider')
 
-        console.log(element.clientWidth / monthSlider.clientWidth)
-
         setData({
             clientWidth: element.clientWidth,
             offsetLeft: element.offsetLeft,

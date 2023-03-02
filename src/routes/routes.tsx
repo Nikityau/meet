@@ -31,6 +31,7 @@ const RoutesApp = () => {
                 <Route path={ROUTE_ARCHIVE} element={<Archive/>}/>
                 <Route path={ROUTE_SETTINGS} element={<Settings/>}/>
 
+                <Route path={'/exit'} element={<Navigate to={ROUTE_MEETS}/>}/>
                 <Route path={'/'} element={<Navigate to={ROUTE_MEETS}/>}/>
             </Routes>
         </WithLazyRoute>

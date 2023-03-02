@@ -3,14 +3,17 @@ import React from 'react';
 import Event from "../event/event";
 import EventSwiper from "../../../../ui/components/event-swiper/event-swiper";
 
-import {dataEvents} from "../../data/data-events";
+import {useEventToday} from "../../zustand/zustand";
 
 import './style/events.scss'
 
 const Events = () => {
+
+    const data = useEventToday((state) => state['data'])
+
     return (
         <div className={'events-today__events'}>
-            <EventSwiper Element={Event} data={dataEvents}/>
+            <EventSwiper Element={Event} data={data}/>
         </div>
     );
 };

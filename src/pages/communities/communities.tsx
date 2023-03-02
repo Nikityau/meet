@@ -1,9 +1,10 @@
 import React from 'react';
 
+import './style/communities.scss'
+
 const Communities = () => {
     return (
         <div className={'communities-page'}>
-            COMMUNITIES
         </div>
     );
 };

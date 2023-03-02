@@ -1,4 +1,5 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
 
 import {
     ROUTE_SETTINGS
@@ -6,10 +7,13 @@ import {
 import EventEmitter from "../../../../helpers/event/event-emitter";
 
 import Nav from "../../../../ui/components/nav/nav";
+import {userLogOut} from "../../../../features/user";
 
 import icon from '../navigation/assets/settings.png'
 
 const UserBar = () => {
+
+    const dispatch = useDispatch()
 
     const onActive = (is: boolean, el: HTMLElement) => {
         if(is) {
@@ -17,6 +21,10 @@ const UserBar = () => {
 
             EventEmitter.emit('nav-slide', fromTop)
         }
+    }
+
+    const onExit = () => {
+        dispatch(userLogOut())
     }
 
     return (
@@ -30,8 +38,8 @@ const UserBar = () => {
             <Nav
                 icon={icon}
                 title={'Выйти'}
-                url={''}
-                onActive={() => {}}
+                url={'/exit'}
+                onActive={onExit}
             />
         </div>
     );

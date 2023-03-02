@@ -22,9 +22,7 @@ const Navigation = () => {
     const onActive = (is: boolean, el: HTMLElement) => {
         if(is) {
            setTimeout(() => {
-               const fromTop = el.offsetTop
-
-               EventEmitter.emit('nav-slide', fromTop)
+               EventEmitter.emit('nav-slide', el.offsetTop)
            }, 200)
         }
     }
@@ -53,13 +51,13 @@ const Navigation = () => {
                     url={ROUTE_FAVORITES}
                     onActive={onActive}
                 />
-                <Nav
-                    icon={meet_icon}
-                    title={'Архив'}
-                    url={ROUTE_ARCHIVE}
-                    onActive={onActive}
-                />
             </AfterUserLogin>
+            <Nav
+                icon={meet_icon}
+                title={'Архив'}
+                url={ROUTE_ARCHIVE}
+                onActive={onActive}
+            />
         </div>
     );
 };
