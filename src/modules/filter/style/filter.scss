@@ -9,6 +9,14 @@
   z-index: 1;
 }
 
+.filter_open {
+  .filter__list {
+    opacity: 1;
+
+    pointer-events: all;
+  }
+}
+
 .filter__list {
   position: absolute;
   top: 0;
@@ -20,12 +28,16 @@
 
   padding: 12px 0;
 
+  opacity: 0;
+  pointer-events: none;
+
   background: rgb(30, 32, 39);
 
   border-radius: 25px;
 
   z-index: 2;
 }
+
 
 .filter__chosen {
   background: rgba(30, 32, 39, 0.8);
@@ -46,9 +58,17 @@
 }
 
 .filter__f-block {
+  min-width: 206px;
+
   display: flex;
   align-items: center;
-  gap: 17px;
+  justify-content: space-between;
+
+  .filter__f-block-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
 
   .filter__title {
     font-family: 'Poppins', sans-serif;
@@ -62,6 +82,7 @@
 
   padding: 7px 12px;
 }
+
 .filter__img {
   width: 18px;
   height: auto;

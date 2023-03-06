@@ -13,7 +13,7 @@ export const dataFilter = [
     {
         id: nanoid(),
         filter: 'staff&students',
-        title: 'Для всех студунтов и сотрудников',
+        title: 'Для всех студентов и сотрудников',
         icon: study
     },
 ]
