@@ -14,6 +14,7 @@ import {
 import EventEmitter from "../../../../helpers/event/event-emitter";
 
 import meet_icon from './assets/meet.png'
+import meet_icon_svg from './assets/meet.svg'
 import community_icon from './assets/community.png'
 
 import './style/navigation.scss'
@@ -46,7 +47,7 @@ const Navigation = () => {
             />
             <AfterUserLogin fallback={null}>
                 <Nav
-                    icon={meet_icon}
+                    icon={meet_icon_svg}
                     title={'Избранное'}
                     url={ROUTE_FAVORITES}
                     onActive={onActive}

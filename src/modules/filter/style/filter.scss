@@ -15,6 +15,12 @@
 
     pointer-events: all;
   }
+
+  .filter__arrow {
+    img {
+      transform: rotate(-180deg);
+    }
+  }
 }
 
 .filter__list {
@@ -45,12 +51,7 @@
 
   border-radius: 40px;
 
-  transition: background-color .2s linear;
-
-  .filter__title {
-    font-weight: 500;
-    font-size: 12px;
-  }
+  transition: all .2s linear;
 
   &:hover {
     background: #2F333B;
@@ -78,6 +79,8 @@
     line-height: 21px;
 
     color: #FFFFFF;
+
+    transition: color .2s linear;
   }
 
   padding: 7px 12px;
@@ -89,8 +92,14 @@
 }
 
 .filter__arrow {
-  width: 9px;
+  width: auto;
   height: auto;
+
+  padding: 5px;
+
+  img {
+    transition: transform .3s linear;
+  }
 }
 
 .filter__img,
@@ -99,4 +108,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.filter__img {
+}
+
+.filter__list {
+  .filter__f-block {
+    &:hover {
+      .filter__title {
+        color: var(--color-purple)
+      }
+    }
+  }
+}
+
+.filter__chosen_not_def {
+  .filter__title {
+    color: var(--color-purple)
+  }
 }

@@ -8,8 +8,9 @@ import {useEventToday} from "../../zustand/zustand";
 import './style/events.scss'
 
 const Events = () => {
+    const zus = useEventToday()
 
-    const data = useEventToday((state) => state['data'])
+    const data = useEventToday((state) => state.data)
 
     return (
         <div className={'events-today__events'}>
