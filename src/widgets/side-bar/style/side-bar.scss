@@ -1,0 +1,21 @@
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: auto;
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: 112px calc(100vh - 112px);
+}
+.side-bar__up {
+  height: 100%;
+}
+.side-bar__navigation {
+  height: 100%;
+}
+
+.side-bar_left_offset {
+  padding-left: 38px;
+}
