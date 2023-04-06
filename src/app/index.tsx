@@ -1,15 +1,17 @@
 import React from "react";
+import cn from 'classnames'
 
 import {WithRouter, WithStore} from "./providers";
 
 import Routing from "pages";
 
-import './style/app.scss'
+import './style/index.scss'
+import './style/fonts/custom/index.scss'
 
 const App = () => {
 
     return (
-        <div className={'app'}>
+        <div className={cn('app', 'app-theme')}>
             <Routing/>
         </div>
     );
