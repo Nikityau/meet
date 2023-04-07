@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import {AppRoutes} from "shared/routes/routes";
 
-import './style/logo.scss'
+import './style/index.scss'
 
 const Logo = () => {
     return (

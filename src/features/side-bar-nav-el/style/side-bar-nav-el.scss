@@ -1,0 +1,29 @@
+.side-bar-nav-el {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  .side-bar-nav-el__icon {
+
+  }
+
+  .side-bar-nav-el__title {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+
+    color: #3E424A;
+
+    opacity: 0;
+
+    transition: opacity .3s linear;
+  }
+}
+
+.side-bar-nav-el_full {
+  .side-bar-nav-el__title {
+    opacity: 1;
+  }
+}

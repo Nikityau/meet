@@ -1,5 +1,7 @@
 export enum AppRoutes {
     BASE = '/',
     EVENTS = '/events',
-    SETTINGS = '/settings'
+    SETTINGS = '/settings',
+    ARCHIVE = '/archive',
+    CHOSEN = '/chosen'
 }

@@ -1,6 +1,55 @@
 .side-bar__navigation {
+  width: auto;
+
   padding-right: 38px;
+
+  //background: red;
 
   background: rgba(248, 248, 248, 0.8);
   backdrop-filter: blur(28px);
+
+  display: grid;
+  grid-template-rows: 70% 30%;
+
+  .side-bar__nav-up {
+    padding-top: 49px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+    //background: #181A21;
+  }
+  .side-bar__nav-bottom {
+    align-self: center;
+    //background: rebeccapurple;
+  }
+}
+
+.events-icon,
+.archive-icon,
+.chosen-icon,
+.settings-icon {
+  &:before {
+    content: '\e906';
+    font-family: AppIcons;
+    font-size: 25px;
+
+    color: #3E424A;
+  }
+}
+.archive-icon {
+  &:before {
+    content: '\e900';
+  }
+}
+.chosen-icon {
+  &:before {
+    content: '\e90a';
+  }
+}
+.settings-icon {
+  &:before {
+    content: '\e918';
+  }
 }
