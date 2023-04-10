@@ -3,12 +3,13 @@
   align-items: center;
   gap: 34px;
 
-  transition: opacity .3s linear;
+  transition: all .3s linear;
 
-  opacity: .5;
 
   .side-bar-nav-el__icon {
-
+    &:before {
+      color: rgba(149, 144, 165, 0.5);
+    }
   }
 
   .side-bar-nav-el__title {
@@ -18,7 +19,7 @@
     font-size: 12px;
     line-height: 20px;
 
-    color: #3E424A;
+    color: rgba(149, 144, 165, 0.5);
 
     opacity: 0;
 
@@ -32,5 +33,14 @@
   }
 }
 .side-bar-nav-el_current {
-  opacity: 1;
+  .side-bar-nav-el__icon {
+    &:before {
+      color: #3E424A;
+    }
+  }
+  .side-bar-nav-el__title {
+    font-size: 14px;
+
+    color: #3E424A;
+  }
 }
