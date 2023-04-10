@@ -3,5 +3,6 @@ export enum AppRoutes {
     EVENTS = '/events',
     SETTINGS = '/settings',
     ARCHIVE = '/archive',
-    CHOSEN = '/chosen'
+    CHOSEN = '/chosen',
+    ADD_POST = '/add-post',
 }

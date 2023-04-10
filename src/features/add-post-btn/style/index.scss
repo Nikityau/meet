@@ -1,0 +1,53 @@
+.add-post-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  padding: 8px 15px;
+
+  transform: translate(12%, 10px);
+
+  background: transparent;
+  border-radius: 15px;
+
+  transition: background-color .3s linear;
+
+  .add-post-btn__icon {
+    &:before {
+      content: '\e913';
+      font-family: AppIcons;
+      font-size: 30px;
+
+      color: var(--color-purple);
+    }
+  }
+
+  .add-post-btn__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+
+    color: #3E424A;
+
+    opacity: 0;
+
+    transition: opacity .3s linear;
+  }
+}
+
+.add-post-btn_full {
+  background: rgba(92, 78, 254, 0.1);
+
+  .add-post-btn__text {
+    opacity: 1;
+  }
+}

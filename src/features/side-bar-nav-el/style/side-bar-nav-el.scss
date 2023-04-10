@@ -3,6 +3,10 @@
   align-items: center;
   gap: 34px;
 
+  transition: opacity .3s linear;
+
+  opacity: .5;
+
   .side-bar-nav-el__icon {
 
   }
@@ -26,4 +30,7 @@
   .side-bar-nav-el__title {
     opacity: 1;
   }
+}
+.side-bar-nav-el_current {
+  opacity: 1;
 }

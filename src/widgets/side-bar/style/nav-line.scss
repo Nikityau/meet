@@ -1,0 +1,14 @@
+.nav-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 5px;
+  height: 47px;
+
+  border-radius: 0px 10px 10px 0px;
+
+  background: #5C4EFE;
+
+  transition: transform .3s linear;
+}

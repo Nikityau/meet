@@ -1,4 +1,6 @@
 .side-bar__navigation {
+  position: relative;
+
   width: auto;
 
   padding-right: 38px;
@@ -12,14 +14,19 @@
   grid-template-rows: 70% 30%;
 
   .side-bar__nav-up {
-    padding-top: 49px;
+    //padding-top: 49px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
+    .side-bar__nav-up-wrapper {
+      transform: translate(0, 100px);
+
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+    }
 
     //background: #181A21;
   }
+
   .side-bar__nav-bottom {
     align-self: center;
     //background: rebeccapurple;
@@ -38,16 +45,19 @@
     color: #3E424A;
   }
 }
+
 .archive-icon {
   &:before {
     content: '\e900';
   }
 }
+
 .chosen-icon {
   &:before {
     content: '\e90a';
   }
 }
+
 .settings-icon {
   &:before {
     content: '\e918';
