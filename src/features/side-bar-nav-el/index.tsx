@@ -12,10 +12,11 @@ type SideBarNavElProps = {
     title: string,
     is_full: boolean,
     onClick: (el: HTMLElement) => void,
-    isAddonOffset: boolean
+    isAddonOffset: boolean,
+    name: string
 }
 
-const SideBarNavEl = ({className, is_full, onClick, link, title, isAddonOffset}: SideBarNavElProps) => {
+const SideBarNavEl = ({className, is_full, onClick, link, title, isAddonOffset, name}: SideBarNavElProps) => {
 
     const div = useRef<HTMLDivElement>()
 
@@ -37,6 +38,7 @@ const SideBarNavEl = ({className, is_full, onClick, link, title, isAddonOffset}:
                  ref={div}
                  onClick={onClickLink}
                  data-is-need-addon-offset={isAddonOffset}
+                 data-name={name}
             >
                 <div className={cn('side-bar-nav-el__icon', className)}>
                 </div>

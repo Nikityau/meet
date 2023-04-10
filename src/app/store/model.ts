@@ -1,6 +1,8 @@
 import {createStore,combineReducers, applyMiddleware} from 'redux'
 import {composeWithDevTools} from '@redux-devtools/extension'
 
+import {isInitReducer} from "../../app-store-global/is-init";
+
 import {sideBarReducer} from "widgets/side-bar";
 
 import {themeReducer} from "features/switch-theme";
@@ -11,7 +13,8 @@ const Store = () => {
     const reducers = combineReducers({
         theme: themeReducer,
         user: userReducer,
-        sideBar: sideBarReducer
+        sideBar: sideBarReducer,
+        isInit: isInitReducer
     })
 
     const store = createStore(reducers, middlewares)

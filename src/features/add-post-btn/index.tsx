@@ -15,6 +15,10 @@ const AddPostBtn = ({is_full, onClick}: AddPostBtnProps) => {
 
     const btn = useRef<HTMLDivElement>()
 
+    const onClickBtn = () => {
+        onClick(btn.current)
+    }
+
     return (
         <Link to={AppRoutes.ADD_POST}>
             <div className={cn(
@@ -22,9 +26,7 @@ const AddPostBtn = ({is_full, onClick}: AddPostBtnProps) => {
                 {
                     'add-post-btn_full': is_full
                 }
-            )} ref={btn} onClick={() => {
-                onClick(btn.current)
-            }}>
+            )} ref={btn} onClick={onClickBtn}>
                 <div className={'add-post-btn__icon'}>
                 </div>
                 <div className={'add-post-btn__text'}>

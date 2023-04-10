@@ -11,6 +11,8 @@ import AddPostBtn from "features/add-post-btn";
 
 import {AppRoutes} from "shared/routes/routes";
 
+import {useTopOffset} from "../helpers/hooks/useTopOffset";
+
 
 export const NavContext = React.createContext<{
     topOffset: number
@@ -20,31 +22,18 @@ const Navigation = () => {
 
     const sideBarState = useSelector(getSideBarState)
 
-    const [topOffset, setTopOffset] = useState<number>()
-
-    const onNavElClick = (el: HTMLElement) => {
-        const attr = el.getAttribute('data-is-need-addon-offset')
-
-        if(attr == 'true') {
-            console.log(attr)
-            setTopOffset(el.offsetTop + el.clientHeight / 2 + 100)
-
-            return
-        }
-
-        setTopOffset(el.offsetTop + el.clientHeight / 2)
-    }
+    const {offset, onElClick} = useTopOffset()
 
     return (
         <NavContext.Provider value={{
-            topOffset
+            topOffset: offset
         }}>
             <div className={'side-bar__navigation side-bar_left_offset'}>
                 <NavLine/>
                 <div className={'side-bar__nav-up'}>
                     <AddPostBtn
                         is_full={sideBarState}
-                        onClick={onNavElClick}
+                        onClick={onElClick}
                     />
                     <div className={'side-bar__nav-up-wrapper'}>
                         {
@@ -55,8 +44,9 @@ const Navigation = () => {
                                     link={el.link}
                                     title={el.title}
                                     is_full={sideBarState}
-                                    onClick={onNavElClick}
+                                    onClick={onElClick}
                                     isAddonOffset={true}
+                                    name={el.name}
                                 />
                             ))
                         }
@@ -68,8 +58,9 @@ const Navigation = () => {
                         link={AppRoutes.SETTINGS}
                         title={'Настройки'}
                         is_full={sideBarState}
-                        onClick={onNavElClick}
+                        onClick={onElClick}
                         isAddonOffset={false}
+                        name={'setting-nav-el'}
                     />
                 </div>
             </div>
