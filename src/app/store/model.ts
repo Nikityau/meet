@@ -4,6 +4,7 @@ import {composeWithDevTools} from '@redux-devtools/extension'
 import {isInitReducer} from "../../app-store-global/is-init";
 
 import {sideBarReducer} from "widgets/side-bar";
+import {dateReducer} from "widgets/months";
 
 import {themeReducer} from "features/switch-theme";
 import {userReducer} from "features/user";
@@ -14,7 +15,8 @@ const Store = () => {
         theme: themeReducer,
         user: userReducer,
         sideBar: sideBarReducer,
-        isInit: isInitReducer
+        date: dateReducer,
+        isInit: isInitReducer,
     })
 
     const store = createStore(reducers, middlewares)
