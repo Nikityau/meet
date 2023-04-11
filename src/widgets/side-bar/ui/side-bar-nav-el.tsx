@@ -1,30 +1,36 @@
-import React, {useRef} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {Link, useLocation} from "react-router-dom";
 import cn from 'classnames'
 
+import {NavContext} from "./navigation";
+
 import {AppRoutes} from "shared/routes/routes";
 
-import './style/index.scss'
+import {NavElC, NavElController} from "../controller/nav-el-controller";
 
 type SideBarNavElProps = {
     className: string,
     link: AppRoutes,
     title: string,
     is_full: boolean,
-    onClick: (el: HTMLElement) => void,
     isAddonOffset: boolean,
-    name: string
 }
 
-const SideBarNavEl = ({className, is_full, onClick, link, title, isAddonOffset, name}: SideBarNavElProps) => {
+const SideBarNavEl = ({className, is_full, link, title, isAddonOffset}: SideBarNavElProps) => {
+
+    const navContext = useContext(NavContext)
+    const location = useLocation()
 
     const div = useRef<HTMLDivElement>()
 
-    const location = useLocation()
+    const [navElC] = useState<NavElC>(new NavElController(isAddonOffset))
 
-    const onClickLink = () => {
-        onClick(div.current)
-    }
+    useEffect(() => {
+        navElC.setEl(div.current)
+
+        navContext.pushToController(link, navElC)
+    }, [])
+
 
     return (
         <Link to={link}>
@@ -36,9 +42,6 @@ const SideBarNavEl = ({className, is_full, onClick, link, title, isAddonOffset, 
                 }
             )}
                  ref={div}
-                 onClick={onClickLink}
-                 data-is-need-addon-offset={isAddonOffset}
-                 data-name={name}
             >
                 <div className={cn('side-bar-nav-el__icon', className)}>
                 </div>

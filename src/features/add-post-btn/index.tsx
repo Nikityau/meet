@@ -1,23 +1,30 @@
-import React, {useRef} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 import cn from 'classnames'
 
 import {AppRoutes} from "shared/routes/routes";
 
+import {NavElC, NavElController} from "widgets/side-bar/controller/nav-el-controller";
+import {NavContext} from "widgets/side-bar/ui/navigation";
+
 import './style/index.scss'
 
 type AddPostBtnProps = {
     is_full: boolean,
-    onClick: (el: HTMLElement) => void
 }
 
-const AddPostBtn = ({is_full, onClick}: AddPostBtnProps) => {
+const AddPostBtn = ({is_full}: AddPostBtnProps) => {
 
     const btn = useRef<HTMLDivElement>()
+    const navContext = useContext(NavContext)
+    const [navElC] = useState<NavElC>(new NavElController(false))
 
-    const onClickBtn = () => {
-        onClick(btn.current)
-    }
+    useEffect(() => {
+        navElC.setEl(btn.current)
+
+        navContext.pushToController(AppRoutes.ADD_POST, navElC)
+    }, [])
+
 
     return (
         <Link to={AppRoutes.ADD_POST}>
@@ -26,7 +33,7 @@ const AddPostBtn = ({is_full, onClick}: AddPostBtnProps) => {
                 {
                     'add-post-btn_full': is_full
                 }
-            )} ref={btn} onClick={onClickBtn}>
+            )} ref={btn}>
                 <div className={'add-post-btn__icon'}>
                 </div>
                 <div className={'add-post-btn__text'}>
