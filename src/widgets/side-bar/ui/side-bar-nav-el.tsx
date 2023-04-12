@@ -3,10 +3,10 @@ import {Link, useLocation} from "react-router-dom";
 import cn from 'classnames'
 
 import {NavContext} from "./navigation";
+import {ElOffsetHandler} from "../controller/nav-controller";
 
 import {AppRoutes} from "shared/routes/routes";
-
-import {NavElC, NavElController} from "../controller/nav-el-controller";
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
 type SideBarNavElProps = {
     className: string,
@@ -23,7 +23,7 @@ const SideBarNavEl = ({className, is_full, link, title, isAddonOffset}: SideBarN
 
     const div = useRef<HTMLDivElement>()
 
-    const [navElC] = useState<NavElC>(new NavElController(isAddonOffset))
+    const [navElC] = useState<IElOffsetHandler>(new ElOffsetHandler(isAddonOffset))
 
     useEffect(() => {
         navElC.setEl(div.current)

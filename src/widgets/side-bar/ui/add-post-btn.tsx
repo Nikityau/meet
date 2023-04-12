@@ -1,23 +1,21 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
+import cn from "classnames";
 import {Link} from "react-router-dom";
-import cn from 'classnames'
+
+import {NavContext} from "./navigation";
+import {ElOffsetHandler} from "../controller/nav-controller";
 
 import {AppRoutes} from "shared/routes/routes";
-
-import {NavElC, NavElController} from "widgets/side-bar/controller/nav-el-controller";
-import {NavContext} from "widgets/side-bar/ui/navigation";
-
-import './style/index.scss'
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
 type AddPostBtnProps = {
-    is_full: boolean,
+    is_full: boolean
 }
 
-const AddPostBtn = ({is_full}: AddPostBtnProps) => {
-
+const AddPostBtn = ({is_full}:AddPostBtnProps) => {
     const btn = useRef<HTMLDivElement>()
     const navContext = useContext(NavContext)
-    const [navElC] = useState<NavElC>(new NavElController(false))
+    const [navElC] = useState<IElOffsetHandler>(new ElOffsetHandler(false))
 
     useEffect(() => {
         navElC.setEl(btn.current)

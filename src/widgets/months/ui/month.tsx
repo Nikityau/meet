@@ -4,7 +4,8 @@ import cn from 'classnames'
 
 import {chooseMonth, getChosenMonth} from "../store";
 import {MonthContext} from "./index";
-import {IMonthController, MonthController} from "../controller/month-controller";
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
+import {MonthController} from "../controller/month-controller";
 
 type MonthProps = {
     number: number,
@@ -19,7 +20,7 @@ const Month = ({number, title}:MonthProps) => {
     const currMonth = useSelector(getChosenMonth)
     const context = useContext(MonthContext)
 
-    const [controller] = useState<IMonthController>(new MonthController())
+    const [controller] = useState<IElOffsetHandler>(new MonthController())
 
     useEffect(() => {
         controller.setEl(ref.current)

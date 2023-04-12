@@ -1,36 +1,35 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useSelector} from "react-redux";
-import {Location} from "react-router-dom";
 
 import {navData} from "../data/nav";
 import {getSideBarState} from "../model";
 import SideBarNavEl from "./side-bar-nav-el";
+import AddPostBtn from "./add-post-btn";
 
 import NavLine from "./nav-line";
 
-import AddPostBtn from "features/add-post-btn";
 
 import {AppRoutes} from "shared/routes/routes";
 
 import {useTopOffset} from "../helpers/hooks/useTopOffset";
-import {NavElC} from "../controller/nav-el-controller";
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
 
 export const NavContext = React.createContext<{
     topOffset: number,
-    pushToController: (key: AppRoutes, controller: NavElC) => void
+    pushToController: (key: AppRoutes, controller: IElOffsetHandler) => void
 }>(null)
 
 const Navigation = () => {
 
     const sideBarState = useSelector(getSideBarState)
 
-    const {offset, pushToController} = useTopOffset()
+    const {offset, push} = useTopOffset()
 
     return (
         <NavContext.Provider value={{
             topOffset: offset,
-            pushToController
+            pushToController: push
         }}>
             <div className={'side-bar__navigation side-bar_left_offset'}>
                 <NavLine/>

@@ -1,20 +1,22 @@
-export interface IMonthController {
-    el:HTMLElement
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
-    offset(): number
-    setEl(el: HTMLElement)
-}
-
-export class MonthController implements IMonthController {
+export class MonthController implements IElOffsetHandler {
     el: HTMLElement
+    isAddonOffset: boolean;
 
-    offset(): number {
-        const offset = this.el.offsetLeft + this.el.clientWidth / 2
-
-        return offset
+    constructor() {
+        this.isAddonOffset = false
     }
+
 
     setEl(el: HTMLElement) {
         this.el = el
+    }
+
+
+    getOffset(): number {
+        const offset = this.el.offsetLeft + this.el.clientWidth / 2
+
+        return offset
     }
 }

@@ -6,23 +6,23 @@ import Month from "./month";
 import Line from "./line";
 
 import {useLeftOffset} from "../helpers/hooks/useLeftOffset";
-import {IMonthController} from "../controller/month-controller";
 
 import '../style/index.scss'
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
 export const MonthContext = React.createContext<{
     offset: number
-    pushMonthController: (key: number, controller:IMonthController) => void
+    pushMonthController: (key: number, controller:IElOffsetHandler) => void
 }>(null)
 
 const Months = () => {
 
-    const {offset, pushController} = useLeftOffset()
+    const {offset, push} = useLeftOffset()
 
     return (
         <MonthContext.Provider value={{
             offset,
-            pushMonthController: pushController
+            pushMonthController: push
         }}>
             <div className={'months'}>
                 {

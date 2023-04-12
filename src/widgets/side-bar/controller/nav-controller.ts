@@ -1,37 +1,33 @@
-import type {Location} from 'react-router-dom'
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
+export class ElOffsetHandler implements IElOffsetHandler {
+    el: HTMLElement;
+    isAddonOffset: boolean;
 
-import {AppRoutes} from "shared/routes/routes";
-
-import {NavElC} from "./nav-el-controller";
-
-export class NavController {
-    links:Map<AppRoutes, NavElC>
-
-    constructor() {
-        this.links = new Map<AppRoutes, NavElC>()
+    constructor(isAddon: boolean) {
+        this.isAddonOffset = isAddon
     }
 
-    push(key: AppRoutes, controller: NavElC) {
-        if(this.links.has(key)) {
-            console.log('nav el controller')
+    getOffset(): number {
+        let offset = 0;
+        let matrix;
+
+        if(this.isAddonOffset) {
+            const parent = this.el.offsetParent
+            const style = getComputedStyle(parent)
+            matrix = new WebKitCSSMatrix(style.transform)
         } else {
-            this.links.set(key, controller)
+            const style = getComputedStyle(this.el)
+            matrix = new WebKitCSSMatrix(style.transform)
         }
 
-        console.log(key, controller)
+        offset = this.el.offsetTop + this.el.clientHeight / 2 + matrix.f
+
+        return offset
     }
 
-    posByLocation(location: Location): number {
-        if(!this.links.has(location.pathname as AppRoutes)) {
-            console.error('this location does not exist', location)
-
-            return
-        }
-
-        const topOffset = this.links.get(location.pathname as AppRoutes).getTopOffset()
-
-        return topOffset
+    setEl(el: HTMLElement) {
+        this.el = el
     }
 
 }
