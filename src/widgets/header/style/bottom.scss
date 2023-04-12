@@ -1,4 +1,23 @@
 .header__bottom {
+  position: relative;
+
   width: 100%;
   height: 56px;
+}
+
+.header__container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: translate(-50%, 0);
+
+  width: 100%;
+  height: 100%;
+}
+.header__wrapper {
+  width: 100%;
+  height: 100%;
+
+  transition: transform .3s linear;
 }

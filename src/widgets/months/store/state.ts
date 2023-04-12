@@ -10,6 +10,11 @@ export const dataState: DateState = {
         year: dateNow.getFullYear(),
         fullDate: dateNow.valueOf()
     },
-    chosenDate: dateNow.getDate(),
+    chosenDate: {
+        date: dateNow.getDate(),
+        month: dateNow.getMonth(),
+        year: dateNow.getFullYear(),
+        fullDate: dateNow.valueOf()
+    },
     chosenMonth: dateNow.getMonth(),
 }

@@ -1,7 +1,15 @@
 .app {
-  width: 100vw;
+  //width: 100vw;
   min-height: 100vh;
 }
 .app-theme {
   background: var(--bg-main);
+}
+
+.app__container {
+  max-width: 1502px;
+}
+
+.app__offset {
+  transform: translate(150px, 0);
 }

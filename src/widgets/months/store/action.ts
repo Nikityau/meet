@@ -6,7 +6,7 @@ export enum DateActionTypes {
 
 export type DateAction = {
     type: DateActionTypes,
-    payload: number
+    payload: number | Date
 }
 
 export const chooseMonth = (month: number): DateAction => ({
@@ -14,7 +14,7 @@ export const chooseMonth = (month: number): DateAction => ({
     payload: month
 })
 
-export const chooseDate = (date: number): DateAction => ({
+export const chooseDate = (date: Date): DateAction => ({
     type: DateActionTypes.CHOOSE_DATE,
     payload: date
 })

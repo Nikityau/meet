@@ -8,6 +8,6 @@ export type DateObj = {
 export type DateState = {
     currentDate: DateObj,
     chosenMonth: number
-    chosenDate: number
+    chosenDate: DateObj
 }
 

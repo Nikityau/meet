@@ -8,8 +8,10 @@
 
   //background: #181A21;
 
+  overflow: hidden;
+
   background: transparent;
-  backdrop-filter: blur(28px);
+  backdrop-filter: blur(0px);
 
   display: grid;
   grid-template-rows: 112px calc(100vh - 112px);
@@ -18,12 +20,15 @@
   border-right-style: solid;
   border-right-width: 0;
 
-  transition: all .3s linear;
+  transition: width .3s linear;
+
+  z-index: 1;
 }
 .side-bar_open {
   width: 248px;
 
   background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(28px);
   border-right-width: 1px;
 }
 .side-bar__up {

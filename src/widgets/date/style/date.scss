@@ -1,0 +1,44 @@
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 7px 12px;
+
+  cursor: pointer;
+
+  border-radius: 10px;
+}
+
+.date__weekday,
+.date__date {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: #292929;
+}
+
+
+.date_weekend {
+
+  .date__weekday,
+  .date__date {
+
+    color: #EA3548;
+  }
+
+}
+
+.date_curr {
+  background: #FF8C8C;
+
+  .date__weekday,
+  .date__date {
+    font-weight: 600;
+
+    color: #FFFFFF;
+  }
+}
