@@ -7,7 +7,7 @@ import Info from "./info";
 
 import '../style/index.scss'
 
-type EventNowProps = {
+export type EventProps = {
     time: string
     title: string
     location: string
@@ -15,7 +15,7 @@ type EventNowProps = {
     img: string,
     link: string
 }
-const EventNow = ({time, title, type, location, img, link}: EventNowProps) => {
+const EventNow = ({time, title, type, location, img, link}: EventProps) => {
     return (
         <Link to={link}>
             <div className={'events-now'}

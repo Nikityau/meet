@@ -1,0 +1,49 @@
+.event-soon {
+  position: relative;
+
+  width: 360px;
+  height: 430px;
+
+  border: 1px solid rgba(238, 238, 238, 0.7);
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: flex-end;
+
+  &:hover {
+    .event-soon__info {
+      transform: translate(0, 0);
+
+      background: #000;
+
+      .event-soon__title {
+        color: #fff;
+      }
+
+      .event-soon__text-block {
+        transform: translate(0, 20px);
+
+        .event-soon__icon {
+          &:before {
+            color: #fff;
+          }
+        }
+        .event-soon__t {
+          color: #fff;
+        }
+      }
+    }
+
+    .event-soon__like {
+      &:before {
+        color: #000;
+      }
+    }
+  }
+}

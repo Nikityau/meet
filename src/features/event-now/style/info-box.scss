@@ -1,0 +1,70 @@
+.events-now__info-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .events-now__info-box-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+      &:before {
+        font-family: AppIcons;
+        font-size: 20px;
+      }
+  }
+}
+
+.events-now__type_all {
+  .events-now__info-box-icon {
+    &:before {
+      content: '\e911';
+    }
+  }
+  .events-now__info-box-text {
+
+  }
+}
+.events-now__type_staff {
+  .events-now__info-box-icon {
+    &:before {
+      content: '\e905';
+    }
+  }
+}
+
+.events-now__type_all,
+.events-now__type_staff {
+  .events-now__info-box-icon {
+    &:before {
+      color: #9590A5;
+    }
+  }
+  .events-now__info-box-text {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+
+    color: #9590A5;
+  }
+}
+
+.events-now__location {
+  .events-now__info-box-icon {
+    &:before {
+      content: '\e914';
+
+      color: rgba(149, 144, 165, 0.5);
+    }
+  }
+
+  .events-now__info-box-text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+
+    color: rgba(149, 144, 165, 0.6);
+  }
+}

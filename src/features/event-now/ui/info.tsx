@@ -1,33 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {neverCheck} from "shared/helpers/never-check";
-import cn from 'classnames'
+import React from 'react';
+
+import {EventType} from "shared/helpers/types/event";
+
+import InfoBox from "./info-box";
+
+import {classByType} from "../helpers/classByType";
+import {textByType} from "../helpers/textByType";
 
 type InfoProps = {
     title: string,
-    type: 'all' | 'staff',
+    type: EventType,
     location: string
-}
-
-const classByType = (type:'all' | 'staff'): string => {
-    switch (type) {
-        case "all":
-            return 'events-now__type_all'
-        case "staff":
-            return 'events-now__type_staff'
-        default:
-            neverCheck(type)
-    }
-}
-
-const textByType = (type:'all' | 'staff'): string => {
-    switch (type) {
-        case "all":
-            return 'ДЛЯ ВСЕХ'
-        case "staff":
-            return 'ДЛЯ СТУДЕНТОВ И СОТРУДНИКОВ'
-        default:
-            neverCheck(type)
-    }
 }
 
 const Info = ({location, type, title}:InfoProps) => {
@@ -39,23 +22,8 @@ const Info = ({location, type, title}:InfoProps) => {
             </div>
             <div className={'events-now__info-below'}>
                 <div className={'events-now__info-wrapper'}>
-                    <div className={cn(
-                        'events-now__info-type',
-                        classByType(type)
-                    )}>
-                        <div className={'events-now__icon'}>
-                        </div>
-                        <div className={'events-now__text'}>
-                            <span>{ textByType(type) }</span>
-                        </div>
-                    </div>
-                    <div className={'events-now__info-location'}>
-                        <div className={'events-now__icon'}>
-                        </div>
-                        <div className={'events-now__text'}>
-                            <span>{location}</span>
-                        </div>
-                    </div>
+                    <InfoBox className={classByType(type)} text={textByType(type)}/>
+                    <InfoBox className={'events-now__location'} text={location}/>
                 </div>
                 <div className={'events-now__info-btn'}>
                     <span>Подробнее</span>

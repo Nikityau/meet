@@ -1,14 +1,19 @@
 import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 
-import {eventsData} from "./model/data";
+import {Event, eventsData} from "./model/data";
 
-import {EventNow} from "features/event-now";
+import {EventProps} from "../../features/event-now/ui";
 
 import 'swiper/css'
 import './style/index.scss'
 
-const EventsSlider = () => {
+type EventsSliderProps = {
+    data: Event[],
+    Component: React.FunctionComponent<EventProps>
+}
+
+const EventsSlider = ({Component, data}: EventsSliderProps) => {
     return (
         <div className={'events-slider'}>
             <Swiper
@@ -17,18 +22,18 @@ const EventsSlider = () => {
                 freeMode={true}
             >
                 {
-                    eventsData.map(el => (
+                    data.map(el => (
                         <SwiperSlide
                             key={el.id}
                         >
-                            <EventNow
-                                title={el.title}
-                                type={el.type}
-                                location={el.location}
+                            <Component
                                 time={el.time}
+                                title={el.title}
+                                location={el.location}
+                                type={el.type}
                                 img={el.img}
                                 link={el.link}
-                            />
+                                />
                         </SwiperSlide>
                     ))
                 }

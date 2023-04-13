@@ -1,0 +1,23 @@
+.compilation {
+  width: 361px;
+  height: 72px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+
+  backdrop-filter: blur(9.5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+
+  color: #B1B5BD;
+}
