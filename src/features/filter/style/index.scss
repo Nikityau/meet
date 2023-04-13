@@ -1,0 +1,11 @@
+.filter {
+  cursor: pointer;
+
+  &:before {
+    content: '\e908';
+    font-family: AppIcons;
+    font-size: 30px;
+
+    color: #0F172A;
+  }
+}

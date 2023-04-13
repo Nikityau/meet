@@ -15,6 +15,7 @@ const Routing = () => {
         <Routes>
             <Route path={AppRoutes.BASE} element={<BasePage/>}>
                 <Route path={AppRoutes.EVENTS} element={<Events/>}/>
+                <Route path={AppRoutes.EVENTS + '/today'} element={'ok'}/>
                 <Route path={AppRoutes.ARCHIVE} element={<Archive/>}/>
                 <Route path={AppRoutes.CHOSEN} element={<Chosen/>}/>
                 <Route path={AppRoutes.ADD_POST} element={<AddPost/>}/>

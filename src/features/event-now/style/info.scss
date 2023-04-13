@@ -1,0 +1,129 @@
+.events-now__info {
+  width: 100%;
+
+  padding: 9px 21px;
+
+  background: #fff;
+
+  border-radius: 0px 0px 9px 9px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  transition: all .3s linear;
+}
+
+.events-now__info-below {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.events-now__info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.events-now__info-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -0.32px;
+
+  color: #000000;
+
+  transition: color .3s linear;
+}
+
+.events-now__info-type {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #9590A5;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  .events-now__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+      font-family: AppIcons;
+      font-size: 17px;
+
+      color: #9590A5;
+    }
+  }
+}
+
+.events-now__type_all {
+  .events-now__icon {
+    &:before {
+      content: '\e911';
+    }
+  }
+}
+.events-now__type_staff {
+  .events-now__icon {
+    &:before {
+      content: '\e905';
+    }
+  }
+}
+
+.events-now__info-location {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+
+  color: rgba(149, 144, 165, 0.6);
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  .events-now__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+      content: '\e914';
+      font-family: AppIcons;
+      font-size: 20px;
+
+      color: rgba(149, 144, 165, 0.5);
+    }
+  }
+}
+
+.events-now__info-btn {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+
+  color: #B1B5BD;
+
+  padding: 12px 42px;
+
+  background: #FFFFFF;
+
+  border-radius: 5px;
+
+  backdrop-filter: blur(9.5px);
+
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.05));
+
+  transition: all .3s linear;
+}

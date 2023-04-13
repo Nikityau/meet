@@ -1,0 +1,13 @@
+.events-slider {
+  width: 100%;
+
+  .swiper {
+    overflow: visible;
+
+    z-index: 0;
+
+    .swiper-slide {
+      width: auto;
+    }
+  }
+}

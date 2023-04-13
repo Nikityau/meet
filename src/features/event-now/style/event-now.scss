@@ -1,0 +1,31 @@
+.events-now {
+  position: relative;
+
+  width: 600px;
+  height: 351px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  border: 1px solid rgba(238, 238, 238, 0.7);
+  border-radius: 16px;
+
+  display: flex;
+  align-items: flex-end;
+
+  &:hover {
+    .events-now__info-btn {
+      color: #fff;
+      background: var(--color-purple);
+    }
+
+    .events-now__info-title {
+      color: #fff;
+    }
+
+    .events-now__info {
+      background: #181A21;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import cn from "classnames"
 import DateNFilter from "./ui/date-n-filter";
 
 import {getSideBarState} from "widgets/side-bar/model";
+import EventsSlider from "widgets/events-slider";
 
 import './style/index.scss'
 
@@ -22,6 +23,7 @@ const Events = () => {
                 }
                 )}>
                 <DateNFilter/>
+                <EventsSlider/>
             </div>
         </div>
     );
