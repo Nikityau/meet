@@ -1,0 +1,18 @@
+.event {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.event__description {
+  width: 979px;
+  height: 200px;
+  background: red;
+}
+
+.event__info {
+  width: 422px;
+  height: 200px;
+  background: rebeccapurple;
+}

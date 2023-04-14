@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
+import {Location} from "react-router-dom";
 
 import {navData} from "../data/nav";
 import {getSideBarState} from "../model";
@@ -26,6 +27,13 @@ const Navigation = () => {
 
     const {offset, push} = useTopOffset()
 
+    const isLinkActive = (link: AppRoutes, location: Location) => {
+        if (location.pathname.includes(link))
+            return true
+
+        return false
+    }
+
     return (
         <NavContext.Provider value={{
             topOffset: offset,
@@ -47,6 +55,7 @@ const Navigation = () => {
                                     title={el.title}
                                     is_full={sideBarState}
                                     isAddonOffset={true}
+                                    isLinkActive={isLinkActive}
                                 />
                             ))
                         }
@@ -59,6 +68,7 @@ const Navigation = () => {
                         title={'Настройки'}
                         is_full={sideBarState}
                         isAddonOffset={false}
+                        isLinkActive={isLinkActive}
                     />
                 </div>
             </div>

@@ -1,12 +1,18 @@
 import React from 'react';
 
-const Like = () => {
+import './style/index.scss'
+
+type LikeProps = {
+}
+
+const Like = ({}:LikeProps) => {
+
     const onLike = (e) => {
         e.preventDefault()
     }
 
     return (
-        <div className={'events-now__like'} onClick={onLike}>
+        <div className={'like-post'} onClick={onLike}>
         </div>
     );
 };

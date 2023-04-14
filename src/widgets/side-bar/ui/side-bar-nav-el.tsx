@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, Location} from "react-router-dom";
 import cn from 'classnames'
 
 import {NavContext} from "./navigation";
@@ -14,9 +14,10 @@ type SideBarNavElProps = {
     title: string,
     is_full: boolean,
     isAddonOffset: boolean,
+    isLinkActive: (link:AppRoutes,location: Location) => boolean
 }
 
-const SideBarNavEl = ({className, is_full, link, title, isAddonOffset}: SideBarNavElProps) => {
+const SideBarNavEl = ({className, is_full, link, title, isAddonOffset, isLinkActive}: SideBarNavElProps) => {
 
     const navContext = useContext(NavContext)
     const location = useLocation()
@@ -38,7 +39,7 @@ const SideBarNavEl = ({className, is_full, link, title, isAddonOffset}: SideBarN
                 'side-bar-nav-el',
                 {
                     'side-bar-nav-el_full': is_full,
-                    'side-bar-nav-el_current': location.pathname == link
+                    'side-bar-nav-el_current': isLinkActive(link,location)
                 }
             )}
                  ref={div}

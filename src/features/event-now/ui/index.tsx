@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import Time from "./time";
-import Like from "./like";
 import Info from "./info";
 
 import '../style/index.scss'
@@ -13,9 +12,10 @@ export type EventProps = {
     location: string
     type: 'all' | 'staff',
     img: string,
-    link: string
+    link: string,
+    Like: React.ReactNode
 }
-const EventNow = ({time, title, type, location, img, link}: EventProps) => {
+const EventNow = ({time, title, type, location, img, link, Like}: EventProps) => {
     return (
         <Link to={link}>
             <div className={'events-now'}
@@ -24,7 +24,7 @@ const EventNow = ({time, title, type, location, img, link}: EventProps) => {
                  }}
             >
                 <Time time={time}/>
-                <Like/>
+                { Like }
                 <Info
                     location={location}
                     type={type}

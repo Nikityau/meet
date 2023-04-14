@@ -1,4 +1,6 @@
 export interface IHandlerController<K, V> {
+    isUseSimilarKey: boolean
+
     handlers: Map<K, V>
 
     push(key: K, value: V): any
@@ -15,6 +17,8 @@ export interface IElOffsetHandler {
 }
 
 export class HandlerController<K, V> implements IHandlerController<K, V> {
+    isUseSimilarKey: boolean = false
+
     handlers: Map<K, V>
 
     constructor() {
@@ -40,8 +44,37 @@ export class HandlerController<K, V> implements IHandlerController<K, V> {
 
 
 export class HandlerOffsetController<K> extends HandlerController<K, IElOffsetHandler> {
+    constructor(isUseSimilarKey: boolean) {
+        super();
+        this.isUseSimilarKey = isUseSimilarKey
+    }
+
+    findSimilarKey(key: K): K | null {
+        const keys = this.handlers.keys()
+        const inputKey = key.toString()
+        const similarKey = inputKey.substring(0, inputKey.substring(1).indexOf('/') + 1)
+
+        const arr = Array.from(keys)
+        for(let k of arr) {
+            if(k == similarKey)
+                return k
+        }
+
+        return null
+    }
+
     invoke(key: K) {
         if(!this.handlers.has(key)) {
+            if(this.isUseSimilarKey) {
+                const similarKey = this.findSimilarKey(key)
+                if(!similarKey) {
+                    console.error(`EventHandler: similar key ${key} does not find`)
+                    return
+                }
+
+                return this.invoke(similarKey)
+            }
+
             console.error(`EventHandler: handler with key ${key} does not exist`)
             return
         }

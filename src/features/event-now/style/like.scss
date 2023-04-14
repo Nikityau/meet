@@ -1,25 +1,23 @@
-.events-now__like {
-  position: absolute;
-  top: 0;
-  left: 0;
+.events-now {
+  .like-post {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  transform: translate(22px, 21px);
+    transform: translate(22px, 21px);
 
-  padding: 12px;
+    padding: 12px;
 
-  background: rgba(52, 56, 66, 0.7);
+    background: rgba(52, 56, 66, 0.7);
 
-  border-radius: 10px;
+    border-radius: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &:before {
-    content: '\e90a';
-    font-family: AppIcons;
-    font-size: 20px;
-
-    color: #D3D3D3;
+    &:before {
+      color: #D3D3D3;
+    }
   }
 }

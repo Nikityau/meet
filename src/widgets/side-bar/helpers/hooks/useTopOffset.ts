@@ -5,7 +5,7 @@ import {useOffset} from "shared/helpers/hooks/useOffset";
 
 export const useTopOffset = () => {
     const location = useLocation()
-    const {offset, push} = useOffset<AppRoutes>(location.pathname as AppRoutes)
+    const {offset, push} = useOffset<AppRoutes>(location.pathname as AppRoutes, true)
 
     return {
         offset,

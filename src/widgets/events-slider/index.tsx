@@ -1,9 +1,10 @@
 import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 
-import {Event, eventsData} from "./model/data";
+import {Event} from "./model/data";
+import Like from "features/like";
 
-import {EventProps} from "../../features/event-now/ui";
+import {EventProps} from "features/event-now";
 
 import 'swiper/css'
 import './style/index.scss'
@@ -18,7 +19,7 @@ const EventsSlider = ({Component, data}: EventsSliderProps) => {
         <div className={'events-slider'}>
             <Swiper
                 slidesPerView={'auto'}
-                spaceBetween={50}
+                spaceBetween={19}
                 freeMode={true}
             >
                 {
@@ -33,6 +34,7 @@ const EventsSlider = ({Component, data}: EventsSliderProps) => {
                                 type={el.type}
                                 img={el.img}
                                 link={el.link}
+                                Like={<Like/>}
                                 />
                         </SwiperSlide>
                     ))

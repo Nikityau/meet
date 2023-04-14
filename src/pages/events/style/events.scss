@@ -2,18 +2,9 @@
   width: 100%;
 
   display: flex;
-  justify-content: center;
-}
-.events-page__container {
-  position: relative;
-
-  width: 100%;
-
-  padding: 140px 0 100px 0;
-
-  transition: transform .3s linear;
-
-  display: flex;
   flex-direction: column;
   gap: 40px;
+}
+.events-page__container {
+
 }

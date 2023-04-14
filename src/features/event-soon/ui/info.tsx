@@ -9,7 +9,8 @@ import TextBlock from "./text-block";
 type InfoProps = {
     title: string,
     type: EventType,
-    location: string
+    location: string,
+    Like: React.ReactNode
 }
 
 const textByType = (type:'all' | 'staff'): string => {
@@ -34,10 +35,10 @@ const classByType = (type:EventType): string => {
     }
 }
 
-const Info = ({title, location, type}: InfoProps) => {
+const Info = ({title, location, type, Like}: InfoProps) => {
     return (
         <div className={'event-soon__info'}>
-            <Like/>
+            { Like }
             <div className={'event-soon__text'}>
                 <div className={'event-soon__title'}>
                     <span>{title}</span>
