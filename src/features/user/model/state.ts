@@ -1,8 +1,11 @@
 import {UserState} from "./type";
 
+import {nanoid} from "nanoid";
+
 import user_img from '../assets/user.png'
 
 export const userState: UserState = {
+    id: nanoid(),
     name: 'Evelin',
     surname: 'Parker',
     avatar: user_img,

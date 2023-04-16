@@ -1,0 +1,26 @@
+.event__organizers {
+  width: 100%;
+
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.event__organizers-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+
+  color: #828282;
+
+  text-align: center;
+}
+
+.event__organizers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

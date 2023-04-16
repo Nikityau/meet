@@ -1,0 +1,76 @@
+.event__event-date {
+  width: auto;
+  height: 356px;
+
+  margin-top: 18px;
+
+  background: #FFFFFF;
+
+  border-radius: 10px;
+}
+
+.event-date {
+  padding: 20px 29px;
+}
+
+.event-date__title {
+  padding: 16px 10px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+
+  text-transform: uppercase;
+
+  color: #292929;
+
+  border-bottom: 1px solid #E4E5E7;
+}
+
+.event-date__calendar {
+  padding: 10px 16px;
+}
+
+.event-date__weekdays,
+.event-date__days {
+  display: grid;
+  gap: 25px;
+
+  grid-template-rows: auto;
+  grid-template-columns: repeat(7, calc(100% / 7 - 20px));
+}
+
+.event-date__days {
+  margin-top: 35px;
+}
+
+.event-date__weekday {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+
+  text-transform: uppercase;
+
+  //justify-items: center;
+  align-self: center;
+
+  color: #7E818C;
+}
+
+.event-date__day {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+
+  text-transform: uppercase;
+
+  //justify-self: center;
+  align-self: center;
+
+  color: #292929;
+}

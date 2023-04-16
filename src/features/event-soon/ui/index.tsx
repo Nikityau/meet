@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import cn from 'classnames'
 
 import {EventProps} from "../../event-now";
 
@@ -8,14 +9,21 @@ import Info from "./info";
 
 import '../style/index.scss'
 
-const EventSoon = ({title, img, type, time, link, location, Like}: EventProps) => {
+type EventSoonProps = {
+    isSmall: boolean
+} & EventProps
+
+const EventSoon = ({title, img, type, time, link, location, Like, isSmall = false}: EventSoonProps) => {
     return (
         <Link to={link}>
-            <div className={'event-soon'}
-                 style={{
-                     backgroundImage: `url(${img})`
-                 }}
-            >
+            <div className={cn('event-soon', { 'event-soon_small': isSmall })}>
+                <div className={'event-soon__img'}
+                    style={{
+                        backgroundImage: `url(${img})`
+                    }}
+                >
+
+                </div>
                 <Date
                     date={'20'}
                     month={'марта'}

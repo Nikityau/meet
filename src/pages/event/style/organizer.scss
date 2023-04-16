@@ -1,0 +1,64 @@
+.event__organizer {
+  width: auto;
+  height: 100px;
+
+  padding: 20px 17px;
+
+  background: #FFFFFF;
+
+  border-radius: 10px;
+}
+
+.organizer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .organizer__img {
+    width: 79px;
+    height: 79px;
+
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .organizer__info {
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #292929;
+
+    .type {
+      font-weight: 300;
+      font-size: 12px;
+    }
+  }
+
+  .organizer__msg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    transform: translate(-49px, -50%);
+
+    cursor: pointer;
+
+    &:before {
+      content: "\e90f";
+      font-family: "AppIcons";
+      font-size: 35px;
+      color: #828282;
+    }
+  }
+}

@@ -9,6 +9,8 @@ const Like = ({}:LikeProps) => {
 
     const onLike = (e) => {
         e.preventDefault()
+
+        console.log('click like')
     }
 
     return (

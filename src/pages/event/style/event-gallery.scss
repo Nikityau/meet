@@ -1,0 +1,25 @@
+.event__gallery {
+  cursor: pointer;
+  
+  width: 188px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+
+  color: #B1B5BD;
+
+  background: #FFFFFF;
+
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+
+  backdrop-filter: blur(9.5px);
+}

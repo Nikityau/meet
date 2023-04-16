@@ -1,10 +1,9 @@
 import React from 'react';
 
 import {EventType} from "shared/helpers/types/event";
-import {neverCheck} from "shared/helpers/never-check";
 
-import Like from "./like";
 import TextBlock from "./text-block";
+import {classByType, textByType} from "../helpers/helpers";
 
 type InfoProps = {
     title: string,
@@ -13,27 +12,7 @@ type InfoProps = {
     Like: React.ReactNode
 }
 
-const textByType = (type:'all' | 'staff'): string => {
-    switch (type) {
-        case "all":
-            return 'Для всех'
-        case "staff":
-            return 'Для студентов и сотрудников'
-        default:
-            neverCheck(type)
-    }
-}
 
-const classByType = (type:EventType): string => {
-    switch (type) {
-        case "all":
-            return 'events-soon__type_all'
-        case "staff":
-            return 'events-soon__type_staff'
-        default:
-            neverCheck(type)
-    }
-}
 
 const Info = ({title, location, type, Like}: InfoProps) => {
     return (
@@ -42,10 +21,13 @@ const Info = ({title, location, type, Like}: InfoProps) => {
             <div className={'event-soon__text'}>
                 <div className={'event-soon__title'}>
                     <span>{title}</span>
-                    <div className={'event-soon__spec-text'}>
-                        <TextBlock title={textByType(type)} className={classByType(type)}/>
-                        <TextBlock title={location} className={'event-soon__location'}/>
-                    </div>
+                    {
+                        location && type &&
+                        <div className={'event-soon__spec-text'}>
+                            <TextBlock title={textByType(type)} className={classByType(type)}/>
+                            <TextBlock title={location} className={'event-soon__location'}/>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

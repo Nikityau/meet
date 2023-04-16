@@ -9,11 +9,11 @@ import '../style/index.scss'
 export type EventProps = {
     time: string
     title: string
-    location: string
-    type: 'all' | 'staff',
+    location?: string
+    type?: 'all' | 'staff',
     img: string,
-    link: string,
-    Like: React.ReactNode
+    link?: string,
+    Like: React.ReactNode | null
 }
 const EventNow = ({time, title, type, location, img, link, Like}: EventProps) => {
     return (

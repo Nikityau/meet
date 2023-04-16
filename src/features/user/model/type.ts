@@ -1,6 +1,7 @@
 import {Action} from "redux";
 
 export type UserState = {
+    id: string
     name: string,
     surname: string,
     birth: string,

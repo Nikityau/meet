@@ -1,5 +1,5 @@
 .event-soon__info {
-  width: 100%;
+  width: auto;
   height: calc(128px - 32px);
 
   background: #fff;
@@ -9,7 +9,7 @@
   display: flex;
   gap: 16px;
 
-  transform: translate(0, 10px);
+  transform: translate(0, 0px);
 
   transition: all .3s linear;
 
