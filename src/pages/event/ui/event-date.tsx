@@ -3,7 +3,6 @@ import {nanoid} from "nanoid";
 
 import {dataDays} from "../model/data";
 import {eachDayOfInterval} from "date-fns";
-import {da} from "date-fns/locale";
 
 const EventDate = () => {
 
