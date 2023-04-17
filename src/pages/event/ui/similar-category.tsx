@@ -4,7 +4,7 @@ import Compilation from "../../events/ui/compilation";
 
 import {dataCategories} from "../model/data";
 
-const SimilarCategory = () => {
+const SimilarCategory = React.memo(() => {
     return (
         <div className={'event__similar-category'}>
             {
@@ -17,6 +17,6 @@ const SimilarCategory = () => {
             }
         </div>
     );
-};
+})
 
 export default SimilarCategory;

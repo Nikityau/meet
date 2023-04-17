@@ -5,15 +5,17 @@
 .base-page__main {
   width: 100%;
 
-  display: flex;
-  justify-content: center;
+  padding-left: 280px;
+
+  //display: flex;
+  //justify-content: center;
 }
 .base-page__container {
   position: relative;
 
   width: 100%;
 
-  padding: 140px 0 100px 0;
+  padding: 112px 0 100px 0;
 
   transition: transform .3s linear;
 }

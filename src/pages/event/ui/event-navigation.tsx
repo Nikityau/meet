@@ -2,7 +2,7 @@ import React from 'react';
 
 import qr from '../assets/qr.png'
 
-const EventNavigation = () => {
+const EventNavigation = React.memo(() => {
     return (
         <div className={'event__navigation'}>
             <div className={'event__nav-info'}>
@@ -13,13 +13,13 @@ const EventNavigation = () => {
                 </div>
             </div>
             <div className={'event__nav-qr'}
-                style={{
-                    backgroundImage: `url(${qr})`
-                }}
+                 style={{
+                     backgroundImage: `url(${qr})`
+                 }}
             >
             </div>
         </div>
     );
-};
+})
 
 export default EventNavigation;

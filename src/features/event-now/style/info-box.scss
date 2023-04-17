@@ -1,7 +1,7 @@
 .events-now__info-box {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 
   .events-now__info-box-icon {
     display: flex;
@@ -10,7 +10,7 @@
 
       &:before {
         font-family: AppIcons;
-        font-size: 20px;
+        font-size: 18px;
       }
   }
 }
@@ -19,6 +19,8 @@
   .events-now__info-box-icon {
     &:before {
       content: '\e911';
+
+      font-size: 16px;
     }
   }
   .events-now__info-box-text {
@@ -44,7 +46,7 @@
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 9px;
 
     color: #9590A5;
   }
@@ -63,7 +65,7 @@
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 12px;
 
     color: rgba(149, 144, 165, 0.6);
   }

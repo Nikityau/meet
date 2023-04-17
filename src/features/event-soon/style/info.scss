@@ -1,24 +1,31 @@
 .event-soon__info {
-  width: auto;
-  height: calc(128px - 32px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
-  background: #fff;
+  width: 100%;
+  height: calc(128px - 25px);
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 18.75%, rgba(49, 79, 157, 0) 100%);
+  //background: red;
 
   padding: 16px 10px;
 
   display: flex;
   gap: 16px;
 
-  transform: translate(0, 0px);
+  transform: translate(0, 30px);
 
   transition: all .3s linear;
 
   .event-soon__text {
+    padding-top: 10px;
+
     .event-soon__title {
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 17px;
+      font-size: 13px;
 
       color: #9590A5;
 

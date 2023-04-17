@@ -4,7 +4,7 @@ import {EventSoon} from "features/event-soon";
 
 import {eventsData} from "widgets/events-slider/model/data";
 
-const SimilarEvents = () => {
+const SimilarEvents = React.memo(() => {
     return (
         <div className={'event__similar-event'}>
             {
@@ -21,6 +21,6 @@ const SimilarEvents = () => {
             }
         </div>
     );
-};
+})
 
 export default SimilarEvents;

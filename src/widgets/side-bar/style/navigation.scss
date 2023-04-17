@@ -1,12 +1,19 @@
 .side-bar__navigation {
   position: relative;
 
-  padding-right: 38px;
+  width: 95px;
 
-  //background: red;
+  overflow: hidden;
+
+  //padding-right: 38px;
+
+  background: rgba(248, 248, 248, 0.8);
+  backdrop-filter: blur(28px);
 
   /*background: rgba(248, 248, 248, 0.8);
   backdrop-filter: blur(28px);*/
+
+  transition: width .3s linear;
 
   display: grid;
   grid-template-rows: 70% 30%;
@@ -15,18 +22,24 @@
     //padding-top: 49px;
 
     .side-bar__nav-up-wrapper {
-      transform: translate(0, 100px);
+      transform: translate(38px, 126px);
 
       display: flex;
       flex-direction: column;
-      gap: 42px;
+      gap: 32px;
     }
 
     //background: #181A21;
   }
 
   .side-bar__nav-bottom {
-    align-self: center;
+    transform: translate(38px, 0);
+
+    padding-bottom: 30px;
+
+    align-self: flex-end;
+
+    //align-self: center;
     //background: rebeccapurple;
   }
 }
@@ -38,7 +51,7 @@
   &:before {
     content: '\e906';
     font-family: AppIcons;
-    font-size: 25px;
+    font-size: 24px;
 
     color: #3E424A;
   }

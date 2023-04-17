@@ -4,7 +4,7 @@ import Like from "features/like";
 
 import img from '../assets/event.png'
 
-const MainDescription = () => {
+const MainDescription = React.memo(() => {
     return (
         <div className={'event__main-description'}>
             <div className={'event__image'}
@@ -39,6 +39,6 @@ const MainDescription = () => {
             </div>
         </div>
     );
-};
+})
 
 export default MainDescription;

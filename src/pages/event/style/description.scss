@@ -50,17 +50,19 @@
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15px;
 
   color: #828282;
 
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 25px;
+
+  max-width: 70%;
 }
 .event__title {
   font-weight: 600;
-  font-size: 26px;
+  font-size: 22px;
 
   color: #292929;
 }

@@ -3,15 +3,10 @@
   top: 0;
   left: 0;
 
-  width: 130px;
+  width: auto;
   height: 100vh;
 
-  //background: #181A21;
-
   overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(28px);
 
   display: grid;
   grid-template-rows: 112px calc(100vh - 112px);
@@ -20,16 +15,21 @@
   border-right-style: solid;
   border-right-width: 0;
 
-  transition: width .3s linear;
-
   z-index: 1;
 }
 .side-bar_open {
-  width: 248px;
-
   background: rgba(255, 255, 255, 0.8);
+
   backdrop-filter: blur(28px);
+
   border-right-width: 1px;
+
+  .side-bar__navigation {
+    width: 248px;
+
+    background: unset;
+    backdrop-filter: unset;
+  }
 }
 .side-bar__up {
   height: 100%;

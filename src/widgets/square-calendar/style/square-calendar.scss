@@ -1,3 +1,96 @@
 .square-calendar {
+  width: auto;
+  height: auto;
 
+  margin-top: 18px;
+
+  background: #FFFFFF;
+
+  border-radius: 10px;
+
+  padding: 5px 29px;
+
+  .square-calendar__title {
+    padding: 10px 10px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    color: #292929;
+
+    border-bottom: 1px solid #E4E5E7;
+  }
+
+  .square-calendar__calendar {
+  }
+
+  .square-calendar__days,
+  .square-calendar__weekdays {
+    padding: 10px 0;
+
+    width: calc(100% - 20px);
+
+    //background: red;
+
+    display: grid;
+    gap: 20px;
+
+    grid-template-rows: auto;
+    grid-template-columns: repeat(7, calc(100% / 7 - 15px));
+
+    font-family: 'Lato ', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    color: #7E818C;
+  }
+
+  .square-calendar__weekday {
+    display: flex;
+    justify-content: center;
+  }
+
+  .square-calendar__days {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    color: #292929;
+
+    margin-top: 35px;
+  }
+
+  .square-calendar__day {
+    width: 24px;
+    height: 24px;
+
+    //background: #FF8C8C;
+
+    border-radius: 5px;
+
+    padding: 1px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.square-calendar__day_hide {
+  opacity: 0;
+}
+
+.square-calendar__day_current {
+  color: #fff;
+  background: #FF8C8C;
 }

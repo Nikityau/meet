@@ -1,14 +1,22 @@
 import React from 'react';
+import cn from 'classnames'
 
 type DayProps = {
-    date: number,
+    date: number
     isCurrent: boolean
+    isHide: boolean
 }
 
-const Day = ({isCurrent, date}:DayProps) => {
+const Day = ({isCurrent, date, isHide}:DayProps) => {
     return (
-        <div className={'square-calendar__day'}>
-
+        <div className={cn(
+            'square-calendar__day',
+            {
+                'square-calendar__day_hide': isHide,
+                'square-calendar__day_current': isCurrent
+            }
+            )}>
+            <span>{date}</span>
         </div>
     );
 };

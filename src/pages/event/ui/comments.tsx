@@ -6,7 +6,7 @@ import Comment from "./comment";
 import UserComment from "./user-comment";
 import {nanoid} from "nanoid";
 
-const Comments = () => {
+const Comments = React.memo(() => {
 
     const [comment, setComments] = useState<CommentType[]>(dataComments)
 
@@ -33,6 +33,6 @@ const Comments = () => {
             />
         </div>
     );
-};
+})
 
 export default Comments;

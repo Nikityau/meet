@@ -39,7 +39,7 @@ const Navigation = () => {
             topOffset: offset,
             pushToController: push
         }}>
-            <div className={'side-bar__navigation side-bar_left_offset'}>
+            <div className={'side-bar__navigation'}>
                 <NavLine/>
                 <div className={'side-bar__nav-up'}>
                     <AddPostBtn
@@ -67,7 +67,7 @@ const Navigation = () => {
                         link={AppRoutes.SETTINGS}
                         title={'Настройки'}
                         is_full={sideBarState}
-                        isAddonOffset={false}
+                        isAddonOffset={true}
                         isLinkActive={isLinkActive}
                     />
                 </div>

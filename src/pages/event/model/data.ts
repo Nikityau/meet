@@ -28,7 +28,12 @@ export const dataComments: CommentType[] = [
     }
 ]
 
-export const dataCategories = [
+export type CategoriesData = {
+    id: string,
+    title: string
+}
+
+export const dataCategories: CategoriesData[] = [
     {
         id: nanoid(),
         title: 'Экскурсии'

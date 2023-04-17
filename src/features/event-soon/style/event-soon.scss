@@ -1,17 +1,19 @@
 .event-soon {
   position: relative;
 
-  width: 360px;
-  height: 430px;
+  width: 310px; // 310
+  height: 370px; // 370
 
   border: 1px solid rgba(238, 238, 238, 0.7);
-  border-radius: 16px;
+  border-radius: 10px;
 
   overflow: hidden;
 
+  //transform: scale(.85);
+
   .event-soon__img {
     width: 100%;
-    height: 312px;
+    height: 265px; //265
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,11 +22,13 @@
 
   &:hover {
     .event-soon__info {
-      transform: translate(0, -10px);
+      transform: translate(0, 0px);
 
       background: #000;
 
       .event-soon__title {
+        //padding-top: 10px;
+
         color: #fff;
       }
 

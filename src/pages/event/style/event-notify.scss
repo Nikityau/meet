@@ -1,6 +1,6 @@
 .event__notify {
-  width: 222px;
-  height: 44px;
+  width: 175px;
+  height: 35px;
 
   background: #5344FF;
   backdrop-filter: blur(9.5px);
@@ -15,9 +15,13 @@
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 11px;
 
   color: #FFFFFF;
 
   cursor: pointer;
+
+  img {
+    width: 18px;
+  }
 }

@@ -17,22 +17,30 @@ const Events = () => {
     return (
         <div className={'events-page'}>
             <DateNFilter/>
-            <Block
-                title={'Сегодня'}
-                block={<TodayEvents/>}
-            />
-            <Block
-                title={'Скоро'}
-                block={<EventsSoon/>}
-            />
-            <Block
-                title={'Подборки'}
-                block={<CompilationBlock/>}
-            />
-            <Advertising
-                url={'https://navig.rgups.ru/'}
-                img={adsNavigImg}
-            />
+            <div className={'events-page__events-today'}>
+                <Block
+                    title={'Сегодня'}
+                    block={<TodayEvents/>}
+                />
+            </div>
+           <div className={'events-page__events-soon'}>
+               <Block
+                   title={'Скоро'}
+                   block={<EventsSoon/>}
+               />
+           </div>
+           <div className={'events-page__events-compilation'}>
+               <Block
+                   title={'Подборки'}
+                   block={<CompilationBlock/>}
+               />
+           </div>
+           <div className={'events-page__advertising'}>
+               <Advertising
+                   url={'https://navig.rgups.ru/'}
+                   img={adsNavigImg}
+               />
+           </div>
         </div>
     );
 };

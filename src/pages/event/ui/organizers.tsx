@@ -4,7 +4,7 @@ import Organizer from "./organizer";
 
 import {dataOrganizers} from "../model/data";
 
-const Organizers = () => {
+const Organizers = React.memo(() => {
     return (
         <div className={'event__organizers'}>
             <div className={'event__organizers-title'}>
@@ -28,6 +28,6 @@ const Organizers = () => {
             </div>
         </div>
     );
-};
+})
 
 export default Organizers;

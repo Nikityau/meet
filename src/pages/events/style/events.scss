@@ -1,10 +1,33 @@
 .events-page {
   width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.events-page__container {
+  margin-top: 32px;
 
+  //display: flex;
+  //flex-direction: column;
+  //gap: 40px;
+}
+
+
+.events-page__events-today {
+  margin-top: 40px;
+}
+
+.events-page__events-soon {
+  margin-top: 61px;
+
+  .events-block {
+    gap: 20px;
+  }
+}
+
+.events-page__events-compilation {
+  .events-block {
+    gap: 40px;
+  }
+}
+
+.events-page__advertising,
+.events-page__events-compilation {
+  margin-top: 100px;
 }

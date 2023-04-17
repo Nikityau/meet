@@ -16,12 +16,13 @@ export class ElOffsetHandler implements IElOffsetHandler {
             const parent = this.el.offsetParent
             const style = getComputedStyle(parent)
             matrix = new WebKitCSSMatrix(style.transform)
+            offset += parent['offsetTop']
         } else {
             const style = getComputedStyle(this.el)
             matrix = new WebKitCSSMatrix(style.transform)
         }
 
-        offset = this.el.offsetTop + this.el.clientHeight / 2 + matrix.f
+        offset += this.el.offsetTop + this.el.clientHeight / 2 + matrix.f
 
         return offset
     }
