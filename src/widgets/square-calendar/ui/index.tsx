@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import cn from 'classnames'
 
-import '../style/index.scss'
 import {dataDays} from "../model/data";
 import Weekday from "./weekday";
 import {nanoid} from "nanoid";
 import {eachDayOfInterval} from "date-fns";
 import Day from "./day";
+
+import '../style/index.scss'
 
 type SquareCalendarProps = {
     initDate: Date,

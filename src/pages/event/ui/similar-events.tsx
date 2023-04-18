@@ -2,7 +2,8 @@ import React from 'react';
 
 import {EventSoon} from "features/event-soon";
 
-import {eventsData} from "widgets/events-slider/model/data";
+import {eventsData} from "entities/events-slider";
+
 
 const SimilarEvents = React.memo(() => {
     return (
@@ -16,6 +17,7 @@ const SimilarEvents = React.memo(() => {
                         title={ev.title}
                         img={ev.img}
                         Like={null}
+                        isEventPast={true}
                     />
                 ))
             }

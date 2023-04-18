@@ -6,8 +6,6 @@ import SideBarArrow from "./side-bar-arrow";
 
 const Up = () => {
 
-    const [state, setState] = useState(false)
-
     return (
         <div className={'side-bar__up side-bar_left_offset'}>
             <div className={'side-bar__grid-up'}>

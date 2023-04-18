@@ -1,0 +1,22 @@
+.comment__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.comment__user-name,
+.comment__comment {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+
+  color: #292929;
+}
+
+.comment__comment {
+  font-weight: 300;
+  font-size: 14px;
+
+  color: #828282;
+}

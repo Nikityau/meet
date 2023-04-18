@@ -10,17 +10,35 @@ import Info from "./info";
 import '../style/index.scss'
 
 type EventSoonProps = {
-    isSmall: boolean
+    isSmall?: boolean,
+    isEventPast?: boolean
 } & EventProps
 
-const EventSoon = ({title, img, type, time, link, location, Like, isSmall = false}: EventSoonProps) => {
+const EventSoon = (
+    {
+        title,
+        img,
+        type,
+        time,
+        link,
+        location,
+        Like,
+        isSmall = false,
+        isEventPast = false
+    }: EventSoonProps
+) => {
     return (
         <Link to={link}>
-            <div className={cn('event-soon', { 'event-soon_small': isSmall })}>
+            <div className={cn('event-soon',
+                {
+                    'event-soon_small': isSmall,
+                    'event-soon_past': isEventPast
+                }
+            )}>
                 <div className={'event-soon__img'}
-                    style={{
-                        backgroundImage: `url(${img})`
-                    }}
+                     style={{
+                         backgroundImage: `url(${img})`
+                     }}
                 >
 
                 </div>

@@ -9,12 +9,10 @@ import AddPostBtn from "./add-post-btn";
 
 import NavLine from "./nav-line";
 
-
 import {AppRoutes} from "shared/routes/routes";
 
 import {useTopOffset} from "../helpers/hooks/useTopOffset";
 import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
-
 
 export const NavContext = React.createContext<{
     topOffset: number,

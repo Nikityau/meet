@@ -1,0 +1,17 @@
+.event-soon_past {
+  height: 377px;
+
+  &:hover {
+    .event-soon__info {
+      transform: translate(0, 30px);
+    }
+  }
+
+  .event-soon__img {
+    height: 312px;
+  }
+
+  .event-soon__info {
+    height: 65px;
+  }
+}

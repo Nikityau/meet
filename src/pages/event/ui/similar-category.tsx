@@ -1,15 +1,14 @@
 import React from 'react';
 
-import Compilation from "../../events/ui/compilation";
-
 import {dataCategories} from "../model/data";
+import Category from "../../../features/category";
 
 const SimilarCategory = React.memo(() => {
     return (
         <div className={'event__similar-category'}>
             {
                 dataCategories.map(c => (
-                    <Compilation
+                    <Category
                         key={c.id}
                         title={c.title}
                     />

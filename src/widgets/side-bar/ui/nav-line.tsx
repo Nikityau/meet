@@ -7,8 +7,6 @@ import {NavContext} from "./navigation";
 import {isAppInitSelector} from '../../../app-store-global/is-init'
 
 const NavLine = () => {
-
-
     const isAppInit = useSelector(isAppInitSelector)
 
     const navContext = useContext(NavContext)

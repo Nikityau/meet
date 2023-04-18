@@ -7,7 +7,7 @@ export const dataCompilation = [
     },
     {
         id: nanoid(),
-        title: 'XYI'
+        title: 'IT'
     },
     {
         id: nanoid(),

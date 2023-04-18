@@ -2,7 +2,7 @@ import React from 'react';
 
 import BasePageOutlet from "./ui";
 
-import Header from "widgets/header";
+import {Header} from "widgets/header";
 import {SideBar} from "widgets/side-bar";
 
 import './style/index.scss'

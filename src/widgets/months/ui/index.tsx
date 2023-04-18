@@ -6,9 +6,9 @@ import Month from "./month";
 import Line from "./line";
 
 import {useLeftOffset} from "../helpers/hooks/useLeftOffset";
+import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
 import '../style/index.scss'
-import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
 
 export const MonthContext = React.createContext<{
     offset: number

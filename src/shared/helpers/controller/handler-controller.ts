@@ -63,7 +63,7 @@ export class HandlerOffsetController<K> extends HandlerController<K, IElOffsetHa
         return null
     }
 
-    invoke(key: K) {
+    invoke(key: K): number | undefined {
         if(!this.handlers.has(key)) {
             if(this.isUseSimilarKey) {
                 const similarKey = this.findSimilarKey(key)

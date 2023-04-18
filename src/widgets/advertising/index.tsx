@@ -1,19 +1,21 @@
 import React from 'react';
+import cn from 'classnames'
 
 import './style/index.scss'
 
 type AdvertisingProps = {
     url: string,
-    img: string
+    img: string,
+    classNames?: string[]
 }
 
-const Advertising = ({img, url}: AdvertisingProps) => {
+const Advertising = ({img, url, classNames}: AdvertisingProps) => {
     return (
         <a
             href={url}
             target={'_blank'}
         >
-            <div className={'advertising'}
+            <div className={cn('advertising', classNames)}
                 style={{
                     backgroundImage: `url(${img})`
                 }}

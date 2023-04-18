@@ -1,9 +1,8 @@
 import React from 'react';
 
-import EventsSlider from "widgets/events-slider";
-import {eventsData} from "widgets/events-slider/model/data";
-
 import {EventSoon} from "features/event-soon";
+
+import {eventsData, EventsSlider} from "entities/events-slider";
 
 const EventsSoon = () => {
     return (
