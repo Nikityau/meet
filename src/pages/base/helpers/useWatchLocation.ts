@@ -1,14 +1,20 @@
-import {useAppLocationStore} from "../model";
 import {useEffect} from "react";
+import {useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
+import {getAllUserInfo} from "features/user";
+
+import {HistoryController} from '../model'
 
 export const useWatchLocation = () => {
+    const user = useSelector(getAllUserInfo)
     const location = useLocation()
 
-    //@ts-ignore
-    const {setCurrent} = useAppLocationStore()
+    useEffect(() => {
+        HistoryController.setBase(location.pathname)
+    }, [])
 
     useEffect(() => {
-        setCurrent(location.pathname)
-    }, [location.pathname])
+        HistoryController.setCurrent(location.pathname, user)
+        //controller.getInfo()
+    }, [location.pathname, user])
 }
