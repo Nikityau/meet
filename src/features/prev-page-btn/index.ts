@@ -1,0 +1,1 @@
+export {default as PrevPageBtn} from './ui'

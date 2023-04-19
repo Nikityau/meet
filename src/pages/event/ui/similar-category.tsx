@@ -1,7 +1,8 @@
 import React from 'react';
 
 import {dataCategories} from "../model/data";
-import Category from "../../../features/category";
+
+import Category from "features/category";
 
 const SimilarCategory = React.memo(() => {
     return (

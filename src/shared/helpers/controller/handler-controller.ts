@@ -25,7 +25,7 @@ export class HandlerController<K, V> implements IHandlerController<K, V> {
         this.handlers = new Map<K, V>()
     }
 
-    invoke(key: K) {
+    invoke(key: K): number {
         if(!this.handlers.has(key)) {
             console.error(`EventHandler: handler with key ${key} does not exist`)
             return

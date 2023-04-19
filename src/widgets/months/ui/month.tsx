@@ -1,11 +1,8 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+
 import cn from 'classnames'
 
-import {chooseMonth, getChosenMonth} from "../store";
-import {MonthContext} from "./index";
-import {IElOffsetHandler} from "shared/helpers/controller/handler-controller";
-import {MonthController} from "../controller/month-controller";
+import {useMonth} from "../helpers/hooks/useMonth";
 
 type MonthProps = {
     number: number,
@@ -14,29 +11,13 @@ type MonthProps = {
 
 const Month = ({number, title}:MonthProps) => {
 
-    const ref = useRef<HTMLDivElement>()
-
-    const dispatch = useDispatch()
-    const currMonth = useSelector(getChosenMonth)
-    const context = useContext(MonthContext)
-
-    const [controller] = useState<IElOffsetHandler>(new MonthController())
-
-    useEffect(() => {
-        controller.setEl(ref.current)
-
-        context.pushMonthController(number, controller)
-    }, [])
-
-    const onClick = () => {
-        dispatch(chooseMonth(number))
-    }
+    const {ref, onClick, isCurrent} = useMonth(number)
 
     return (
         <div className={cn(
             'month',
             {
-                'month_curr': currMonth == number
+                'month_curr': isCurrent
             }
         )} onClick={onClick} ref={ref}>
             <span>{ title }</span>

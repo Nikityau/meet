@@ -1,0 +1,29 @@
+.prev-page-btn {
+  width: fit-content;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #828282;
+
+  cursor: pointer;
+
+  &:before {
+    content: '\e901';
+
+    font-family: AppIcons;
+    font-size: 15px;
+
+    color: #EBEBEB;
+
+    transform: rotate(90deg);
+  }
+}

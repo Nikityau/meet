@@ -2,9 +2,9 @@ import React, {useContext, useRef} from 'react';
 import {useSelector} from "react-redux";
 import cn from 'classnames'
 
-import {MonthContext} from "./index";
 
 import {isAppInitSelector} from "../../../app-store-global/is-init";
+import {MonthContext} from "../providers/context";
 
 const Line = () => {
 

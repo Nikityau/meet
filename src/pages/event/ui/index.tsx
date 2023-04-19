@@ -5,9 +5,6 @@ import cn from 'classnames'
 import {SquareCalendar} from "widgets/square-calendar";
 import {getSideBarState} from "widgets/side-bar/model";
 
-
-import img from '../assets/event.png'
-
 import '../style/index.scss'
 import {CategoriesData, CommentType} from "../model/data";
 import MainDescription from "./main-description";
@@ -20,8 +17,9 @@ import EventNavigation from "./event-navigation";
 import Organizers from "./organizers";
 import EventComments from "./event-comments";
 
+import {stateEvent} from "../model/state";
 
-type EventData = {
+export type EventData = {
     date: Date,
     title: string,
     img: string
@@ -33,22 +31,7 @@ type EventData = {
 
 const Event = () => {
     const sideBarState = useSelector(getSideBarState)
-    const [event, setEvent] = useState<EventData>({
-        title: 'Современная архитектура веб приложений',
-        description: 'В Центре IT-Притяжения РГУПС пройдет научно-популярная лекция для всех желающих студентов, на тему «Современная архитектура веб приложений»\n' +
-            '\n' +
-            'Лекцию читает к.т.н. доцент кафедры «Вычислительная техника и автоматизированные системы управления» Капкаев Андрей Андреевич.\n' +
-            '\n' +
-            'Лекция будет проходить в режиме диалога, когда каждый может задать любой вопрос, ответ на который формирует совместно ребята и педагог.\n' +
-            '\n' +
-            'Студенты ознакомиться с элементами, системами, используемыми при построении современных веб приложений, популярными и наиболее востребованными в информационных компаниях технологиями веба.\n' +
-            '\n',
-        date: new Date(),
-        comments: [],
-        similarEvents: [],
-        similarCategory: [],
-        img
-    })
+    const [event, setEvent] = useState<EventData>(stateEvent)
 
     return (
         <div className={cn(

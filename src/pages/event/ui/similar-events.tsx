@@ -4,7 +4,6 @@ import {EventSoon} from "features/event-soon";
 
 import {eventsData} from "entities/events-slider";
 
-
 const SimilarEvents = React.memo(() => {
     return (
         <div className={'event__similar-event'}>

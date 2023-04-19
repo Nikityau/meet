@@ -22,7 +22,7 @@ module.exports = (env) => {
     const device = env.DEVICE
 
     return {
-        entry: path.resolve(__dirname, 'src', 'index.ts'),
+        entry: path.resolve(__dirname, 'src', 'index.tsx'),
         resolve: {
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
             alias: {

@@ -4,6 +4,9 @@ import cn from 'classnames'
 
 import {Months} from "../../months";
 import {getSideBarState} from "../../side-bar/model";
+import {useLocation} from "react-router-dom";
+import {AppRoutes} from "../../../shared/routes/routes";
+import {PrevPageBtn} from "../../../features/prev-page-btn";
 
 
 const BottomWithSBState = ({children}:React.PropsWithChildren) => {
@@ -29,9 +32,15 @@ const BottomWithSBState = ({children}:React.PropsWithChildren) => {
 
 
 const Bottom = () => {
+    const location = useLocation()
+
     return (
         <BottomWithSBState>
-            <Months/>
+            {
+                location.pathname == AppRoutes.EVENTS
+                    ? <Months/>
+                    : <PrevPageBtn/>
+            }
         </BottomWithSBState>
     );
 };
