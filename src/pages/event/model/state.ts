@@ -1,6 +1,7 @@
 import {EventData} from "../ui";
 
 import img from "../assets/event.png";
+import qr from '../assets/qr.png'
 
 export const stateEvent:EventData = {
     title: 'Современная архитектура веб приложений',
@@ -16,5 +17,8 @@ export const stateEvent:EventData = {
     comments: [],
     similarEvents: [],
     similarCategory: [],
-    img
+    img,
+    where: 'Главный корпус А-128',
+    time: '11:28',
+    qr
 }

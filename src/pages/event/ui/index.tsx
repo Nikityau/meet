@@ -13,16 +13,19 @@ import SimilarCategory from "./similar-category";
 import SimilarEvents from "./similar-events";
 import Gallery from "./gallery";
 import Notify from "./notify";
-import EventNavigation from "./event-navigation";
 import Organizers from "./organizers";
 import EventComments from "./event-comments";
 
 import {stateEvent} from "../model/state";
+import {EventNavigation} from "../../../widgets/event-navigation";
 
 export type EventData = {
     date: Date,
     title: string,
-    img: string
+    img: string,
+    qr: string,
+    time: string,
+    where: string,
     description: string,
     comments: CommentType[],
     similarEvents: Event[],
@@ -47,7 +50,7 @@ const Event = () => {
                         img={event.img}
                         description={event.description}
                     />
-                    <EventComments />
+                    <EventComments/>
                 </div>
                 <Block
                     title={'Похожие категории'}
@@ -63,13 +66,15 @@ const Event = () => {
                     <Gallery/>
                     <Notify/>
                 </div>
-                <EventNavigation/>
-                <div className={'event__date'}>
-                    <SquareCalendar
-                        initDate={event.date}
-                        chosenDate={event.date}
-                    />
-                </div>
+                <EventNavigation
+                    qr={event.qr}
+                    time={event.time}
+                    where={event.where}
+                />
+                <SquareCalendar
+                    initDate={event.date}
+                    chosenDate={event.date}
+                />
                 <Organizers/>
             </div>
         </div>

@@ -1,4 +1,4 @@
-.event__navigation {
+.event-navigation {
   margin-top: 48px;
 
   width: auto;
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.event__nav-info {
+.event-navigation__nav-info {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -32,7 +32,7 @@
     color: #292929;
   }
 
-  .event__nav-time {
+  .event-navigation__nav-time {
     display: flex;
     gap: 17px;
   }
@@ -47,7 +47,7 @@
   }
 }
 
-.event__nav-qr {
+.event-navigation__nav-qr {
   width: 150px;
   height: 100%;
 
