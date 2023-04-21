@@ -3,9 +3,11 @@ import React from 'react';
 import './style/index.scss'
 
 type LikeProps = {
+    id: string,
+    isLiked: boolean
 }
 
-const Like = ({}:LikeProps) => {
+const Like = ({isLiked, id}:LikeProps) => {
 
     const onLike = (e) => {
         e.preventDefault()

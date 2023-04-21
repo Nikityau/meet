@@ -1,0 +1,35 @@
+.event-card__info_today {
+  width: calc(100% - 42px);
+  height: calc(90px - 18px);
+
+  background: #fff;
+
+  padding: 9px 21px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: background-color .3s linear;
+
+  .event-card__another-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .event-card__info-title {
+    color: #000000;
+
+    transition: color .3s linear;
+  }
+
+  .event-card__type {
+    color: #9590A5;
+  }
+
+  .event-card__location {
+    color: rgba(149, 144, 165, 0.6);
+  }
+}
+

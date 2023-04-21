@@ -1,0 +1,73 @@
+.event-card__info_soon {
+  width: 100%;
+  height: calc(130px - 48px);
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 18.75%,
+          rgba(49, 79, 157, 0) 100%);
+
+
+  transform: translate(0, 25px);
+
+  display: flex;
+  gap: 10px;
+
+  transition: all .3s linear;
+
+  padding: 24px 16px;
+
+  .like-post {
+    width: 40px;
+    height: 40px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    color: #D3D3D3;
+  }
+
+  .event-card__info-descr {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transform: translate(0, 10px);
+
+    transition: transform .3s linear;
+
+    .event-card__info-title {
+      font-size: 15px;
+
+      text-transform: unset;
+
+      transition: color .3s linear;
+
+      color: #9590A5;
+    }
+
+    .event-card__info-below {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+
+      .event-card__location {
+        text-transform: unset;
+
+        font-size: 12px;
+      }
+
+      .event-card__type {
+        font-size: 11px;
+      }
+
+      .event-card__location,
+      .event-card__type {
+        color: transparent;
+
+        &:before {
+          color: transparent;
+        }
+      }
+    }
+  }
+}

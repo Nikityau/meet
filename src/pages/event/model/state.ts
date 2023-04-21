@@ -20,5 +20,5 @@ export const stateEvent:EventData = {
     img,
     where: 'Главный корпус А-128',
     time: '11:28',
-    qr
+    qr,
 }
