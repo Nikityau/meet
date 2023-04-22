@@ -43,3 +43,17 @@
     transform: translate(-30px, 23px);
   }
 }
+.event_past {
+  .event__preview {
+    width: 100%;
+    height: 312px;
+  }
+
+  .event-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transform: translate(-30px, 23px);
+  }
+}

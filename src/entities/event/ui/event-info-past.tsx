@@ -8,8 +8,8 @@ const EventInfoPast: React.FC<EventInfoBaseProps> = (
     }
 ) => {
     return (
-        <div className={'event-card__info'}>
-
+        <div className={'event-card__info event-card__info_past'}>
+            <span>{title}</span>
         </div>
     );
 };

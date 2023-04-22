@@ -1,22 +1,33 @@
 import React from 'react';
 
-import {EventSoon} from "features/event-soon";
+import {Event, EventInfoPast, EventPreview} from "entities/event";
+import EventDate from "entities/event-date";
 
-import {eventsData} from "entities/events-slider";
+import {dataEventPast} from "../model/data";
 
 const SimilarEvents = React.memo(() => {
     return (
         <div className={'event__similar-event'}>
             {
-                eventsData.map(ev => (
-                    <EventSoon
-                        isSmall={true}
+                dataEventPast.map(ev => (
+                    <Event
                         key={ev.id}
-                        time={ev.time}
-                        title={ev.title}
-                        img={ev.img}
-                        Like={null}
-                        isEventPast={true}
+                        id={ev.id}
+                        type={'past'}
+                        Preview={
+                            <EventPreview
+                                Like={null}
+                                Date={
+                                    <EventDate date={'20 марта'}/>
+                                }
+                                previewImg={ev.img}
+                            />
+                        }
+                        Info={
+                            <EventInfoPast
+                                title={ev.title}
+                            />
+                        }
                     />
                 ))
             }

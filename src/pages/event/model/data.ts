@@ -1,10 +1,9 @@
 import {nanoid} from "nanoid";
 
-import u1 from '../assets/u1.png'
-import u2 from '../assets/u2.png'
-import kapka from '../assets/kapka.png'
+import type {Event} from "entities/events-slider";
 
-import {OrganizerProps} from "../ui/organizer";
+import rstu_img from "entities/events-slider/assets/rstu.png";
+import tech_img from "entities/events-slider/assets/tech.png";
 
 export type CommentType = {
     id: string,
@@ -13,59 +12,28 @@ export type CommentType = {
     comment: string
 }
 
-export const dataComments: CommentType[] = [
-    {
-        id: nanoid(),
-        userFullName: 'Sveta Pikul',
-        userImage: u1,
-        comment: 'Спасибо Вам за возможность познакомится с учебным заведением!'
-    },
-    {
-        id: nanoid(),
-        userFullName: 'Vera Brounce',
-        userImage: u2,
-        comment: ' В прошлом году было круто! Надеюсь поступить в ваш вуз '
-    }
-]
-
 export type CategoriesData = {
     id: string,
     title: string
 }
 
-export const dataCategories: CategoriesData[] = [
+export const dataEventPast: Event[] = [
     {
         id: nanoid(),
-        title: 'Экскурсии'
+        time: '11:00',
+        title: 'День открытых дверей РГУПС',
+        type: 'all',
+        location: 'A-128',
+        img: rstu_img,
+        link: '/events/today',
     },
     {
         id: nanoid(),
-        title: 'Экскурсии'
-    },
-    {
-        id: nanoid(),
-        title: 'Экскурсии'
-    },
-]
-
-
-export const dataOrganizers: OrganizerProps[] = [
-    {
-        id: nanoid(),
-        img: kapka,
-        type: 'Преподаватель',
-        canMessage: true,
-        surname: 'Капкаев',
-        name: 'Андрей',
-        patronymic: 'Андреевич'
-    },
-    {
-        id: nanoid(),
-        img: kapka,
-        type: 'Преподаватель',
-        canMessage: true,
-        surname: 'Капкаев',
-        name: 'Андрей',
-        patronymic: 'Андреевич'
+        time: '11:00',
+        title: 'День открытых дверей РГУПС',
+        type: 'staff',
+        location: 'Главный корпус',
+        img: tech_img,
+        link: '/events/today'
     },
 ]

@@ -1,4 +1,4 @@
-.event__organizers {
+.organizers {
   width: 100%;
 
   margin-top: 30px;
@@ -8,7 +8,7 @@
   gap: 25px;
 }
 
-.event__organizers-title {
+.organizers__title {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.event__organizers-list {
+.organizers__list {
   display: flex;
   flex-direction: column;
   gap: 20px;

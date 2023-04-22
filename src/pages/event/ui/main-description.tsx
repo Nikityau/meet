@@ -1,16 +1,16 @@
 import React from 'react';
+import {nanoid} from "nanoid";
 
 import Like from "features/like";
 
-import {nanoid} from "nanoid";
-
 type MainDescriptionProps = {
+    id: string
     img: string,
     title: string
     description: string
 }
 
-const MainDescription = React.memo(({description, title, img}:MainDescriptionProps) => {
+const MainDescription = React.memo(({description, title, img, id}:MainDescriptionProps) => {
     return (
         <div className={'event__main-description'}>
             <div className={'event__image'}
@@ -18,7 +18,10 @@ const MainDescription = React.memo(({description, title, img}:MainDescriptionPro
                      backgroundImage: `url(${img})`
                  }}
             >
-                <Like/>
+                <Like
+                    id={id}
+                    isLiked={false}
+                />
             </div>
             <div className={'event__below'}>
                 <div className={'event__title'}>

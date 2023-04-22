@@ -1,25 +1,18 @@
-import React, {useState} from 'react';
-import {useSelector} from "react-redux";
-import cn from 'classnames'
+import React from 'react';
 
-import {SquareCalendar} from "widgets/square-calendar";
-import {getSideBarState} from "widgets/side-bar/model";
+import {OrganizerProps} from "entities/organizer";
+import type {Event} from 'entities/events-slider'
+
+import EventInfo from "./event-info";
+import EventDescription from "./event-description";
+import EventProvider from "../provider/event-provider";
+
+import {CategoriesData, CommentType} from "../model/data";
 
 import '../style/index.scss'
-import {CategoriesData, CommentType} from "../model/data";
-import MainDescription from "./main-description";
-import Block from "../../../entities/block";
-import SimilarCategory from "./similar-category";
-import SimilarEvents from "./similar-events";
-import Gallery from "./gallery";
-import Notify from "./notify";
-import Organizers from "./organizers";
-import EventComments from "./event-comments";
-
-import {stateEvent} from "../model/state";
-import {EventNavigation} from "../../../widgets/event-navigation";
 
 export type EventData = {
+    id: string
     date: Date,
     title: string,
     img: string,
@@ -29,55 +22,17 @@ export type EventData = {
     description: string,
     comments: CommentType[],
     similarEvents: Event[],
-    similarCategory: CategoriesData[]
+    similarCategory: CategoriesData[],
+    organizers: OrganizerProps[]
 }
 
 const Event = () => {
-    const sideBarState = useSelector(getSideBarState)
-    const [event, setEvent] = useState<EventData>(stateEvent)
 
     return (
-        <div className={cn(
-            'event',
-            {
-                'event_narrow': sideBarState
-            }
-        )}>
-            <div className={'event__description'}>
-                <div className={'event__main-info'}>
-                    <MainDescription
-                        title={event.title}
-                        img={event.img}
-                        description={event.description}
-                    />
-                    <EventComments/>
-                </div>
-                <Block
-                    title={'Похожие категории'}
-                    block={<SimilarCategory/>}
-                />
-                <Block
-                    title={'Похожие события'}
-                    block={<SimilarEvents/>}
-                />
-            </div>
-            <div className={'event__info'}>
-                <div className={'event__notify-n-gallery'}>
-                    <Gallery/>
-                    <Notify/>
-                </div>
-                <EventNavigation
-                    qr={event.qr}
-                    time={event.time}
-                    where={event.where}
-                />
-                <SquareCalendar
-                    initDate={event.date}
-                    chosenDate={event.date}
-                />
-                <Organizers/>
-            </div>
-        </div>
+        <EventProvider>
+            <EventDescription/>
+            <EventInfo/>
+        </EventProvider>
     );
 };
 

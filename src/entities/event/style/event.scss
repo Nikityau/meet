@@ -75,4 +75,18 @@
     }
   }
 }
+.event_past {
+  width: 310px; // 310
+  height: 370px; // 370
+
+  border: 1px solid #F3F3F3;
+
+  &:hover {
+    .event-card__info_past {
+      background-color: #000;
+
+      color: #fff;
+    }
+  }
+}
 

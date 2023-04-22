@@ -1,0 +1,18 @@
+.event-card__info_past {
+  width: calc(100% - 32px);
+  height: calc(58px - 42px);
+
+  padding: 21px 16px;
+
+  background-color: transparent;
+
+  transition: all .3s linear;
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -0.32px;
+
+  color: #9590A5;
+}

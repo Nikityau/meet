@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style/index.scss'
+
 export type OrganizerProps = {
     id: string,
     img: string,
@@ -7,24 +9,26 @@ export type OrganizerProps = {
     surname: string,
     patronymic: string,
     type: 'Преподаватель',
-    canMessage: boolean
+    Message: React.ReactNode
 }
 
-const Organizer = ({
-    img,
-    type,
-    name,
-    surname,
-    patronymic,
-    canMessage,
-    id
-}: OrganizerProps) => {
+const Organizer: React.FC<OrganizerProps> = (
+    {
+        type,
+        id,
+        surname,
+        patronymic,
+        name,
+        img,
+        Message
+    }
+) => {
     return (
         <div className={'event__organizer organizer'}>
             <div className={'organizer__img'}
-                style={{
-                    backgroundImage: `url(${img})`
-                }}
+                 style={{
+                     backgroundImage: `url(${img})`
+                 }}
             >
             </div>
             <div className={'organizer__info'}>
@@ -33,12 +37,10 @@ const Organizer = ({
                 <span className={'type'}>{`${type}`}</span>
             </div>
             {
-                canMessage &&
-                <div className={'organizer__msg'}>
-                </div>
+                Message
             }
         </div>
     );
 };
 
-export default Organizer;
+export default React.memo(Organizer);

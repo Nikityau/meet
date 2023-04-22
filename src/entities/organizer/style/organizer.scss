@@ -44,21 +44,4 @@
       font-size: 11px;
     }
   }
-
-  .organizer__msg {
-    position: absolute;
-    top: 50%;
-    right: 0;
-
-    transform: translate(-49px, -50%);
-
-    cursor: pointer;
-
-    &:before {
-      content: "\e90f";
-      font-family: "AppIcons";
-      font-size: 28px;
-      color: #828282;
-    }
-  }
 }
