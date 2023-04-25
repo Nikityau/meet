@@ -4,5 +4,7 @@ export enum AppRoutes {
     SETTINGS = '/settings',
     ARCHIVE = '/archive',
     CHOSEN = '/chosen',
-    ADD_POST = '/add-post',
+    CREATE_POST = '/create-post',
+    CREATE_POST_PREVIEW = '/create-post/preview',
+    CREATE_POST_CREATING = '/create-post/creating'
 }

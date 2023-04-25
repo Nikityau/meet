@@ -20,7 +20,7 @@ const MainDescription = React.memo(({description, title, img, id}:MainDescriptio
             >
                 <Like
                     id={id}
-                    isLiked={false}
+                    isLiked={true}
                 />
             </div>
             <div className={'event__below'}>

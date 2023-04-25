@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {OrganizerProps} from "entities/organizer";
-import type {Event} from 'entities/events-slider'
+import type {Event as EventType} from 'entities/events-slider'
 
 import EventInfo from "./event-info";
 import EventDescription from "./event-description";
@@ -21,7 +21,7 @@ export type EventData = {
     where: string,
     description: string,
     comments: CommentType[],
-    similarEvents: Event[],
+    similarEvents: EventType[],
     similarCategory: CategoriesData[],
     organizers: OrganizerProps[]
 }

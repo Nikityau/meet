@@ -1,0 +1,37 @@
+.create-post-tab-link {
+  opacity: .5;
+
+  padding: 8px 12px;
+
+  border-radius: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.create-post-tab-link__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 18px;
+    height: auto;
+  }
+}
+.create-post-tab-link__title {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #3E424A;
+}
+
+.create-post-tab-link_current {
+  background: rgba(92, 78, 254, 0.1);
+
+  opacity: 1;
+}

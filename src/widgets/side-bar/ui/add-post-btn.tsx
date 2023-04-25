@@ -20,12 +20,12 @@ const AddPostBtn = ({is_full}:AddPostBtnProps) => {
     useEffect(() => {
         navElC.setEl(btn.current)
 
-        navContext.pushToController(AppRoutes.ADD_POST, navElC)
+        navContext.pushToController(AppRoutes.CREATE_POST, navElC)
     }, [])
 
 
     return (
-        <Link to={AppRoutes.ADD_POST}>
+        <Link to={AppRoutes.CREATE_POST}>
             <div className={cn(
                 'add-post-btn',
                 {

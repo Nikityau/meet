@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AddPost = () => {
+const CreateTitle = () => {
     return (
         <div>
-
+            title
         </div>
     );
 };
 
-export default AddPost;
+export default CreateTitle;

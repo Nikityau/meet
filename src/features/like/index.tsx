@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames'
 
 import './style/index.scss'
 
@@ -7,7 +8,7 @@ type LikeProps = {
     isLiked: boolean
 }
 
-const Like = ({isLiked, id}:LikeProps) => {
+const Like = ({isLiked, id}: LikeProps) => {
 
     const onLike = (e) => {
         e.preventDefault()
@@ -16,7 +17,12 @@ const Like = ({isLiked, id}:LikeProps) => {
     }
 
     return (
-        <div className={'like-post'} onClick={onLike}>
+        <div className={cn(
+            'like-post',
+            {
+                'like-post_liked': isLiked
+            }
+        )} onClick={onLike}>
         </div>
     );
 };
