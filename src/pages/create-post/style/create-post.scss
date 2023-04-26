@@ -4,3 +4,19 @@
   display: flex;
   gap: 180px;
 }
+
+.creating-post__area {
+  width: 650px;
+}
+
+.creating-post {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.create-post__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}

@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
 
-
 import {useCreateEvent} from "../helpers/hooks/useCreateEvent";
 
-export const CreatePostContext = React.createContext(null)
+import {ICreatePostContext} from "../controller/type";
+
+export const CreatePostContext = React.createContext<ICreatePostContext>(null)
 
 const Wrapper = ({children}:React.PropsWithChildren) => {
 
-    const {state, change} = useCreateEvent()
+    const {change} = useCreateEvent()
 
     return (
         <CreatePostContext.Provider value={{
-            state,
             change
         }}>
             {

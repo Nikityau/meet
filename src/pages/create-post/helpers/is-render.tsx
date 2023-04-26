@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import {useCreatePost} from "../zustand";
 
@@ -14,7 +14,7 @@ export const IsRender:React.FC<IIsRender> = ({Component, number}) => {
     return (
         <>
             {
-                number >= currentStage
+                currentStage >= number
                     ? Component
                     : null
             }

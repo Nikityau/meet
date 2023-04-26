@@ -1,25 +1,26 @@
-import {useReducer} from "react";
+import {useEffect, useReducer, useState} from "react";
 
-export type ChangeEvent = 'title' | 'wrapper'
+import {CreateEventController} from "../../controller/create-post.controller";
+import {useCreatePost} from "../../zustand";
 
-const initState = {
+export type ChangeEvent = 'title' | 'wrapper' | 'next' | 'finish'
 
-}
 
-const reducer = () => {
-    return initState
-}
+const controller = new CreateEventController()
 
 export const useCreateEvent = () => {
-    const [state, dispatch] = useReducer(reducer, initState)
 
+    const zustand = useCreatePost()
 
-    const change = (key: ChangeEvent, value: any) => {
+    useEffect(() => {
+        controller.setZustand(zustand)
+    }, [zustand])
 
-    }
+    useEffect(() => {
+        controller.savePostToLocal()
+    }, [zustand.currentStage])
 
     return {
-        state,
-        change
+        change: controller.change.bind(controller)
     }
 }
