@@ -7,12 +7,7 @@ export class CreateEventController {
     zustand: ICreatePost = null
 
     constructor() {
-        console.log('???')
-        /*const savedPost = sessionStorage.getItem('post')
-        console.log('saved',savedPost)*/
-        //if(!savedPost) return
 
-        //this.zustand.setFullPost(JSON.parse(savedPost))
     }
 
     removeError(key: ChangeEvent) {
@@ -32,12 +27,19 @@ export class CreateEventController {
                 return true
             }
 
-            if (this.zustand.post.title?.length == 0 || !this.zustand.post.title) {
+            if (
+                this.zustand.post.title?.length == 0
+                || !this.zustand.post.title
+                 && this.zustand.currentStage >= 1
+            ) {
                 this.error('title', 'title nope')
                 isError = true
             }
 
-            if(!this.zustand.post.image) {
+            if (!this.zustand.post.image &&
+                this.zustand.currentStage >= 2
+            ) {
+                this.error('wrapper', 'no image')
                 isError = true
             }
 
@@ -45,6 +47,11 @@ export class CreateEventController {
         }
         if (key == 'title') {
             if (value.length != 0) {
+                this.removeError(key)
+            }
+        }
+        if (key == 'wrapper') {
+            if (value) {
                 this.removeError(key)
             }
         }
@@ -61,9 +68,10 @@ export class CreateEventController {
             currentStage: this.zustand.currentStage
         }))
     }
+
     loadPostFromLocal() {
         const savedPost = localStorage.getItem('post')
-        if(!savedPost) return null
+        if (!savedPost) return null
 
         return JSON.parse(savedPost)
     }
@@ -73,9 +81,8 @@ export class CreateEventController {
 
         if (key == 'next') {
             this.zustand.setNextStage()
-            this.savePostToLocal()
         }
-        if(key == 'finish') {
+        if (key == 'finish') {
             // ...send
             localStorage.removeItem('post')
         }
@@ -84,13 +91,21 @@ export class CreateEventController {
             console.log('title')
             this.zustand?.setPostTitle(value)
         }
+        if (key == 'wrapper') {
+            this.zustand.setImage(value)
+        }
+
+        if (key != 'finish') {
+            console.log('here')
+            this.savePostToLocal()
+        }
     }
 
     setZustand(zustand: ICreatePost) {
         if (!this.zustand) {
             this.zustand = zustand
             const savedPost = this.loadPostFromLocal()
-            if(!savedPost) return
+            if (!savedPost) return
 
             this.zustand.setFullPost(savedPost.post)
             this.zustand.setStage(savedPost.currentStage)

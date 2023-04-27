@@ -2,7 +2,7 @@ import {ChangeEvent} from "../helpers/hooks/useCreateEvent";
 
 export interface INewEvent {
     title?: string,
-    image: string,
+    image?: File,
     description?: string,
     date?: Date,
     time?: string,
@@ -28,4 +28,5 @@ export interface ICreatePost {
     removeError: (...args: any[]) => any,
     setFullPost: (...args: any[]) => any,
     setStage: (...args: any[]) => any,
+    setImage: (...args: any[]) => any,
 }

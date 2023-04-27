@@ -3,6 +3,7 @@ import React from "react";
 
 import CreateTitle from "../ui/create-title";
 import CreateWrapper from "../ui/create-wrapper";
+import CreateDescription from "../ui/create-description";
 
 
 interface IStages {
@@ -21,5 +22,10 @@ export const stagesComp: IStages[] = [
         id: v4(),
         number: 2,
         Element: <CreateWrapper/>
+    },
+    {
+        id: v4(),
+        number: 3,
+        Element: <CreateDescription/>
     }
 ]

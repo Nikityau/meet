@@ -1,2 +1,2 @@
 export {CreatePost, Creating, Preview} from './ui'
-export type {Tab} from './zustand'
+export type {ICreatePost, useCreatePost, ICreatePostError, INewEvent} from './zustand'

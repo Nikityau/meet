@@ -1,9 +1,93 @@
 .create-wrapper {
   width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+
+
+  .ui-white-back {
+    border-color: #E3E3E3;
+    border-radius: 10px;
+  }
 }
 
 .create-wrapper__up {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.create-wrapper__title {
+  font-size: 18px;
+}
+
+.create-wrapper__image-choser {
+  width: 100%;
+  height: 400px;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.create-wrapper__image-plug {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .create-wrapper__image-plug-wrapper {
+    width: 90%;
+    height: 90%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    img[data-name="upload"] {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 100px;
+      height: auto;
+    }
+  }
+}
+
+.create-wrapper_error {
+  .ui-white-back {
+    border-color: var(--color-red);
+  }
+}
+
+.create-wrapper__file-input {
+  display: none;
+}
+
+.create-wrapper_past {
+  .create-title__input {
+    input {
+      color: #292929;
+    }
+  }
+  .create-post__subtitle {
+    color: #292929;
+  }
 }

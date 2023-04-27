@@ -3,7 +3,7 @@ import cn from 'classnames'
 
 type SubtitleProps = {
     subtitle: string,
-    classNames: string[]
+    classNames?: string[]
 }
 
 const Subtitle: React.FC<SubtitleProps> = ({subtitle, classNames}) => {

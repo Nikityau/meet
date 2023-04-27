@@ -88,5 +88,12 @@ export const useCreatePost = create<ICreatePost>((set, getState, store) => ({
 
             return draft
         })
+    ),
+    setImage: (image: any) => set(
+        produce(getState(), draft => {
+            draft.post.image = image
+
+            return draft
+        })
     )
 }))

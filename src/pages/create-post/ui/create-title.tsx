@@ -23,14 +23,14 @@ const CreateTitle = () => {
         setTitle(post?.title || "")
     }, [post])
 
+    useEffect(() => {
+        console.log(isError)
+    }, [isError])
+
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(e.target.value)
         context.change('title', e.target.value)
     }
-
-    useEffect(() => {
-        console.log(isError)
-    }, [isError])
 
     return (
         <div className={cn(

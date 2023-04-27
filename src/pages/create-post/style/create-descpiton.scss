@@ -1,0 +1,54 @@
+.create-description {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+
+  .create-description__up {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .create-description__title {
+      font-size: 18px;
+    }
+  }
+
+  .create-description__description {
+    width: 100%;
+
+    padding: 16px 12px;
+
+    textarea {
+      width: calc(100% - 24px);
+      height: 20px;
+
+      resize: none;
+
+      outline: none;
+      border: none;
+
+      border-bottom: 1px solid #828282;
+
+      &:focus {
+
+      }
+    }
+  }
+}
+
+.create-description_error {
+
+}
+
+.create-description_past {
+  .create-title__input {
+    input {
+      color: #292929;
+    }
+  }
+  .create-post__subtitle {
+    color: #292929;
+  }
+}
