@@ -74,7 +74,7 @@ export class CreateEventController {
         this.eventStagesStatus[key].error = value
 
         this.sendStatus(key)
-        console.log(`${key}: error`)
+        console.log(`${key}: error: ${value}`)
     }
 
     private checkOnGlobalError() {
@@ -97,7 +97,7 @@ export class CreateEventController {
                 stagesStatus[i].status == 'process'
             ) {
                 const valueStageState = this.eventState[i]
-                this.setError(i, (this.eventStageServices[i]?.check(valueStageState) || true))
+                this.setError(i, (this.eventStageServices[i]?.checkError(valueStageState) || true))
             }
         }
 
@@ -109,7 +109,6 @@ export class CreateEventController {
 
     private setStateValue(key: string, value: any) {
         this.eventState[key] = value
-
     }
 
     nextStage() {
@@ -154,7 +153,7 @@ export class CreateEventController {
     }
 
     createEvent(key: string | EventSpecKeyType, value: any) {
-        if (!this.eventStageServices[key].check(value)) {
+        if (!this.eventStageServices[key].checkError(value)) {
             //this.setError(key, true);
             //this.checkError();
             //this.checkOnGlobalError();
@@ -162,6 +161,7 @@ export class CreateEventController {
             return
         } else {
             this.setStateValue(key, value)
+            this.setError(key, false)
         }
 
         if (key == 'next') {

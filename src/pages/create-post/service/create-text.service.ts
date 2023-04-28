@@ -1,6 +1,6 @@
 export class CreateTextService implements IEventStageService {
-    check(value: any): boolean {
-        if(typeof value == 'string') {
+    checkError(value: any): boolean {
+        if(typeof value == 'string' && value.length > 0) {
             return false
         }
 

@@ -1,3 +1,3 @@
 interface IEventStageService {
-    check(value: any): boolean
+    checkError(value: any): boolean
 }
