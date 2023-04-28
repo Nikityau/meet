@@ -1,20 +1,21 @@
 import React, {useEffect} from "react";
+import {useCreateEventStatus} from "./hooks/useCreateEventStatus";
 
-import {useCreatePost} from "../zustand";
 
 interface IIsRender {
     Component: React.ReactNode,
-    number: number
+    uniqueName: string
 }
 
-export const IsRender:React.FC<IIsRender> = ({Component, number}) => {
+export const IsRender:React.FC<IIsRender> = ({Component, uniqueName}) => {
 
-    const {currentStage} = useCreatePost()
+    const {status} = useCreateEventStatus(uniqueName)
 
     return (
         <>
             {
-                currentStage >= number
+                (status.status == 'process' ||
+                    status.status == 'done')
                     ? Component
                     : null
             }

@@ -1,23 +1,20 @@
 import React, {useEffect, useState} from 'react';
 
-import {useCreateEvent} from "../helpers/hooks/useCreateEvent";
+import {CreateEventController} from "../controller/create-event.controller";
 
-import {ICreatePostContext} from "../controller/type";
+import {eventStages} from "../model/event-stages";
 
-export const CreatePostContext = React.createContext<ICreatePostContext>(null)
+const createEventController = CreateEventController.INIT(eventStages)
+createEventController.start()
 
 const Wrapper = ({children}:React.PropsWithChildren) => {
 
-    const {change} = useCreateEvent()
-
     return (
-        <CreatePostContext.Provider value={{
-            change
-        }}>
+        <>
             {
                 children
             }
-        </CreatePostContext.Provider>
+        </>
     );
 };
 
