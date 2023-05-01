@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
-import equal from "deep-equal";
-
-import {StatusObject} from "../../controller/type/type";
+import equal from 'deep-equal'
 
 import {CreateEventController} from "../../controller/create-event.controller";
+import {StatusObject} from "../../controller/type/type";
 
-export const useCreateEventStatus = (uniqueName: string) => {
+import {CreateTextService} from "../../service/create-text.service";
+
+export const useCreateEvent = (uniqueName: string) => {
     const [state, setState] = useState<StatusObject>(() => ({
         error: false,
         status: 'wait'
@@ -18,6 +19,7 @@ export const useCreateEventStatus = (uniqueName: string) => {
         }
 
         const unsub = inst.onHookHandler(uniqueName, messageHandler)
+        inst.addEventStageService(uniqueName, new CreateTextService())
 
         return () => {
             unsub()
@@ -31,8 +33,18 @@ export const useCreateEventStatus = (uniqueName: string) => {
         }
     }
 
+    const dispatch = (value: any) => {
+        const inst = CreateEventController.GET()
+        if (!inst) {
+            return
+        }
+
+        inst.createEvent(uniqueName, value)
+    }
+
 
     return {
         status:state,
+        dispatch
     }
 }

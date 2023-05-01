@@ -1,12 +1,10 @@
-.create-title {
+.create-post-title {
   width: 90%;
 
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
 
-.create-title__input {
   input {
     width: 100%;
 
@@ -30,21 +28,14 @@
   }
 }
 
-.create-title_error {
-  .create-title__input {
-    input {
-      border-color: var(--color-red);
-    }
+.create-post-title_error {
+  input {
+    border-color: var(--color-red);
   }
 }
 
 .create-title_past {
-  .create-title__input {
-    input {
-      color: #292929;
-    }
-  }
-  .create-post__subtitle {
+  input {
     color: #292929;
   }
 }

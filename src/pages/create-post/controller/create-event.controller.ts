@@ -1,5 +1,6 @@
-import {EventSpecKeyType, EventStage, EventHookStageHandler, StatusObject, Unsub} from "./type/type";
 import {Subject} from "rxjs";
+
+import {EventSpecKeyType, EventStage, EventHookStageHandler, StatusObject, Unsub} from "./type/type";
 
 export class CreateEventController {
     private static instance: CreateEventController = null
@@ -52,6 +53,8 @@ export class CreateEventController {
                 return
             }
         }
+
+        this.sendStatusByAll()
     }
 
     onHookHandler(uniqueName: string, handler: EventHookStageHandler): Unsub {
@@ -60,6 +63,7 @@ export class CreateEventController {
         }
 
         const unsub = this.eventStageHookHandlers.get(uniqueName).subscribe(handler)
+        this.sendStatus(uniqueName)
 
         return () => {
             unsub.unsubscribe()
@@ -97,10 +101,17 @@ export class CreateEventController {
                 stagesStatus[i].status == 'process'
             ) {
                 const valueStageState = this.eventState[i]
-                this.setError(i, (this.eventStageServices[i]?.checkError(valueStageState) || true))
+                const res = this.eventStageServices[i]?.checkError(valueStageState)
+
+                this.setError(i, res == undefined ? true : res)
             }
         }
 
+    }
+    private sendStatusByAll() {
+        this.eventStages.forEach(stage => {
+            this.sendStatus(stage.uniqueName)
+        })
     }
 
     private sendStatus(uniqueName: string) {
@@ -109,12 +120,15 @@ export class CreateEventController {
 
     private setStateValue(key: string, value: any) {
         this.eventState[key] = value
+
+        console.log(value)
     }
 
     nextStage() {
         this.checkError()
         this.checkOnGlobalError()
 
+        console.log('gb error',this.globalStatus.error)
         if (this.globalStatus.error) {
             return
         }
@@ -129,11 +143,12 @@ export class CreateEventController {
         for (let i in stagesStatus) {
             if (stagesStatus[i].status == 'process') {
                 currentStage = stagesStatus[i]
-                return
+                break
             }
         }
 
         currentStage!.status = 'done'
+
 
         const allStages = this.eventStages
         if (currentStage!.number == allStages[allStages.length - 1].number) {
@@ -142,10 +157,12 @@ export class CreateEventController {
             for (let i in stagesStatus) {
                 if (stagesStatus[i].number == currentStage!.number + 1) {
                     stagesStatus[i].status = 'process'
-                    return
+                    break
                 }
             }
         }
+
+        this.sendStatusByAll()
     }
 
     private finishCreateEvent() {
@@ -153,7 +170,8 @@ export class CreateEventController {
     }
 
     createEvent(key: string | EventSpecKeyType, value: any) {
-        if (!this.eventStageServices[key].checkError(value)) {
+        if (this.eventStageServices[key].checkError(value)) {
+            this.setStateValue(key, null)
             //this.setError(key, true);
             //this.checkError();
             //this.checkOnGlobalError();

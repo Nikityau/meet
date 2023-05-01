@@ -1,13 +1,17 @@
+import React from "react";
+
 import {v4} from "uuid";
 
 import {EventStage} from "../controller/type/type";
+
+import CreatePostTitle from '../ui/create-post-title'
 
 export const eventStages: EventStage[] = [
     {
         id: v4(),
         number: 1,
         uniqueName: 'title',
-        renderNode: null
+        renderNode: <CreatePostTitle/>
     },
     {
         id: v4(),

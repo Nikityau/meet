@@ -1,17 +1,18 @@
-import {useEffect, useState} from "react";
 import {CreateEventController} from "../../controller/create-event.controller";
 
-export const useCreateEventNext = () => {
-    const [cb, setCb] = useState(null)
+type Next = () => void
 
-    useEffect(() => {
+export const useCreateEventNext = (): Next => {
+
+    const next = () => {
         const inst = CreateEventController.GET()
+
         if(!inst) {
-            return
+            console.log('Dont Created')
         }
 
-        setCb(inst.nextStage.bind(inst))
-    }, [])
+        inst.nextStage()
+    }
 
-    return cb
+    return next
 }

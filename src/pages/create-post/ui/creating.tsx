@@ -1,30 +1,30 @@
 import React from 'react';
 
+import NextBtn from "./next-btn";
+
 import {IsRender} from "../helpers/is-render";
+
+import {CreateEventController} from "../controller/create-event.controller";
 
 const Creating = () => {
     return (
         <div className={'creating-post'}>
             <div className={'create-post__steps'}>
-                {/*{
-                    stagesComp.map(stage => (
+                {
+                    CreateEventController.GET().getStagesEvent().map(stages => (
                         <IsRender
-                            key={stage.id}
+                            key={stages.id}
                             Component={
-                                <CreateEventStage
-                                    number={stage.number}
-                                    Component={
-                                        stage.Element
-                                    }
-                                />
+                                stages.renderNode
                             }
-                            number={stage.number}
+                            uniqueName={stages.uniqueName}
                         />
                     ))
-                }*/}
+                }
+
             </div>
             <div className={'create-post__btn'}>
-                {/*<CreatePostBtn/>*/}
+                <NextBtn/>
             </div>
         </div>
     );

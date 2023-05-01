@@ -1,21 +1,24 @@
 import React, {useEffect} from "react";
-import {useCreateEventStatus} from "./hooks/useCreateEventStatus";
 
+import {useRenderCreateEvent} from "./hooks/useRenderCreateEvent";
 
 interface IIsRender {
     Component: React.ReactNode,
     uniqueName: string
 }
 
-export const IsRender:React.FC<IIsRender> = ({Component, uniqueName}) => {
+export const IsRender: React.FC<IIsRender> = ({Component, uniqueName}) => {
 
-    const {status} = useCreateEventStatus(uniqueName)
+    const {isRender} = useRenderCreateEvent(uniqueName)
+
+    useEffect(() => {
+        console.log(uniqueName,'isRender',isRender)
+    }, [isRender])
 
     return (
         <>
             {
-                (status.status == 'process' ||
-                    status.status == 'done')
+                isRender
                     ? Component
                     : null
             }

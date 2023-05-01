@@ -1,15 +1,10 @@
 import {useEffect, useState} from "react";
-import equal from "deep-equal";
 
 import {StatusObject} from "../../controller/type/type";
-
 import {CreateEventController} from "../../controller/create-event.controller";
 
-export const useCreateEventStatus = (uniqueName: string) => {
-    const [state, setState] = useState<StatusObject>(() => ({
-        error: false,
-        status: 'wait'
-    }))
+export const useRenderCreateEvent = (uniqueName: string) => {
+    const [state, setState] = useState<boolean>(() => false)
 
     useEffect(() => {
         const inst = CreateEventController.GET()
@@ -25,14 +20,17 @@ export const useCreateEventStatus = (uniqueName: string) => {
     }, [state])
 
     const messageHandler = (status: StatusObject) => {
-        if (!equal(status, state)) {
-            const newState = JSON.parse(JSON.stringify(status))
-            setState(newState)
+        console.log(status)
+        const newState = status
+        if (newState.status == 'wait') {
+            setState(false)
+        } else {
+            setState(true)
         }
     }
 
 
     return {
-        status:state,
+        isRender: state,
     }
 }
