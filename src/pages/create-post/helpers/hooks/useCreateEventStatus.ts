@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import equal from "deep-equal";
 
 import {StatusObject} from "../../controller/type/type";
@@ -11,25 +11,36 @@ export const useCreateEventStatus = (uniqueName: string) => {
         status: 'wait'
     }))
 
-    useEffect(() => {
+
+    const sub = useCallback(() => {
         const inst = CreateEventController.GET()
         if (!inst) {
             return
         }
 
-        const unsub = inst.onHookHandler(uniqueName, messageHandler)
+        const unsub = inst.onHookHandler(uniqueName, msgHandlerCb)
+
+        return unsub
+    }, [uniqueName])
+
+    useEffect(() => {
+        const unsub = sub()
 
         return () => {
             unsub()
         }
-    }, [state])
+    }, [sub])
 
-    const messageHandler = (status: StatusObject) => {
-        if (!equal(status, state)) {
-            const newState = JSON.parse(JSON.stringify(status))
-            setState(newState)
-        }
-    }
+
+    const msgHandlerCb = useCallback((status: StatusObject) => {
+        setState(prev => {
+            if (!equal(status, state)) {
+                return JSON.parse(JSON.stringify(status))
+            }
+
+            return prev
+        })
+    }, [uniqueName])
 
 
     return {

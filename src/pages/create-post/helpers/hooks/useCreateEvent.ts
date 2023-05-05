@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import equal from 'deep-equal'
 
 import {CreateEventController} from "../../controller/create-event.controller";
@@ -12,39 +12,50 @@ export const useCreateEvent = (uniqueName: string) => {
         status: 'wait'
     }))
 
-    useEffect(() => {
+
+    const sub = useCallback(() => {
         const inst = CreateEventController.GET()
         if (!inst) {
             return
         }
 
-        const unsub = inst.onHookHandler(uniqueName, messageHandler)
+        const unsub = inst.onHookHandler(uniqueName, msgHandlerCb)
         inst.addEventStageService(uniqueName, new CreateTextService())
+
+        return unsub
+    }, [uniqueName])
+
+    useEffect(() => {
+        const unsub = sub()
 
         return () => {
             unsub()
         }
-    }, [state])
+    }, [sub])
 
-    const messageHandler = (status: StatusObject) => {
-        if (!equal(status, state)) {
-            const newState = JSON.parse(JSON.stringify(status))
-            setState(newState)
-        }
-    }
 
-    const dispatch = (value: any) => {
+    const msgHandlerCb = useCallback((status: StatusObject) => {
+        setState(prev => {
+            if (!equal(status, state)) {
+                return JSON.parse(JSON.stringify(status))
+            }
+
+            return prev
+        })
+    }, [uniqueName])
+
+    const dispatch = useCallback((value: any) => {
         const inst = CreateEventController.GET()
         if (!inst) {
             return
         }
 
         inst.createEvent(uniqueName, value)
-    }
+    }, [uniqueName])
 
 
     return {
-        status:state,
+        status: state,
         dispatch
     }
 }
