@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NextBtn from "./next-btn";
+import CreateEventNextBtn from "features/create-event-next-btn";
 
 import {IsRender} from "../helpers/is-render";
 
@@ -17,14 +17,13 @@ const Creating = () => {
                             Component={
                                 stages.renderNode
                             }
-                            uniqueName={stages.uniqueName}
+                            uniqueName={stages.uniqueName.toString()}
                         />
                     ))
                 }
-
             </div>
             <div className={'create-post__btn'}>
-                <NextBtn/>
+                <CreateEventNextBtn/>
             </div>
         </div>
     );

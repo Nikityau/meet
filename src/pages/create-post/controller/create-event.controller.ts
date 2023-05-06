@@ -2,10 +2,10 @@ import {Subject} from "rxjs";
 
 import {EventSpecKeyType, EventStage, EventHookStageHandler, StatusObject, Unsub} from "./type/type";
 
-export class CreateEventController {
-    private static instance: CreateEventController = null
+export class CreateEventController<T> {
+    private static instance: CreateEventController<any> = null
 
-    private readonly eventStages: EventStage[]
+    private readonly eventStages: EventStage<T>[]
 
     private eventStagesStatus: Record<string, StatusObject> = {}
 
@@ -20,7 +20,7 @@ export class CreateEventController {
         status: 'process'
     }
 
-    constructor(eventStages: EventStage[]) {
+    constructor(eventStages: EventStage<T>[]) {
         this.eventStageHookHandlers = new Map<string, Subject<EventHookStageHandler>>()
 
         this.eventStages = eventStages
@@ -30,7 +30,7 @@ export class CreateEventController {
 
     private buildStatusObj() {
         this.eventStages.forEach(stage => {
-            this.eventStagesStatus[`${stage.uniqueName}`] = {
+            this.eventStagesStatus[`${stage.uniqueName.toString()}`] = {
                 status: 'wait',
                 error: false,
                 number: stage.number
@@ -40,17 +40,46 @@ export class CreateEventController {
 
     private buildStateObj() {
         this.eventStages.forEach(stage => {
-            this.eventState[`${stage.uniqueName}`] = null
+            this.eventState[`${stage.uniqueName.toString()}`] = null
         })
     }
 
+
+    private saveToLocalStorage() {
+        const jsonEventState = JSON.stringify(this.eventState)
+        const jsonEventStatus = JSON.stringify(this.eventStagesStatus)
+
+        localStorage.setItem('create-event-state', jsonEventState)
+        localStorage.setItem('create-event-status', jsonEventStatus)
+    }
+
+    private loadFromLocalStorage() {
+        const eventState = JSON.parse(localStorage.getItem('create-event-state'))
+        const eventStatus = JSON.parse(localStorage.getItem('create-event-status'))
+
+        if (!eventStatus || !eventState) {
+            return false
+        }
+
+        this.eventState = eventState
+        this.eventStagesStatus = eventStatus
+
+        return true
+    }
+    private deleteFromLocalStorage() {
+        localStorage.removeItem('create-event-state')
+        localStorage.removeItem('create-event-status')
+    }
+
     start() {
-        const stagesStatus = this.eventStagesStatus
-        for (let i in stagesStatus) {
-            if (stagesStatus[i].number == 1) {
-                stagesStatus[i].status = 'process'
-            } else {
-                return
+        if(!this.loadFromLocalStorage()) {
+            const stagesStatus = this.eventStagesStatus
+            for (let i in stagesStatus) {
+                if (stagesStatus[i].number == 1) {
+                    stagesStatus[i].status = 'process'
+                } else {
+                    break
+                }
             }
         }
 
@@ -108,14 +137,15 @@ export class CreateEventController {
         }
 
     }
+
     private sendStatusByAll() {
         this.eventStages.forEach(stage => {
-            this.sendStatus(stage.uniqueName)
+            this.sendStatus(stage.uniqueName.toString())
         })
     }
 
     private sendStatus(uniqueName: string) {
-        this.eventStageHookHandlers.get(uniqueName).next(this.eventStagesStatus[uniqueName])
+        this.eventStageHookHandlers.get(uniqueName)?.next(this.eventStagesStatus[uniqueName])
     }
 
     private setStateValue(key: string, value: any) {
@@ -128,8 +158,8 @@ export class CreateEventController {
         this.checkError()
         this.checkOnGlobalError()
 
-        console.log('gb error',this.globalStatus.error)
         if (this.globalStatus.error) {
+            console.log('gb error', this.globalStatus.error)
             return
         }
 
@@ -163,6 +193,7 @@ export class CreateEventController {
         }
 
         this.sendStatusByAll()
+        this.saveToLocalStorage()
     }
 
     private finishCreateEvent() {
@@ -180,6 +211,7 @@ export class CreateEventController {
         } else {
             this.setStateValue(key, value)
             this.setError(key, false)
+            this.saveToLocalStorage()
         }
 
         if (key == 'next') {
@@ -194,7 +226,11 @@ export class CreateEventController {
         return this.eventStages
     }
 
-    static INIT(eventStages: EventStage[]) {
+    getStateByKey(key: string): any {
+        return this.eventState[key]
+    }
+
+    static INIT<T>(eventStages: EventStage<T>[]) {
         if (CreateEventController.instance == null) {
             CreateEventController.instance = new CreateEventController(eventStages)
         }

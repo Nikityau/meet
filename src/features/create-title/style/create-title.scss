@@ -1,5 +1,5 @@
-.create-post-title {
-  width: 90%;
+.create-event-title {
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
   }
 }
 
-.create-post-title_error {
+.create-event-title_error {
   input {
     border-color: var(--color-red);
   }

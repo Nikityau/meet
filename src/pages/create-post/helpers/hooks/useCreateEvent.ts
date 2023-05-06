@@ -4,9 +4,8 @@ import equal from 'deep-equal'
 import {CreateEventController} from "../../controller/create-event.controller";
 import {StatusObject} from "../../controller/type/type";
 
-import {CreateTextService} from "../../service/create-text.service";
 
-export const useCreateEvent = (uniqueName: string) => {
+export const useCreateEvent = <T>(uniqueName: keyof T, service: IEventStageService) => {
     const [state, setState] = useState<StatusObject>(() => ({
         error: false,
         status: 'wait'
@@ -19,8 +18,8 @@ export const useCreateEvent = (uniqueName: string) => {
             return
         }
 
-        const unsub = inst.onHookHandler(uniqueName, msgHandlerCb)
-        inst.addEventStageService(uniqueName, new CreateTextService())
+        const unsub = inst.onHookHandler(uniqueName.toString(), msgHandlerCb)
+        inst.addEventStageService(uniqueName.toString(), service)
 
         return unsub
     }, [uniqueName])
@@ -50,7 +49,7 @@ export const useCreateEvent = (uniqueName: string) => {
             return
         }
 
-        inst.createEvent(uniqueName, value)
+        inst.createEvent(uniqueName.toString(), value)
     }, [uniqueName])
 
 

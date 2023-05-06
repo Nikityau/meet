@@ -6,27 +6,3 @@
   display: flex;
   justify-content: left;
 }
-
-.create-post-btn {
-  cursor: pointer;
-
-  padding: 8px 12px;
-
-  background: #5C4EFE;
-
-  border-radius: 40px;
-
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-
-  color: #FFFFFF;
-}
-
-.create-post-btn_error {
-  opacity: .5;
-
-  pointer-events: none;
-}

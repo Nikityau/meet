@@ -1,8 +1,18 @@
 import React from "react";
 
-export type EventStage = {
+export type EventObject = {
+    title,
+    wrapper,
+    description,
+    date,
+    location,
+    category,
+    feedback
+}
+
+export type EventStage<T> = {
     id: string,
-    uniqueName: string,
+    uniqueName: keyof T,
     number: number,
     renderNode: React.ReactNode
 }
