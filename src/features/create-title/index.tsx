@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useDeferredValue, useEffect, useState} from 'react';
 import cn from "classnames";
 
 import {useCreateEvent} from "../../pages/create-post/helpers/hooks/useCreateEvent";
@@ -14,8 +14,6 @@ const CreateEventTitle = () => {
 
     const [state, setState] = useState<string>(() => {
         const inst = CreateEventController.GET().getStateByKey('title')
-
-
         return inst ? inst : ""
     })
 

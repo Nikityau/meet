@@ -69,6 +69,7 @@ export class CreateEventController<T> {
     private deleteFromLocalStorage() {
         localStorage.removeItem('create-event-state')
         localStorage.removeItem('create-event-status')
+        localStorage.removeItem('content-state')
     }
 
     start() {
@@ -206,6 +207,7 @@ export class CreateEventController<T> {
             //this.setError(key, true);
             //this.checkError();
             //this.checkOnGlobalError();
+            this.saveToLocalStorage()
 
             return
         } else {

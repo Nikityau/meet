@@ -1,9 +1,10 @@
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 import equal from 'deep-equal'
+
+import {debounce} from "shared/helpers/debounce";
 
 import {CreateEventController} from "../../controller/create-event.controller";
 import {StatusObject} from "../../controller/type/type";
-
 
 export const useCreateEvent = <T>(uniqueName: keyof T, service: IEventStageService) => {
     const [state, setState] = useState<StatusObject>(() => ({
@@ -32,7 +33,6 @@ export const useCreateEvent = <T>(uniqueName: keyof T, service: IEventStageServi
         }
     }, [sub])
 
-
     const msgHandlerCb = useCallback((status: StatusObject) => {
         setState(prev => {
             if (!equal(status, state)) {
@@ -55,6 +55,6 @@ export const useCreateEvent = <T>(uniqueName: keyof T, service: IEventStageServi
 
     return {
         status: state,
-        dispatch
+        dispatch: debounce(dispatch, 1000)
     }
 }

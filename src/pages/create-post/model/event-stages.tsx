@@ -8,7 +8,8 @@ import CreatePostSubtitle from "entities/create-event-subtitle";
 import StageCircle from "entities/stage-circle";
 
 import CreateEventTitle from "features/create-title";
-import {CreateEventWrapper} from "../../../features/create-event-wrapper";
+import {CreateEventWrapper} from "features/create-event-wrapper";
+import {CreateEventDescription} from "features/create-event-description";
 
 export const eventStages: EventStage<EventObject>[] = [
     {
@@ -91,7 +92,9 @@ export const eventStages: EventStage<EventObject>[] = [
                         />
                     </>
                 }
-                CreateZone={null}
+                CreateZone={
+                    <CreateEventDescription/>
+                }
             />
     },
     {
