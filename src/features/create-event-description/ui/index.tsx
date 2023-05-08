@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {convertFromRaw, convertToRaw, Editor, EditorState} from 'draft-js'
+import cn from 'classnames'
 
 import 'draft-js/dist/Draft.css';
 import '../style/index.scss'
@@ -49,7 +50,12 @@ const CreateEventDescription = () => {
 
     return (
         <WhiteBack>
-            <div className={'create-event-description'}>
+            <div className={cn(
+                'create-event-description',
+                {
+                    'create-event-description_error': status.error
+                }
+            )}>
                 <div className={'create-event-description__work-zone'}>
                     <Editor
                         editorState={description}

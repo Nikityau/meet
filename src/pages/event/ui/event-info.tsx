@@ -26,7 +26,8 @@ const EventInfo = () => {
             />
             <SquareCalendar
                 initDate={event.date}
-                chosenDate={event.date}
+                chosenDates={[event.date]}
+                canChangeMonth={false}
             />
             <Organizers
                 organizers={event.organizers}

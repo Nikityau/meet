@@ -55,6 +55,6 @@ export const useCreateEvent = <T>(uniqueName: keyof T, service: IEventStageServi
 
     return {
         status: state,
-        dispatch: debounce(dispatch, 1000)
+        dispatch: debounce(dispatch, 500)
     }
 }
