@@ -12,7 +12,7 @@ import {CreateEventWrapper} from "features/create-event-wrapper";
 import {CreateEventDescription} from "features/create-event-description";
 import {CreateEventDateTime} from "../../../widgets/create-event-date-time";
 
-export const eventStages: EventStage<EventObject>[] = [
+export const eventStages: EventStage[] = [
     {
         id: v4(),
         number: 1,

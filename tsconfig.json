@@ -38,6 +38,7 @@
     "baseUrl": "./src",
     "removeComments": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
 
     "declaration": false
   },

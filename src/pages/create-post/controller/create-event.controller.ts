@@ -2,10 +2,10 @@ import {Subject} from "rxjs";
 
 import {EventSpecKeyType, EventStage, EventHookStageHandler, StatusObject, Unsub} from "./type/type";
 
-export class CreateEventController<T> {
-    private static instance: CreateEventController<any> = null
+export class CreateEventController {
+    private static instance: CreateEventController = null
 
-    private readonly eventStages: EventStage<T>[]
+    private readonly eventStages: EventStage[]
 
     private eventStagesStatus: Record<string, StatusObject> = {}
 
@@ -20,7 +20,7 @@ export class CreateEventController<T> {
         status: 'process'
     }
 
-    constructor(eventStages: EventStage<T>[]) {
+    constructor(eventStages: EventStage[]) {
         this.eventStageHookHandlers = new Map<string, Subject<EventHookStageHandler>>()
 
         this.eventStages = eventStages
@@ -232,7 +232,7 @@ export class CreateEventController<T> {
         return this.eventState[key]
     }
 
-    static INIT<T>(eventStages: EventStage<T>[]) {
+    static INIT(eventStages: EventStage[]) {
         if (CreateEventController.instance == null) {
             CreateEventController.instance = new CreateEventController(eventStages)
         }

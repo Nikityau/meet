@@ -10,9 +10,9 @@ export type EventObject = {
     feedback
 }
 
-export type EventStage<T> = {
+export type EventStage = {
     id: string,
-    uniqueName: keyof T,
+    uniqueName: string,
     number: number,
     renderNode: React.ReactNode
 }

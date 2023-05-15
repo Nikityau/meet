@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Timer from "./timer";
 import Clock from "./clock";
@@ -17,10 +17,15 @@ const SquareClock: React.FC<SquareClockProps> = (
     }
 ) => {
 
+    const onClockClick = (h: string) => {
+        const m = time.split(':')[1]
+        onTimeClick(`${h}:${m}`)
+    }
+
     return (
         <div className={'square-clock'}>
-            <Timer time={time}/>
-            <Clock time={time}/>
+            <Timer time={time} onTimeSet={onTimeClick}/>
+            <Clock time={time} onClockClick={onClockClick}/>
         </div>
     );
 };

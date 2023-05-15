@@ -3,7 +3,6 @@ import cn from 'classnames'
 
 import {SquareCalendar} from "../../square-calendar";
 
-
 import {useCreateEvent} from "pages/create-post/helpers/hooks/useCreateEvent";
 import {EventObject} from "pages/create-post/controller/type/type";
 import {CreateDateService} from "pages/create-post/service/create-date.service";
@@ -13,9 +12,10 @@ import {isDatesCompare} from "shared/helpers/is-date-compare";
 
 import {dateState, dateReducer, addChosenDate, removeChosenDate, setTime} from "../reducer";
 
-import '../style/index.scss'
 import {SquareClock} from "../../square-clock";
 import {WhiteBack} from "../../../entities/white-back";
+
+import '../style/index.scss'
 
 const CreateEventDateTime = () => {
 
@@ -24,7 +24,7 @@ const CreateEventDateTime = () => {
 
         const date = CreateEventController.GET().getStateByKey('date')
 
-        if(!date) {
+        if (!date) {
             return {
                 time: "11:00",
                 currentDate: new Date(Date.now()),
@@ -46,8 +46,8 @@ const CreateEventDateTime = () => {
     const isDatesContainDate = (date: Date): boolean => {
         const dates = dateObj.chosenDates
 
-        for(let di in dates) {
-            if(isDatesCompare(dates[di], date)) {
+        for (let di in dates) {
+            if (isDatesCompare(dates[di], date)) {
                 return true
             }
         }
@@ -56,7 +56,7 @@ const CreateEventDateTime = () => {
     }
 
     const onDateClick = (date: Date) => {
-        if(isDatesContainDate(date)) {
+        if (isDatesContainDate(date)) {
             dispatchDate(removeChosenDate(date, dispatch))
             return
         }

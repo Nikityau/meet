@@ -3,16 +3,23 @@ import React, {useState} from 'react';
 type TimeNumProps = {
     num: number,
     x: number,
-    y: number
+    y: number,
+    onTimeClick: (num: number) => void
 }
 
-const TimeNum: React.FC<TimeNumProps> = ({num, x, y}) => {
+const TimeNum: React.FC<TimeNumProps> = ({num, x, y, onTimeClick}) => {
+
+    const onClick = () => {
+        onTimeClick(num)
+    }
 
     return (
         <div className={'square-clock__time-num'}
             style={{
-                transform: `translate(${x}px, ${y}px)`
+                top: x + 'px',
+                left: y + 'px'
             }}
+             onClick={onClick}
         >
             <span>{num}</span>
         </div>
