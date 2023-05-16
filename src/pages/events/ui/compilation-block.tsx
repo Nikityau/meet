@@ -9,7 +9,7 @@ const CompilationBlock = () => {
         <div className={'compilation-block'}>
             {
                 dataCompilation.map(el => (
-                    <Category key={el.id} title={el.title}/>
+                    <Category key={el.id} title={el.title} isCurrent={false}/>
                 ))
             }
         </div>

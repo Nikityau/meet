@@ -4,6 +4,8 @@ type DateType = {
 }
 
 function isDateType(dateObj: any | DateType): dateObj is DateType {
+    if(!dateObj) return false
+
     if ('time' in dateObj && 'dates' in dateObj) {
         return true
     }
@@ -14,7 +16,6 @@ function isDateType(dateObj: any | DateType): dateObj is DateType {
 export class CreateDateService implements IEventStageService {
     checkError(value: any): boolean {
         if (!isDateType(value)) {
-            console.log('??',value)
             return true
         }
 

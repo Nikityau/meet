@@ -1,0 +1,16 @@
+.create-event-category {
+  display: grid;
+  grid-template-columns: repeat(3, 230px);
+
+  gap: 10px;
+
+  .category {
+    width: 100%;
+  }
+}
+
+.create-event-category_error {
+  .ui-white-back {
+    border-color: var(--color-red);
+  }
+}

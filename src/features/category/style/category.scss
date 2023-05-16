@@ -12,4 +12,14 @@
   font-size: 13px;
 
   color: #B1B5BD;
+
+  cursor: pointer;
+}
+
+.category_current {
+  .category {
+    color: #fff;
+
+    background: var(--color-purple);
+  }
 }

@@ -15,6 +15,7 @@ const SimilarCategories:React.FC<SimilarCategoriesProps> = ({categories}) => {
                     <Category
                         key={c.id}
                         title={c.title}
+                        isCurrent={false}
                     />
                 ))
             }

@@ -23,22 +23,22 @@ const Timer: React.FC<TimerProps> = ({time, onTimeSet}) => {
     }, [time])
 
     const hValidate = (h: number): string => {
-        if(h == NaN) return "00"
+        if (h == NaN) return "00"
 
-        if(h > 12) {
+        if (h > 12) {
             return '12'
         }
-        if(h < 0) {
+        if (h < 0) {
             return '00'
         }
 
         return h.toString()
     }
     const mValidate = (m: number): string => {
-        if(m > 59) {
+        if (m > 59) {
             return '59'
         }
-        if(m < 0) {
+        if (m < 0) {
             return '00'
         }
 
@@ -54,7 +54,7 @@ const Timer: React.FC<TimerProps> = ({time, onTimeSet}) => {
 
         const intTime = time.length == 0 ? 0 : Number.parseInt(time)
 
-        if(type == 'h') {
+        if (type == 'h') {
             time = hValidate(intTime)
         } else {
             time = mValidate(intTime)
@@ -74,14 +74,38 @@ const Timer: React.FC<TimerProps> = ({time, onTimeSet}) => {
         onChangeTime('m', e)
     }
 
+    const onTimeBlur = () => {
+        let h = timeParsed.h
+        let m = timeParsed.m
+
+        if(h.length == 1) {
+            h = `0${h}`
+        }
+        if(m.length == 1) {
+            m = `0${m}`
+        }
+
+        onTimeSet(`${h}:${m}`)
+    }
+
     return (
         <div className={'square-clock__timer'}>
-            <input type={'text'} value={timeParsed.h} onChange={onChangeHours}/>
+            <input
+                type={'text'}
+                value={timeParsed.h}
+                onChange={onChangeHours}
+                onBlur={onTimeBlur}
+            />
             <div className={'square-clock__timer-delimeter'}>
                 <div className={'square-clock__timer-delimeter-circle'}/>
                 <div className={'square-clock__timer-delimeter-circle'}/>
             </div>
-            <input type={'text'} value={timeParsed.m} onChange={onMinuteChange}/>
+            <input
+                type={'text'}
+                value={timeParsed.m}
+                onChange={onMinuteChange}
+                onBlur={onTimeBlur}
+            />
         </div>
     );
 };

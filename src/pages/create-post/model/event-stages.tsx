@@ -11,6 +11,8 @@ import CreateEventTitle from "features/create-title";
 import {CreateEventWrapper} from "features/create-event-wrapper";
 import {CreateEventDescription} from "features/create-event-description";
 import {CreateEventDateTime} from "../../../widgets/create-event-date-time";
+import CreateEventLocation from "../../../features/create-event-location";
+import CreateEventCategory from "../../../widgets/create-event-category";
 
 export const eventStages: EventStage[] = [
     {
@@ -153,7 +155,9 @@ export const eventStages: EventStage[] = [
                         />
                     </>
                 }
-                CreateZone={null}
+                CreateZone={
+                    <CreateEventLocation/>
+                }
             />
     },
     {
@@ -181,7 +185,9 @@ export const eventStages: EventStage[] = [
                         />
                     </>
                 }
-                CreateZone={null}
+                CreateZone={
+                    <CreateEventCategory/>
+                }
             />
     },
     {
