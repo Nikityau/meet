@@ -1,1 +1,0 @@
-export {controller as HistoryController} from './history-controller'
