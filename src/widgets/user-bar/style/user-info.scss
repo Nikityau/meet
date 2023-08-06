@@ -1,0 +1,40 @@
+.user-info {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 0 22px;
+
+    .user-info__avatar {
+        width: 44px;
+        height: 44px;
+
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .user-info__data {
+
+        .user-info__name,
+        .user-info__role {
+            color: #292929;
+            font-family: Poppins;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+        }
+
+        .user-info__role {
+            font-size: 14px;
+            font-weight: 400;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
