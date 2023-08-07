@@ -1,4 +1,7 @@
 .user-circle {
+    display: flex;
+    gap: 10px;
+
     cursor: pointer;
     height: 100%;
 
@@ -12,5 +15,60 @@
         border-radius: 50%;
 
         background-position: center;
+    }
+
+    .user-circle__ux {
+        width: auto;
+
+        position: relative;
+    }
+
+    .user-circle__dots {
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+
+        .user-circle__dot {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background-color: #0F172A;
+        }
+    }
+
+    .user-circle__crosshair {
+        position: absolute;
+
+
+        img {
+            width: 15px;
+            height: auto;
+        }
+    }
+
+    .user-circle__dots,
+    .user-circle__crosshair {
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        opacity: 0;
+    }
+
+    .user-circle__ux_crs {
+        .user-circle__crosshair {
+            opacity: 1;
+        }
+    }
+
+    .user-circle__ux_dots {
+        .user-circle__dots {
+            opacity: 1;
+        }
     }
 }

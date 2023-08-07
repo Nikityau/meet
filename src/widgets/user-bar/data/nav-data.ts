@@ -1,7 +1,13 @@
 import {v4} from 'uuid'
 
-export const navData = {
-    nav: [
+export type NavData = {
+    id: string,
+    icon: string,
+    text: string
+}
+
+export const navData: NavData[][] = [ 
+    [
         {
             id: v4(),
             icon: '',
@@ -28,22 +34,23 @@ export const navData = {
             text: 'help'
         }
     ],
-    links: [
+    [
         {
             id: v4(),
             icon: '',
             text: 'e-mail'
         },
         {
-            icon: '',
-            text: 'discord'
-        }
-    ],
-    other: [
-        {
             id: v4(),
             icon: '',
             text: 'discord'
+        } 
+    ],
+    [
+        {
+            id: v4(),
+            icon: '',
+            text: 'conf'
         }
     ]
-}
+]
