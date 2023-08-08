@@ -7,7 +7,6 @@ import AppRouter from "pages";
 import './style/fonts.scss'
 import './style/base.scss'
 
-
 const App = () => {
     return (
         <WithRouter>

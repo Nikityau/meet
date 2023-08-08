@@ -1,0 +1,26 @@
+.event-preview-now__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  z-index: 2;
+
+  transform: translate(25px, -25px);
+
+  .event-preview-now__title,
+  .event-preview-now__remain-info {
+    color: #FFF;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+
+  .event-preview-now__remain-info {
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+}
