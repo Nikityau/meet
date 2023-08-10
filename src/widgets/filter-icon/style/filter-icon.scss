@@ -1,0 +1,26 @@
+.filter-icon {
+  position: relative;
+
+  width: fit-content;
+
+  .filter-icon__icon {
+    cursor: pointer;
+    
+    width: 48px;
+    height:48px;
+
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.80);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(28px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 20px;
+      height: auto;
+    }
+  }
+}

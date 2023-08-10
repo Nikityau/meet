@@ -1,0 +1,49 @@
+.filter-bar {
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  transform: translate(20px, 0);
+
+  padding-bottom: 15px;
+
+  background: transparent no-repeat top;
+  background-size: 100%;
+
+  border-radius: 10px;
+
+  width: 457px;
+
+  z-index: 3;
+
+  .filter-bar__container {
+    width: auto;
+
+    padding: 0 17px;
+  }
+
+  .filter-bar__title {
+    padding-top: 17px;
+    margin-bottom: 30px;
+
+    transform: translate(20px,0);
+
+    color: #000;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+.filter-bar_open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.filter-bar_close {
+  //opacity: 0;
+  //pointer-events: none;
+}
