@@ -1,3 +1,37 @@
-.custom-swiper-style {
 
+//width: 698px;
+
+.swiper {
+  height: 420px;
+
+  .swiper-wrapper {
+    height: 380px;
+  }
+
+  .swiper-slide {
+    width: auto;
+    margin-right: 20px;
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      opacity: 1;
+      background: #B1B5BD;
+
+      margin: 0 5px;
+
+      transition: all .3s;
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 25px;
+
+      border-radius: 10px;
+      background: #5C4EFE;
+    }
+  }
 }

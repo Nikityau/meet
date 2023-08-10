@@ -6,8 +6,8 @@ import {EventPreviewNowProps} from "../event-preview-now";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './style/index.scss'
 
+import './style/index.scss'
 
 type SwipeEventsProps = {
     Event: React.FunctionComponent<EventPreviewNowProps>
@@ -19,8 +19,10 @@ const SwipeEvents = ({Event, data}: SwipeEventsProps) => {
         <div className={'swipe-events'}>
             <Swiper
                 modules={[Pagination]}
-                className={'custom-swiper-styles'}
+                slidesPerView={'auto'}
+                freeMode={true}
                 pagination={true}
+
             >
                 {
                     data.map(el => (
