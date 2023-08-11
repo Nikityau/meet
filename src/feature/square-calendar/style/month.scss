@@ -1,0 +1,57 @@
+.square-calendar__month {
+  width: 100%;
+  height: 65px;
+
+  border-radius: 10px;
+  border: 1px solid var(--grey-stroke, #E3E3E3);
+
+  .square-calendar__month-container {
+    width: auto;
+    height: 100%;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .square-calendar__month-data {
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+
+      text-transform: uppercase;
+
+      color: #292929;
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0.14px;
+    }
+
+    .square-calendar__month-btns {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .square-calendar__month-btn-l,
+    .square-calendar__month-btn-r {
+      cursor: pointer;
+
+      svg {
+        width: 20px;
+        height: auto;
+      }
+    }
+
+    .square-calendar__month-btn-r {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

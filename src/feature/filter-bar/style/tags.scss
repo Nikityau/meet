@@ -1,0 +1,36 @@
+.filter-bar__tags {
+  margin: 12px 0;
+
+  .filter-bar__tags-title {
+    color: #000;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .filter-bar__tags-list {
+    margin-top: 12px;
+
+    .swiper {
+      height: 50px;
+
+      .swiper-slide {
+        width: 135px;
+        height: 48px;
+
+        margin-right: 10px;
+      }
+    }
+
+    .filter-bar__tag {
+      width: 135px;
+      height: 48px;
+
+      .selection {
+        height: 100%;
+      }
+    }
+  }
+}

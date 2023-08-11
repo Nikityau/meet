@@ -6,12 +6,12 @@ import CloseBtn from "./ui/close-btn";
 import Title from "./ui/title";
 import Location from "./ui/location";
 import Tags from "./ui/tags";
-
-import './style/index.scss'
+import {debounce} from "../../shared/helpers/debounce";
+import SquareCalendar from "../square-calendar";
 
 import bg from './assets/bg.png'
-import {debounce} from "../../shared/helpers/debounce";
 
+import './style/index.scss'
 
 export type FilterBarProps = {
     isOpen: boolean,
@@ -42,6 +42,11 @@ const FilterBar = (
                     }, 400)}
                 />
                 <Tags/>
+                <SquareCalendar
+                    onDateChange={debounce((d) => {
+                        console.log('date changed', d)
+                    }, 400)}
+                />
                 <Button
                     text={'Применить'}
                     onClick={() => {}}
