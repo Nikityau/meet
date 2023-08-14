@@ -1,28 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {weekdays} from "../data/date";
 import Day from "./day";
+import {SqCalendarContext} from "../index";
 
-type DatesProps = {
-    dates: Date[],
-    chosenDates: Date[],
-    onDateClick: (date: Date) => void
-}
 
-const Dates = ({dates, chosenDates, onDateClick}: DatesProps) => {
+const Dates = () => {
 
-    const isChosen = (date: Date): boolean => {
-        for(let i = 0; i < chosenDates.length; ++i) {
-            const d = chosenDates[i]
-
-            if(
-                d.getDate() == date.getDate() &&
-                d.getMonth() == date.getMonth() &&
-                d.getFullYear() == date.getFullYear()
-            ) return true
-        }
-
-        return false
-    }
+    const cntx = useContext(SqCalendarContext)
 
     return (
         <div className={'square-calendar__dates'}>
@@ -38,12 +22,10 @@ const Dates = ({dates, chosenDates, onDateClick}: DatesProps) => {
                 </div>
                 <div className={'square-calendar__days'}>
                     {
-                        dates.map(d => (
+                        cntx.state.dates.map(d => (
                             <Day
                                 key={d['uid']}
                                 date={d}
-                                isChosen={isChosen(d)}
-                                onClick={onDateClick}
                             />
                         ))
                     }

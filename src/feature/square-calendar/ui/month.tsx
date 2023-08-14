@@ -1,35 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
-type MonthProps = {
-    state: Date
-    onChangeMonth: (change: 'up' | 'down') => void
-}
+import {SqCalendarContext} from "../index";
+import {DateG} from "../../../shared/helpers/date-g";
 
-const Month = ({state,onChangeMonth}: MonthProps) => {
+const Month = () => {
 
-    const getMonthNameRu = (num: number): string => {
-        const months = [
-            "январь",
-            "ферваль",
-            "март",
-            "апрель",
-            "май",
-            "июнь",
-            "июль",
-            "август",
-            "сентябрь",
-            "октябрь",
-            "ноябрь",
-            "декабрь"
-        ]
-        return months[num]
-    }
+    const cntx = useContext(SqCalendarContext)
 
     const changeUp = () => {
-        onChangeMonth('up')
+        cntx.f.onMonthChange('up')
     }
     const changeDown = () => {
-        onChangeMonth('down')
+        cntx.f.onMonthChange('down')
     }
 
 
@@ -37,7 +19,7 @@ const Month = ({state,onChangeMonth}: MonthProps) => {
         <div className={'square-calendar__month'}>
             <div className={'square-calendar__month-container'}>
                 <div className={'square-calendar__month-data'}>
-                    <span>{getMonthNameRu(state.getMonth())} {state.getFullYear()}</span>
+                    <span>{DateG.getMonthNameRu(cntx.state.date.getMonth())} {cntx.state.date.getFullYear()}</span>
                 </div>
                 <div className={'square-calendar__month-btns'}>
                     <div className={'square-calendar__month-btn-l'}

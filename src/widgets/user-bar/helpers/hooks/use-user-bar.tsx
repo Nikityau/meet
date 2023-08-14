@@ -19,10 +19,6 @@ export const useUserBar = () => {
             }
 
             setIsBarOpen(prev => {
-                if (prev) {
-
-                }
-
                 if (prev == false) {
                     return prev
                 }

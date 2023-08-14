@@ -17,5 +17,9 @@
     height: 48px;
 
     margin-bottom: 32px;
+
+    display: grid;
+    grid-template-columns: 50px calc(100% - 70px);
+    gap: 20px;
   }
 }

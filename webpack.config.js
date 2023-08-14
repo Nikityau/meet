@@ -73,10 +73,6 @@ module.exports = (env) => {
             new MiniCssExtractPlugin({
                 filename: '[name].[contenthash].bundle.css',
             }),
-            new ESLintPlugin({
-                files: './.eslintrc.json',
-                useEslintrc: true
-            })
         ],
         module: {
             rules: [

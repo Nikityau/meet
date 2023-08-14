@@ -24,3 +24,13 @@
     }
   }
 }
+
+.filter-icon__bar_open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.filter-icon__bar_close {
+  opacity: 0;
+  pointer-events: none;
+}

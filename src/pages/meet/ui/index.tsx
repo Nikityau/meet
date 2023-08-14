@@ -1,8 +1,6 @@
 import React from 'react'
 
-import MonthCalendar from "../../../widgets/month-calendar";
-import HorChooser from "../../../widgets/hor-chooser";
-
+import HorCalendar from "../../../widgets/hor-calendar";
 import TodayEvent from "./today-event";
 import SoonEvent from "./soon-event";
 import Selections from "./selections";
@@ -15,8 +13,7 @@ import '../style/index.scss'
 export const MeetPage = () => {
     return (
         <div className={'meet-page'}>
-            <MonthCalendar/>
-            <HorChooser/>
+            <HorCalendar/>
             <div className={'meet-page__container app-container'}>
                 <TodayEvent/>
                 <SoonEvent/>

@@ -11,6 +11,9 @@ const AppRouter = () => {
             <Route path={AppRoutes.MEET} element={<MeetBase/>}>
                 <Route path='affiche' element={<MeetPage/>}></Route>
                 <Route path='archive' element={'arch'}></Route>
+
+
+                <Route path={''} element={<Navigate to={'affiche'}/>}/>
             </Route>
 
 

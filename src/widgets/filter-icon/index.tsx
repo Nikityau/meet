@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
+import cn from 'classnames'
 
 import filter_img from './assets/filter.png'
-import {FilterBarProps} from "../../feature/filter-bar";
 
 import './style/index.scss'
 
 type FilterIconProps = {
-    Filter: React.FunctionComponent<FilterBarProps>
+    FilterBar: React.ReactNode
 }
 
-
-const FilterIcon = ({Filter}: FilterIconProps) => {
+const FilterIcon = ({FilterBar}: FilterIconProps) => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -23,12 +22,15 @@ const FilterIcon = ({Filter}: FilterIconProps) => {
             <div className={'filter-icon__icon'} onClick={onIconClick}>
                 <img src={filter_img} alt={'filter'}/>
             </div>
-            {
-                <Filter
-                    isOpen={isOpen}
-                    close={onIconClick}
-                />
-            }
+            <div className={cn(
+                'filter-icon__bar',
+                isOpen ? 'filter-icon__bar_open'
+                    : 'filter-icon__bar_close'
+                )}>
+                {
+                    FilterBar
+                }
+            </div>
         </div>
     );
 };

@@ -1,13 +1,25 @@
 import {useEffect, useReducer} from "react";
-import {useCalendar} from "./useCalendar";
 
 import {SqActionTypes, sqReducer, SqState, sqState} from "../react-reducer";
+import {useCalendar} from "../../../shared/helpers/hooks/useCalendar";
 
 type useSquareCalendarProps = {
     onChange: (state: SqState) => void
 }
 
-export const useSquareCalendar = ({onChange}: useSquareCalendarProps) => {
+export type SqRetSt = {
+    state: {
+        date: Date,
+        chosenDate: Date[],
+        dates: Date[]
+    },
+    f: {
+        onMonthChange: (change: 'up' | 'down') => void,
+        onDateClick: (date: Date) => void
+    }
+}
+
+export const useSquareCalendar = ({onChange}: useSquareCalendarProps): SqRetSt => {
     const [st, dis] = useReducer(sqReducer, sqState)
 
     const dates = useCalendar(st.chosenDate)
@@ -17,7 +29,7 @@ export const useSquareCalendar = ({onChange}: useSquareCalendarProps) => {
     }, [st])
 
     const onMonthChange = (change: 'up' | 'down') => {
-        if(change == 'up') {
+        if (change == 'up') {
             dis({
                 type: SqActionTypes.MONTH_NEXT,
                 payload: null
@@ -33,7 +45,7 @@ export const useSquareCalendar = ({onChange}: useSquareCalendarProps) => {
     }
 
     const onDateClick = (date: Date) => {
-        if(isChosenContain(date)) {
+        if (isChosenContain(date)) {
             dis({
                 type: SqActionTypes.CHOSEN_REMOVE,
                 payload: date
@@ -49,9 +61,9 @@ export const useSquareCalendar = ({onChange}: useSquareCalendarProps) => {
     }
 
     const isChosenContain = (date: Date): boolean => {
-        for(let i = 0; i < st.chosenDates.length; ++i) {
+        for (let i = 0; i < st.chosenDates.length; ++i) {
             const d = st.chosenDates[i]
-            if(
+            if (
                 d.getDate() == date.getDate() &&
                 d.getMonth() == date.getMonth() &&
                 d.getFullYear() == date.getFullYear()

@@ -1,24 +1,42 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import cn from 'classnames'
+import {SqCalendarContext} from "../index";
 
 
 type DayProps = {
     date: Date,
-    isChosen: boolean
-    onClick: (date: Date) => void
 }
 
-const Day = ({date, isChosen, onClick}: DayProps) => {
+const Day = ({date}: DayProps) => {
+
+    const cntx = useContext(SqCalendarContext)
+
+    const isChosen = (date: Date): boolean => {
+        const chosenDates = cntx.state.chosenDate
+
+        for(let i = 0; i < chosenDates.length; ++i) {
+            const d = chosenDates[i]
+
+            if(
+                d.getDate() == date.getDate() &&
+                d.getMonth() == date.getMonth() &&
+                d.getFullYear() == date.getFullYear()
+            ) return true
+        }
+
+        return false
+    }
+
     return (
         <div className={
             cn(
                 'square-calendar__day',
                 date['invisible'] ? 'square-calendar__day_hide' : '',
-                isChosen ? 'square-calendar__day_chosen' : ''
+                isChosen(date)? 'square-calendar__day_chosen' : ''
             )
         }
              onClick={() => {
-                 onClick(date)
+                 cntx.f.onDateClick(date)
              }}>
             <span>{date.getDate()}</span>
         </div>

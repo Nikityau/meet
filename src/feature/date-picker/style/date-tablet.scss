@@ -1,0 +1,41 @@
+.date-picker__date-tablet {
+  width: 32px;
+  height: 48px;
+
+  cursor: pointer;
+}
+
+.date-tablet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  border-radius: 10px;
+
+  .date-tablet__day,
+  .date-tablet__date {
+    color: #292929;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.3px;
+  }
+
+  .date-tablet__day {
+
+  }
+
+  .date-tablet__date {
+
+  }
+}
+
+.date-tablet_weekend {
+  .date-tablet__date,
+  .date-tablet__day {
+    color: #EA3548;
+  }
+}

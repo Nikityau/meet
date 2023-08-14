@@ -1,0 +1,14 @@
+.month-picker {
+  position: relative;
+
+  width: 100%;
+  height: 56px;
+}
+
+.month-picker__month-list {
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

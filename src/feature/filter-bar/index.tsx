@@ -14,20 +14,17 @@ import bg from './assets/bg.png'
 import './style/index.scss'
 
 export type FilterBarProps = {
-    isOpen: boolean,
     close: () => void
 }
 
 const FilterBar = (
     {
-        isOpen,
         close
     }: FilterBarProps) => {
 
     return (
         <div className={cn(
             'filter-bar',
-            isOpen ? 'filter-bar_open' : 'filter-bar_close'
         )}
              style={{
                  backgroundImage: `url(${bg})`
@@ -49,7 +46,9 @@ const FilterBar = (
                 />
                 <Button
                     text={'Применить'}
-                    onClick={() => {}}
+                    onClick={() => {
+                        console.log('ok')
+                    }}
                 />
             </div>
         </div>
