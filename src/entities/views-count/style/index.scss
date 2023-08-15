@@ -1,0 +1,20 @@
+.views-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .views-count__img {
+    display: flex;
+    align-items: center;
+  }
+
+  .views-count__count {
+    color: #292929;
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+

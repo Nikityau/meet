@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from "../../../shared/ui/button/button";
 import FilterCategory from "./filter-category";
+import MonthFilter from "./month-filter";
 
 const ArchiveFilter = () => {
     const applyFilters = () => {
@@ -14,6 +15,7 @@ const ArchiveFilter = () => {
     return (
         <div className={'archive-filter'}>
             <FilterCategory/>
+            <MonthFilter/>
             <div className={'archive-filter__btns'}>
                 <div className={'archive-filter__btn'}>
                     <Button

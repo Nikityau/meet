@@ -1,0 +1,54 @@
+.archive-event-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .archive-event-header__left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .archive-event-header__org {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .archive-event-header__title {
+    color: #292929;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .archive-event-header__other {
+    color: #828282;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .archive-event-header__underline {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translate(-50%, 5px);
+
+    width: 100%;
+    height: 1px;
+
+    background: #E3E3E3;
+  }
+}
