@@ -1,8 +1,8 @@
 import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 
-import {selectionsData} from "../data/selections";
 import Selection from "../../../entities/selection";
+import {tags} from "../../../shared/data/tags";
 
 const SelectionFilter = () => {
     return (
@@ -11,7 +11,7 @@ const SelectionFilter = () => {
                 slidesPerView={'auto'}
             >
                 {
-                    selectionsData.map(d => (
+                    tags.map(d => (
                         <SwiperSlide
                             key={d.id}
                         >

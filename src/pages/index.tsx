@@ -3,17 +3,18 @@ import {Routes, Route, Navigate} from 'react-router-dom'
 import { AppRoutes } from "shared/app-routes";
 import MeetBase from "./meet-base";
 import { MeetPage } from "./meet";
+import Archive from "./archive";
 
 const AppRouter = () => {
     return (
         <Routes>
             <Route path={AppRoutes.LOGIN} element='login'></Route>
             <Route path={AppRoutes.MEET} element={<MeetBase/>}>
-                <Route path='affiche' element={<MeetPage/>}></Route>
-                <Route path='archive' element={'arch'}></Route>
+                <Route path={AppRoutes.AFFICHE} element={<MeetPage/>}></Route>
+                <Route path={AppRoutes.ARCHIVE} element={<Archive/>}></Route>
 
 
-                <Route path={''} element={<Navigate to={'affiche'}/>}/>
+                <Route path={''} element={<Navigate to={AppRoutes.AFFICHE}/>}/>
             </Route>
 
 

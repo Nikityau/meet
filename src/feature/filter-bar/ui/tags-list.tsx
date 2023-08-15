@@ -1,7 +1,7 @@
 import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {tags} from "../data/tags";
 import Selection from "../../../entities/selection";
+import {tags} from "../../../shared/data/tags";
 
 const TagsList = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import {selectionsData} from "../data/selections";
 import Selection from "../../../entities/selection";
+import {tags} from "../../../shared/data/tags";
 
 const Selections = () => {
     return (
@@ -10,7 +10,7 @@ const Selections = () => {
             </div>
             <div className={'selections__list'}>
                 {
-                    selectionsData.map(data => (
+                    tags.map(data => (
                         <Selection
                             id={data.id}
                             text={data.selection}

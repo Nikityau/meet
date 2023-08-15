@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {PropsWithChildren, useState} from 'react';
 
 import './style/index.scss'
 import MonthList from "./ui/month-list";
@@ -20,7 +20,7 @@ interface MonthPickerCntx {
 
 export const MonthPickerContext = React.createContext<MonthPickerCntx>(null)
 
-const MonthPicker = ({current}: MonthPickerProps) => {
+const MonthPicker = ({current, children}: MonthPickerProps & PropsWithChildren) => {
 
     const [month, setMonth] = useState<number>(current)
     const [leftOffset, setLeftOffset] = useState<number>(0)
@@ -32,10 +32,7 @@ const MonthPicker = ({current}: MonthPickerProps) => {
             setMonth,
             setLeftOffset
         }}>
-            <div className={'month-picker'}>
-                <MonthList/>
-                <MonthPointer/>
-            </div>
+            { children }
         </MonthPickerContext.Provider>
     );
 };
