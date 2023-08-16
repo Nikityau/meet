@@ -1,0 +1,46 @@
+.user-comment {
+  margin: 5px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .user-comment__image {
+    width: 45px;
+    height: 45px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .user-comment__comment {
+    position: relative;
+
+    width: 100%;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(177, 181, 189, 0.20);
+
+    input {
+      color: #B1B5BD;
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .user-comment__btn {
+      position: absolute;
+      right: 0;
+      top: 50%;
+
+      cursor: pointer;
+
+      transform: translate(-10px, -50%);
+    }
+  }
+}

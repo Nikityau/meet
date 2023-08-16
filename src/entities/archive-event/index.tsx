@@ -55,7 +55,13 @@ const ArchiveEvent = (
                 CommentBtn={CommentBtn}
             />
             {
-                Comments
+                Comment
+                    ? <div className={'archive-event__container'}>
+                        {
+                            Comments
+                        }
+                    </div>
+                    : null
             }
         </div>
     );

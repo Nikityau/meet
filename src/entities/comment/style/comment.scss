@@ -1,0 +1,32 @@
+.comment {
+  width: 95%;
+
+  margin: 5px 0;
+
+  .comment__container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .comment__avatar {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .comment__underline {
+    width: 100%;
+    height: 1px;
+
+    margin-top: 7px ;
+    margin-bottom: 2px;
+
+    background: #E3E3E3;
+  }
+}

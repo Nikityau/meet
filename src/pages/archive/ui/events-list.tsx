@@ -5,7 +5,11 @@ import {archiveResData} from "../data/arch";
 import ArchiveEvent from "../../../entities/archive-event";
 import EventTag from "../../../entities/event-tag";
 import ViewsCount from "../../../entities/views-count";
-import DoSmthEv from "../../../entities/do-smth-ev";
+import MiniInfo from "../../../entities/mini-info";
+import LikeEvent from "../../../feature/like-event";
+import ShareEvent from "../../../feature/share-event";
+import CommentsEvent from "../../../feature/comments-event";
+import EventComments from "../../../widgets/comments";
 
 const EventsList = () => {
     return (
@@ -29,15 +33,42 @@ const EventsList = () => {
                             </>
                         }
                         LikeBtn={
-                            <DoSmthEv/>
+                            <MiniInfo>
+                                <LikeEvent
+                                    event_id={d.id}
+                                    likeCount={d.likesCount}
+                                />
+                            </MiniInfo>
                         }
                         ShareBtn={
-                            <DoSmthEv/>
+                            <MiniInfo>
+                                <ShareEvent
+                                    eventId={d.id}
+                                    shareCount={d.sharesCount}
+                                />
+                            </MiniInfo>
                         }
                         CommentBtn={
-                            <DoSmthEv/>
+                            <MiniInfo>
+                                <CommentsEvent
+                                    eventId={d.id}
+                                    commentsCount={d.commentsCount}
+                                />
+                            </MiniInfo>
                         }
-                        Comments={null}
+                        Comments={
+                            <>
+                                {
+                                    d.commentsCount > 0
+                                        ?
+                                        <EventComments
+                                            eventId={d.id}
+                                            list={d.comments}
+                                        />
+                                        : null
+                                }
+                            </>
+                        }
                         Views={
                             <ViewsCount
                                 id={d.id}

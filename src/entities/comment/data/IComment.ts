@@ -1,4 +1,5 @@
-export interface Comment {
+export interface IComment {
+    eventId?: string,
     id: string,
     userImage: string,
     userName: string,

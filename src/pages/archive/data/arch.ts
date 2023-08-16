@@ -1,4 +1,4 @@
-import {Comment} from "../../../entities/comment/data/comment";
+import {IComment} from "../../../entities/comment/data/IComment";
 import {v4} from "uuid";
 import {ArchiveData} from "../../../entities/archive-event/data/archive-data";
 
@@ -12,7 +12,7 @@ interface ArchiveRes extends ArchiveData {
     commentsCount: number,
     viewCount: number,
     tags: string[],
-    comments: Comment[]
+    comments: IComment[]
 }
 
 export const archiveResData: ArchiveRes[] = [

@@ -1,0 +1,24 @@
+.share-event {
+  cursor: pointer;
+  
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  .share-event__icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .share-event__count {
+    color: #292929;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
