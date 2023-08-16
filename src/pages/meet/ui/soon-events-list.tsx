@@ -13,6 +13,7 @@ const SoonEventsList = ({Event, data}: SoonEventsListProps) => {
             {
                 data.map(el => (
                     <Event
+                        id={el.id}
                         key={el.id}
                         title={el.title}
                         date={el.date}

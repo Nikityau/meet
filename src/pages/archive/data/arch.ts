@@ -6,7 +6,7 @@ import org_img from '../assets/org.png'
 import com_img from '../assets/com.png'
 import ev_img from '../assets/ev.png'
 
-interface ArchiveRes extends ArchiveData {
+export interface ArchiveRes extends ArchiveData {
     likesCount: number,
     sharesCount: number,
     commentsCount: number,

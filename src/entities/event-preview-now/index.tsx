@@ -4,6 +4,7 @@ import Categories from "./ui/categories";
 import EventInfo from "./ui/event-info";
 
 import './style/index.scss'
+import {Link} from "react-router-dom";
 
 export type EventPreviewNowProps = {
     id?: string,
@@ -24,24 +25,27 @@ const EventPreviewNow = (
         time,
         location,
         month,
-        img
+        img,
+        id
     }: EventPreviewNowProps) => {
     return (
-        <div className={'event-preview-now'}
-             style={{
-                 backgroundImage: `url(${img})`
-             }}
-        >
-            <div className={'event-preview-now_blackout_light'}/>
-            <Categories categories={categories}/>
-            <EventInfo
-                month={month}
-                time={time}
-                title={title}
-                date={date}
-                location={location}
-            />
-        </div>
+        <Link to={`/meet/event/${id}`}>
+            <div className={'event-preview-now'}
+                 style={{
+                     backgroundImage: `url(${img})`
+                 }}
+            >
+                <div className={'event-preview-now_blackout_light'}/>
+                <Categories categories={categories}/>
+                <EventInfo
+                    month={month}
+                    time={time}
+                    title={title}
+                    date={date}
+                    location={location}
+                />
+            </div>
+        </Link>
     );
 };
 

@@ -28,6 +28,7 @@ const SwipeEvents = ({Event, data}: SwipeEventsProps) => {
                     data.map(el => (
                         <SwiperSlide key={el.id}>
                             <Event
+                                id={el.id}
                                 title={el.title}
                                 date={el.date}
                                 month={el.month}

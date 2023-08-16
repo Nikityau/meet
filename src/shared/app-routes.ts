@@ -2,5 +2,6 @@ export const AppRoutes = {
     LOGIN: 'login',
     MEET: 'meet',
     AFFICHE: 'affiche',
-    ARCHIVE: 'archive'
+    ARCHIVE: 'archive',
+    EVENT: 'event/:id'
 }

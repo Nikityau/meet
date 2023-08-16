@@ -1,0 +1,10 @@
+.event-page {
+  padding-top: 35px;
+
+  .event-page__container {
+    display: grid;
+    grid-template-columns: 935px auto;
+    gap: 15px;
+  }
+
+}
