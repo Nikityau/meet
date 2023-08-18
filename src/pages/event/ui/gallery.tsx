@@ -1,5 +1,5 @@
 import React from 'react';
-import {v4} from "uuid";
+import {Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {event} from "../data/event";
 
@@ -13,8 +13,10 @@ const Gallery = () => {
             </div>
             <div className={'event-gallery__list'}>
                 <Swiper
+                    modules={[Pagination]}
                     slidesPerView={1}
                     freeMode={true}
+                    pagination={true}
                 >
                     {
                         event.images.map((d, i)   => (

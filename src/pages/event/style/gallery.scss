@@ -1,5 +1,18 @@
 .event-gallery {
+  margin-top: 15px;
+
   width: 100%;
+
+  .event-gallery__title {
+    color: #292929;
+    font-family: Poppins,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    margin-bottom: 5px;
+  }
 
   .event-gallery__list{
     width: 100%;
@@ -17,6 +30,11 @@
 
     .swiper {
       width: 500px;
+      height: 250px;
+
+      .swiper-slide {
+        margin-right: 0;
+      }
     }
   }
 }

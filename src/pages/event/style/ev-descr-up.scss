@@ -1,3 +1,10 @@
+.event-description {
+  display: grid;
+  grid-template-rows: 450px auto;
+  gap: 0;
+  height: 100%;
+}
+
 .event-descr-up {
   position: relative;
 
