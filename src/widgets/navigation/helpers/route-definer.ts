@@ -16,10 +16,13 @@ export class RouteDefiner {
     }
 
     define(route: string): string {
-        if(route.includes(AppRoutes.ARCHIVE)) {
-            return AppRoutes.ARCHIVE
-        }
+        const ks = Object.keys(this.routes)
 
+        for(let k of ks) {
+            if(route.includes(k)) {
+                return k
+            }
+        }
 
         return AppRoutes.AFFICHE
     }
