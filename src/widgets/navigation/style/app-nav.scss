@@ -1,0 +1,21 @@
+.app-navigation {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transform: translate(-50%, 0);
+
+  padding: 4px;
+
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.80);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(28px);
+
+  z-index: 3;
+}
+

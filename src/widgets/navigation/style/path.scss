@@ -1,0 +1,29 @@
+.app-route {
+  width: 140px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50px;
+
+
+  span {
+    color: #fff;
+    font-family: Inter,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+.app-route__current {
+  //background: #FFF;
+
+
+  span {
+    color: #292929;
+  }
+}

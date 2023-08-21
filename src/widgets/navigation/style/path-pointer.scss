@@ -1,0 +1,15 @@
+.path-pointer {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+
+  width: 140px;
+  height: 50px;
+
+  border-radius: 50px;
+  background: #fff;
+
+  z-index: -1;
+
+  transition: all .3s;
+}
