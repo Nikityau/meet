@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  db:
+    container_name: meet-db
+    image: postgres:latest
+    env_file:
+      - .env
+    ports:
+      - ":5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+  server:
+    container_name: meet-server
+    image: nikityau/meet-server:latest
+    ports:
+      - ":4000"
+    env_file:
+      - .env
+    environment:
+      - DATABASE_HOST=db
+    depends_on:
+      - db
+  frontend:
+    container_name: meet-front
+    image: nikityau/meet-client:latest
+    volumes:
+      - frontend_build:/app/build/web
+    depends_on:
+      - server
+  nginx:
+    container_name: nginx
+    image: nginx:1.25.1
+    restart: always
+    ports:
+      - '8000:8080'
+    depends_on:
+      - frontend
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - frontend_build:/usr/share/nginx/html/
+volumes:
+  db_data:
+  frontend_build:
