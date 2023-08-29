@@ -1,0 +1,13 @@
+.settings-page {
+  width: 100%;
+
+  margin-top: 50px;
+
+
+
+  .settings-page__container {
+    display: grid;
+    grid-template-columns: 180px 750px;
+    gap: 65px;
+  }
+}

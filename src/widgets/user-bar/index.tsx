@@ -7,23 +7,17 @@ import UserInfo from './ui/user-info'
 import {userInfo} from './data/user-info'
 import {navData} from './data/nav-data'
 
-import {useUserBar} from "./helpers/hooks/use-user-bar";
+import {genNavPanel} from "./helpers/drawNavPanel";
+import Context from "./provider/context";
 
 import './style/index.scss'
 
-export const UserBarContext = React.createContext(null)
-
 const UserBar = () => {
-    const {state, f} = useUserBar()
-
     return (
-        <UserBarContext.Provider value={{
-            isOpen: state.isBarOpen
-        }}>
+        <Context>
             <div className='user-bar'>
-                <UserCircle onClick={f.onCircleClick}/>
+                <UserCircle/>
                 <UserNav
-                    onMousePos={f.onHMouseBarPos}
                     userInfo={
                         <UserInfo
                             avatar={userInfo.avatar}
@@ -34,13 +28,13 @@ const UserBar = () => {
                     tabs={
                         <>
                             {
-                                f.genNavPanel(navData)
+                                genNavPanel(navData)
                             }
                         </>
                     }
                 />
             </div>
-        </UserBarContext.Provider>
+        </Context>
     )
 }
 

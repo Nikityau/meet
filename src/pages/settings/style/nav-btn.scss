@@ -1,0 +1,23 @@
+.settings-nav-btn {
+  width: 100%;
+
+
+
+  .settings-nav-btn__container {
+    padding: 8px 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    border-radius: 40px;
+    background: rgba(92, 78, 254, 0.10);
+
+    .settings-nav-btn__name {
+      color: #3E424A;
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

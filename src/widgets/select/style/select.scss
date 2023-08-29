@@ -1,0 +1,40 @@
+.select {
+  position: relative;
+}
+
+.select__current {
+  position: relative;
+
+  padding: 10px;
+
+  border-radius: 10px;
+  border: 1px solid #C4C4C4;
+  background: var(--white-100, #FFF);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    color: #828282;
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .select__arrow {
+    svg {
+      transition: all .3s;
+    }
+  }
+
+  .select__arrow_open {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+}

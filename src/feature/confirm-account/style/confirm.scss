@@ -1,0 +1,30 @@
+.confirm-account {
+  cursor: pointer;
+
+  margin: 20px 0;
+
+  border-radius: 10px;
+  border: 1px solid var(--grey-stroke, #E3E3E3);
+  background: var(--white-100, #FFF);
+  backdrop-filter: blur(22px);
+
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .confirm-account__title,
+  .confirm-account__status {
+    color: #B1B5BD;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .confirm-account__status {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}

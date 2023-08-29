@@ -1,8 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {v4} from "uuid";
-import {NavData} from "../../data/nav-data";
-import NavPanel from "../../ui/nav-panel";
-import SepLine from "../../ui/user-nav/sep-line";
 
 export const useUserBar = () => {
     const [isBarOpen, setIsBarOpen] = useState(false)
@@ -42,30 +38,6 @@ export const useUserBar = () => {
         setIsBarOpen(prev => !prev)
     }
 
-    const genNavPanel = (arr: NavData[][]): JSX.Element[] => {
-        const jsx: JSX.Element[] = []
-
-        for (let i = 0; i < arr.length; ++i) {
-            for (let j = 0; j < arr[i].length; ++j) {
-                const navEl = arr[i][j]
-                jsx.push(
-                    <NavPanel
-                        icon={navEl.icon}
-                        text={navEl.text}
-                        key={navEl.id}
-                    />
-                )
-            }
-
-            if (i + 1 != arr.length)
-                jsx.push(
-                    <SepLine key={v4()}/>
-                )
-        }
-
-        return jsx
-    }
-
 
     return {
         state: {
@@ -75,7 +47,7 @@ export const useUserBar = () => {
         f: {
             onHMouseBarPos,
             onCircleClick,
-            genNavPanel
         }
     }
 }
+

@@ -1,0 +1,21 @@
+.text-edit {
+  border-radius: 10px;
+  border: 1px solid #C4C4C4;
+  background: var(--white-100, #FFF);
+
+  overflow: hidden;
+
+  input {
+    width: 100%;
+
+    padding: 8px 14px;
+
+
+    color: #828282;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

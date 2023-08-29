@@ -1,24 +1,23 @@
-import React, {useEffect, useState, useContext} from 'react'
+import React, {useContext} from 'react'
 import cn from 'classnames'
+import {UserBarContext} from "../../provider/context";
 
-import {UserBarContext} from 'widgets/user-bar'
 
 type UserNavProps = {
     userInfo: React.ReactNode,
     tabs: React.ReactNode,
-    onMousePos: (pos: 'in' | 'out') => void
 }
 
-const UserNav = ({tabs, userInfo, onMousePos}: UserNavProps) => {
+const UserNav = ({tabs, userInfo}: UserNavProps) => {
 
     const context = useContext(UserBarContext)
 
     const onMouseIn = () => {
-        onMousePos('in')
+        context.f.onHMouseBarPos('in')
     }
 
     const onMouseOut = () => {
-        onMousePos('out')
+        context.f.onHMouseBarPos('out')
     }
 
     return (
