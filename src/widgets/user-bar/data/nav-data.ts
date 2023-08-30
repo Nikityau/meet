@@ -24,7 +24,7 @@ export const navData: NavData[][] = [
             id: v4(),
             icon: settings_img,
             text: 'Настройки',
-            link: AppRoutes.SETTINGS
+            link: `/meet/in/settings`
         },
         {
             id: v4(),

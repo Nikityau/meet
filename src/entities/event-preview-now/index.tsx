@@ -29,7 +29,7 @@ const EventPreviewNow = (
         id
     }: EventPreviewNowProps) => {
     return (
-        <Link to={`/meet/event/${id}`}>
+        <Link to={`/meet/in/event/${id}`}>
             <div className={'event-preview-now'}
                  style={{
                      backgroundImage: `url(${img})`

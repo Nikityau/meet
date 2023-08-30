@@ -1,0 +1,30 @@
+.theme-switcher {
+  cursor: pointer;
+
+  width: 350px;
+  height: 60px;
+
+  border-radius: 10px;
+  background: var(--white-100, #FFF);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+
+  .theme-switcher__container {
+    height: 100%;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .theme-switcher__text {
+      color: #000;
+      text-align: center;
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}

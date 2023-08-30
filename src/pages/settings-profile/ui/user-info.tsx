@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import {userSelector} from "../../../entities/user-store/user-selector";
+import {userSelector} from "../../../redux/user-store/user-selector";
 
 const UserInfo = () => {
 

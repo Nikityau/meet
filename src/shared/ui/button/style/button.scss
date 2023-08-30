@@ -8,7 +8,6 @@
 
   border-radius: 5px;
   border: 1px solid var(--white-100, #FFF);
-  background: var(--purple, #5C4EFE);
   backdrop-filter: blur(9.5px);
 
   color: #FFF;
@@ -19,4 +18,11 @@
   line-height: normal;
 
   cursor: pointer;
+}
+.btn-ui_theme_purple {
+  background: var(--purple, #5C4EFE);
+}
+
+.btn-ui_theme_grey {
+  background: #A6A6A6;
 }

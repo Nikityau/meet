@@ -1,0 +1,102 @@
+.theme-boilerplate {
+  cursor: pointer;
+
+  width: 100px;
+  height: 140px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  .theme-boilerplate__sq-list {
+    margin-top: 20px;
+
+    padding-left: 8px;
+
+    display: grid;
+    grid-template-columns: 48px auto;
+    gap: 5px;
+  }
+
+  .theme-boilerplate__circle-list {
+    margin-top: 10px;
+
+    padding: 0 8px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .theme-boilerplate__btn-container {
+    margin-top: 13px;
+
+    padding: 0 8px;
+
+    display: flex;
+    justify-content: right;
+  }
+
+  .theme-boilerplate__sq {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 10px;
+
+    background: #22252D;
+  }
+
+  .theme-boilerplate__circle {
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: #22252D;
+  }
+
+  .theme-boilerplate__btn {
+    width: 60px;
+    height: 16px;
+
+    border-radius: 8px;
+
+    background: #5C4EFE;
+  }
+}
+
+.theme-boilerplate_main_white {
+  background: #F8F8F8;
+
+  .theme-boilerplate__sq,
+  .theme-boilerplate__circle {
+    background: #fff;
+  }
+}
+.theme-boilerplate_main_black {
+  background: #14161D;
+
+  .theme-boilerplate__sq,
+  .theme-boilerplate__circle {
+    background: #22252D;
+  }
+}
+
+.theme-boilerplate_addon_purple {
+  .theme-boilerplate__btn {
+    background: #5C4EFE;
+  }
+}
+.theme-boilerplate_addon_yellow {
+  .theme-boilerplate__btn {
+    background: #FFC83A;
+  }
+}
+.theme-boilerplate_addon_grey {
+  .theme-boilerplate__btn {
+    background: #D2BFAA;
+  }
+}
+
+.theme-boilerplate_current {
+  border: 2px solid #5C4EFE;
+}

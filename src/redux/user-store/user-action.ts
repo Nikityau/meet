@@ -1,14 +1,12 @@
 import {UserState} from "./user-state";
+import {ReduxAction} from "../default/redux-action";
 
 export enum UserActionTypes {
     SET = 'user/set',
     REMOVE = 'user/remove'
 }
 
-export interface UserAction {
-    type: UserActionTypes,
-    payload: UserState | null
-}
+export interface UserAction extends ReduxAction<UserActionTypes, UserState | null> {}
 
 export const setUser = (user: UserState): UserAction => {
     return {

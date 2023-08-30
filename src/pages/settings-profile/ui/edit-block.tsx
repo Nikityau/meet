@@ -1,10 +1,10 @@
 import React from 'react';
 import TextEdit from "./text-edit";
 import {useSelector} from "react-redux";
-import {userSelector} from "../../../entities/user-store/user-selector";
 import TitleWrapper from "./title-wrapper";
 import Select from "../../../widgets/select";
 import DateSelect from "./date-select";
+import {userSelector} from "../../../redux/user-store/user-selector";
 
 const EditBlock = () => {
     const user = useSelector(userSelector)

@@ -3,14 +3,10 @@ import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 
 import {AppRoutes} from "../../../../shared/app-routes";
-import {userSelector} from "../../../../entities/user-store/user-selector";
+import {userSelector} from "../../../../redux/user-store/user-selector";
 
-type UserInfoProps = {
-    avatar: string,
-    name: string,
-    role: 'user' | 'moderator'
-}
-const UserInfo = ({avatar, name, role}: UserInfoProps) => {
+type UserInfoProps = {}
+const UserInfo = ({}: UserInfoProps) => {
 
     const user = useSelector(userSelector)
 

@@ -19,11 +19,7 @@ const UserBar = () => {
                 <UserCircle/>
                 <UserNav
                     userInfo={
-                        <UserInfo
-                            avatar={userInfo.avatar}
-                            name={userInfo.name}
-                            role={userInfo.role}
-                        />
+                        <UserInfo/>
                     }
                     tabs={
                         <>

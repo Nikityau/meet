@@ -1,0 +1,30 @@
+.settings-view__themes {
+  margin-top: 20px;
+
+  height: 200px;
+
+  border-radius: 10px;
+  background: var(--white-100, #FFF);
+  backdrop-filter: blur(22px);
+
+  .settings-view__themes-container {
+    padding: 20px 10px;
+
+    height: calc(100% - 40px);
+
+    .swiper {
+      height: 100%;
+
+      .swiper-wrapper {
+        height: 100%;
+
+        .swiper-slide {
+          margin-right: 10px;
+
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

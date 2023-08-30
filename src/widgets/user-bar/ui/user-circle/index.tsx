@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 import Dot3 from './dot'
 import {UserBarContext} from "../../provider/context";
-import {userSelector} from "../../../../entities/user-store/user-selector";
+import {userSelector} from "../../../../redux/user-store/user-selector";
 
 type UserCircleProps = {}
 

@@ -1,12 +1,13 @@
 import React from "react";
 import {Routes, Route, Navigate} from 'react-router-dom'
-import { AppRoutes } from "shared/app-routes";
+import {AppRoutes} from "shared/app-routes";
 import MeetBase from "./meet-base";
-import { MeetPage } from "./meet";
+import {MeetPage} from "./meet";
 import Archive from "./archive";
 import Event from "./event";
 import Settings from "./settings";
 import SettingsProfile from "./settings-profile";
+import SettingsView from "./settings-view";
 
 const AppRouter = () => {
     return (
@@ -24,13 +25,12 @@ const AppRouter = () => {
                     <Route path={AppRoutes.SETTINGS} element={<Settings/>}>
                         <Route path={'profile'} element={<SettingsProfile/>}/>
                         <Route path={'security'}/>
-                        <Route path={'view'}/>
+                        <Route path={'view'} element={<SettingsView/>}/>
                         <Route path={'notification'}/>
 
                         <Route path={''} element={<Navigate to={'profile'}/>}/>
                     </Route>
                 </Route>
-
 
 
                 <Route path={''} element={<Navigate to={'in'}/>}/>

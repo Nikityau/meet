@@ -20,7 +20,7 @@ const EventPreviewSoon = (
         month
     }: EventPreviewSoonProps) => {
     return (
-        <Link to={`/meet/event/${id}`}>
+        <Link to={`/meet/in/event/${id}`}>
             <div className={'event-preview-soon'}
                  style={{
                      backgroundImage: `url(${img})`
