@@ -19,13 +19,17 @@ const ArchiveFilter = () => {
             <div className={'archive-filter__btns'}>
                 <div className={'archive-filter__btn'}>
                     <Button
-                        text={'Применить'}
+                        children={
+                            <span>Применить</span>
+                        }
                         onClick={applyFilters}
                     />
                 </div>
                 <div className={'archive-filter__btn archive-filter__btn_r'}>
                     <Button
-                        text={'Сбросить'}
+                        children={
+                            <span>Выход</span>
+                        }
                         onClick={resetFilters}
                     />
                 </div>

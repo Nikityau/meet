@@ -39,3 +39,20 @@
     color: #EA3548;
   }
 }
+.date-tablet__current {
+  background: #958CFF;
+
+  .date-tablet__date,
+  .date-tablet__day {
+    color: #fff;
+  }
+}
+
+.date-tablet__chosen {
+  background: #5C4EFE;
+
+  .date-tablet__date,
+  .date-tablet__day {
+    color: #fff;
+  }
+}

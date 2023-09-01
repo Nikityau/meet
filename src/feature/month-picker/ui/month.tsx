@@ -1,30 +1,17 @@
-import React, {useContext, useRef} from 'react';
+import React, {useEffect} from 'react';
 import cn from 'classnames'
 
 import {DateG} from "../../../shared/helpers/date-g";
-import {MonthPickerContext} from "../index";
+import {useMonth} from "../helpers/use-month";
 
 type MonthProps = {
     month: number
 }
 
-const Month = ({month}:MonthProps) => {
+const Month = ({month}: MonthProps) => {
 
-    const cntx = useContext(MonthPickerContext)
-    const ref = useRef<HTMLDivElement>(null)
+    const {onMonthClick, ref, cntx} = useMonth(month)
 
-    const onMonthClick = () => {
-        cntx.setMonth(month)
-        cntx.setLeftOffset(computeOffset())
-    }
-
-    const computeOffset = () => {
-        const curr = ref.current
-        const o = curr.offsetLeft
-        const w = curr.clientWidth / 2
-
-        return o + w
-    }
 
     return (
         <div className={cn(
@@ -33,7 +20,7 @@ const Month = ({month}:MonthProps) => {
                 ? 'month-picker__month_current'
                 : ''
         )}
-            onClick={onMonthClick}
+             onClick={onMonthClick}
              ref={ref}
         >
             <span>{DateG.getMonthNameRu(month)}</span>

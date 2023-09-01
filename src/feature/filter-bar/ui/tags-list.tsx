@@ -1,9 +1,17 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Selection from "../../../entities/selection";
-import {tags} from "../../../shared/data/tags";
+import {tagsSelector} from "../../../redux/tags-store/tags-selector";
 
 const TagsList = () => {
+
+    const tags = useSelector(tagsSelector)
+
+    const onTagClick = (tag: string) => {
+
+    }
+
     return (
         <div className={'filter-bar__tags-list'}>
             <Swiper
@@ -14,7 +22,9 @@ const TagsList = () => {
                         <SwiperSlide key={d.id}>
                             <div className={'filter-bar__tag'}>
                                 <Selection
-                                    text={d.selection}
+                                    text={d.tag}
+                                    isChosen={false}
+                                    onClick={() => onTagClick(d.tag)}
                                 />
                             </div>
                         </SwiperSlide>

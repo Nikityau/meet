@@ -12,15 +12,18 @@ import SquareCalendar from "../square-calendar";
 import bg from './assets/bg.png'
 
 import './style/index.scss'
+import {useFilterBar} from "./helpers/hooks/use-filter-bar";
 
 export type FilterBarProps = {
-    close: () => void
 }
 
-const FilterBar = (
-    {
-        close
-    }: FilterBarProps) => {
+const FilterBar = ({}: FilterBarProps) => {
+
+    const {
+        onCloseClick,
+        onMouseIn,
+        onMouseOut
+    } = useFilterBar()
 
     return (
         <div className={cn(
@@ -29,9 +32,11 @@ const FilterBar = (
              style={{
                  backgroundImage: `url(${bg})`
              }}
+             onMouseEnter={onMouseIn}
+             onMouseLeave={onMouseOut}
         >
             <div className={'filter-bar__container'}>
-                <CloseBtn onClick={close}/>
+                <CloseBtn onClick={onCloseClick}/>
                 <Title/>
                 <Location
                     onChangeLocation={debounce(() => {
@@ -45,10 +50,14 @@ const FilterBar = (
                     }, 400)}
                 />
                 <Button
-                    text={'Применить'}
                     onClick={() => {
                         console.log('ok')
                     }}
+                    children={
+                        <span>
+                            Применить
+                        </span>
+                    }
                 />
             </div>
         </div>

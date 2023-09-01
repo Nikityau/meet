@@ -1,34 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
+import {useWinClose} from "../../../../shared/helpers/hooks/useWinClose";
 
 export const useUserBar = () => {
     const [isBarOpen, setIsBarOpen] = useState(false)
     const [mouseBarPos, setMouseBarPos] = useState<'in' | 'out'>('out')
 
-    useEffect(() => {
-        const closeBar = (e: globalThis.MouseEvent) => {
-            const target = e.target as HTMLDivElement
+    useWinClose({
+        className: 'user-circle',
+        watchParams: [isBarOpen, mouseBarPos],
+        closeCb: () => {
+            if(mouseBarPos == 'in') return
 
-            if (target.classList.contains('user-circle') ||
-                mouseBarPos == 'in'
-            ) {
-                return
-            }
-
-            setIsBarOpen(prev => {
-                if (prev == false) {
-                    return prev
-                }
-
-                return !prev
-            })
+            setIsBarOpen(false)
         }
-
-        window.addEventListener('click', closeBar)
-
-        return () => {
-            window.removeEventListener('click', closeBar)
-        }
-    }, [isBarOpen, mouseBarPos])
+    })
 
     const onHMouseBarPos = (pos: 'in' | 'out') => {
         setMouseBarPos(pos)

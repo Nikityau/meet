@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import cn from 'classnames'
 
 import filter_img from './assets/filter.png'
 
 import './style/index.scss'
+import {useFilterIcon} from "./helpers/hook/use-filter-icon";
 
 type FilterIconProps = {
     FilterBar: React.ReactNode
@@ -11,11 +12,7 @@ type FilterIconProps = {
 
 const FilterIcon = ({FilterBar}: FilterIconProps) => {
 
-    const [isOpen, setIsOpen] = useState<boolean>(false)
-
-    const onIconClick = () => {
-        setIsOpen(prev => !prev)
-    }
+    const {onIconClick, isOpen} = useFilterIcon()
 
     return (
         <div className={'filter-icon'}>

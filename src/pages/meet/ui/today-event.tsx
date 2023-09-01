@@ -2,13 +2,12 @@ import React from 'react';
 
 import TodayFilters from "./today-filters";
 import TodayEventList from "./today-event-list";
+import TdTitle from "./td-title";
 
 const TodayEvent = () => {
     return (
         <div className={'today-event'}>
-            <div className={'today-event__title'}>
-                <span>Сегодня</span>
-            </div>
+            <TdTitle/>
             <TodayFilters/>
             <TodayEventList/>
         </div>

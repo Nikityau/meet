@@ -4,7 +4,6 @@ import UserCircle from './ui/user-circle'
 import UserNav from './ui/user-nav'
 import UserInfo from './ui/user-info'
 
-import {userInfo} from './data/user-info'
 import {navData} from './data/nav-data'
 
 import {genNavPanel} from "./helpers/drawNavPanel";

@@ -4,6 +4,7 @@ import createSagaMiddleware from 'redux-saga'
 import {userReducer} from "../../redux/user-store";
 import {userMiddleware} from "../../redux/user-store/user-middleware";
 import {themeReducer} from "../../redux/theme-store";
+import {tagsReducer} from "../../redux/tags-store";
 
 
 
@@ -15,7 +16,8 @@ const enhancers = composeWithDevTools(
 
 const reducers = combineReducers({
     user: userReducer,
-    theme: themeReducer
+    theme: themeReducer,
+    tags: tagsReducer
 })
 
 const store = createStore(reducers, enhancers)

@@ -1,5 +1,5 @@
 import React, {useContext, useRef} from 'react';
-import {MonthPickerContext} from "../index";
+import {MonthPickerContext} from "../provider/context";
 
 const MonthPointer = () => {
 
@@ -7,7 +7,7 @@ const MonthPointer = () => {
     const ref = useRef<HTMLDivElement>(null)
 
     const getOffset = () => {
-        const l = cntx.leftOffset
+        const l = cntx?.leftOffset
         const diff = !ref.current ? 0 : ref.current.clientWidth / 2
 
         return l - diff

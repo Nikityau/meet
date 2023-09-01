@@ -23,6 +23,26 @@ export class DateG {
         return date
     }
 
+    static getNormalStr = (date: Date): string => {
+        date.setMonth(date.getMonth() + 1)
+
+        let str = ""
+        if(date.getDate() < 10) {
+            str += '0'
+        }
+
+        str += date.getDate() + "."
+
+        if(date.getMonth() < 10) {
+            str += '0'
+        }
+
+        str += date.getMonth() + '.'
+        str += date.getFullYear()
+
+        return str
+    }
+
     static getMonthNameRu(num: number): string {
         const months = [
             "январь",
@@ -39,5 +59,15 @@ export class DateG {
             "декабрь"
         ]
         return months[num]
+    }
+
+    static isCompare(d1: Date, d2: Date) {
+        if (d1.getDate() == d2.getDate() &&
+            d1.getMonth() == d2.getMonth() &&
+            d1.getFullYear() == d2.getFullYear()
+        )
+            return true
+
+        return false
     }
 }
