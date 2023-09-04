@@ -1,7 +1,7 @@
-import {useFilterBarStore} from "../../zustand";
+import {useFilterBarState} from "../../zustand";
 
 export const useFilterBar = () => {
-    const {setIsOpen, setMousePos} = useFilterBarStore()
+    const {setIsOpen, setMousePos} = useFilterBarState()
 
     const onMouseIn = () => {
         setMousePos(true)

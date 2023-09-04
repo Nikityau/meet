@@ -6,12 +6,12 @@ import {tagsSelector} from "../../../redux/tags-store/tags-selector";
 
 const Selections = () => {
 
-    const {filters, setFilter} = useFilterMeet()
+    const {filters, dispatch} = useFilterMeet()
     const tags = useSelector(tagsSelector)
 
     const onClick = (tag: string, is: boolean) => {
         if(is) {
-            setFilter({
+            dispatch({
                 type: "filterMeet/tags-remove",
                 payload: tag
             })
@@ -19,7 +19,7 @@ const Selections = () => {
             return
         }
 
-        setFilter({
+        dispatch({
             type: "filterMeet/tags-add",
             payload: tag
         })

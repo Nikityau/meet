@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import cn from 'classnames'
-import {SqCalendarContext} from "../index";
+import {SqCalendarContext} from "../provider/sq-context";
 
 
 type DayProps = {

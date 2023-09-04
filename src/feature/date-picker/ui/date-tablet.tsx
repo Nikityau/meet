@@ -30,7 +30,7 @@ const DateTablet = ({date}: DateTabletProps) => {
     }
 
     const onClick = () => {
-        filter.setFilter({
+        filter.dispatch({
             type: "filterMeet/dates-add",
             payload: date
         })

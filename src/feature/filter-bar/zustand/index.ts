@@ -2,6 +2,8 @@ import {create} from "zustand";
 import {immer} from "zustand/middleware/immer";
 import {devtools} from "zustand/middleware";
 
+import {FilterFabric} from "../../../shared/helpers/fabric/filter-fabric";
+
 interface FBarStore {
     isMouseIn: boolean,
     isOpen: boolean,
@@ -9,7 +11,7 @@ interface FBarStore {
     setMousePos: (isIn: boolean) => void,
 }
 
-export const useFilterBarStore = create<FBarStore>()(devtools(immer((set) => ({
+export const useFilterBarState = create<FBarStore>()(devtools(immer((set) => ({
     isMouseIn: false,
     isOpen: false,
     setMousePos: (isIn: boolean) => set(state => {
@@ -19,3 +21,5 @@ export const useFilterBarStore = create<FBarStore>()(devtools(immer((set) => ({
         state.isOpen = is
     }),
 }))))
+
+export const useFilterBarStore = new FilterFabric().create()

@@ -2,8 +2,8 @@ import React, {PropsWithChildren} from 'react';
 
 import Month from "./ui/month";
 import {SqState} from "./react-reducer";
-import {SqRetSt, useSquareCalendar} from "./helpers/useSquareCalendar";
 import Dates from "./ui/dates";
+import SqContextProvider from "./provider/sq-context";
 
 import './style/index.scss'
 
@@ -20,21 +20,15 @@ type SquareCalendarProps = {
 *
 * */
 
-export const SqCalendarContext = React.createContext<SqRetSt>(null)
 
 const SquareCalendar = ({onDateChange, children}: SquareCalendarProps & PropsWithChildren) => {
-    const {state, f} = useSquareCalendar({onChange: onDateChange})
-
     return (
-        <SqCalendarContext.Provider value={{
-            state,
-            f
-        }}>
+        <SqContextProvider onDateChange={onDateChange}>
             <div className={'square-calendar'}>
                 <Month/>
                 <Dates/>
             </div>
-        </SqCalendarContext.Provider>
+        </SqContextProvider>
     );
 };
 

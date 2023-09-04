@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 
-import {SqCalendarContext} from "../index";
 import {DateG} from "../../../shared/helpers/date-g";
+import {SqCalendarContext} from "../provider/sq-context";
 
 const Month = () => {
 

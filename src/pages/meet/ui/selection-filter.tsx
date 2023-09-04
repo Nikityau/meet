@@ -7,10 +7,10 @@ import {useFilterMeet} from "../../../local-states/filter-meet";
 
 const SelectionFilter = () => {
 
-    const {setFilter} = useFilterMeet()
+    const {dispatch} = useFilterMeet()
 
     const onClick = (tag: string) => {
-        setFilter({
+        dispatch({
             type: "filterMeet/tags-add",
             payload: tag
         })

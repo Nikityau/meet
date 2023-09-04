@@ -1,8 +1,8 @@
-import {useFilterBarStore} from "../../../../feature/filter-bar/zustand";
+import {useFilterBarState} from "../../../../feature/filter-bar/zustand";
 import {useWinClose} from "../../../../shared/helpers/hooks/useWinClose";
 
 export const useFilterIcon = () => {
-    const {isOpen, isMouseIn, setIsOpen} = useFilterBarStore()
+    const {isOpen, isMouseIn, setIsOpen} = useFilterBarState()
 
     useWinClose({
         className: 'filter-icon__icon',

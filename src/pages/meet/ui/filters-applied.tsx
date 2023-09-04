@@ -9,26 +9,33 @@ import 'swiper/css'
 
 const FiltersApplied = () => {
 
-    const {filters, setFilter} = useFilterMeet()
+    const {filters, dispatch} = useFilterMeet()
 
     const onClickBtn = () => {
-        setFilter({
+        dispatch({
             type: "filterMeet/clear",
             payload: null
         })
     }
 
     const onDateClick = (date: Date) => {
-        setFilter({
+        dispatch({
             type: "filterMeet/dates-remove",
             payload: date
         })
     }
 
     const onTagClick = (tag: string) => {
-        setFilter({
+        dispatch({
             type: "filterMeet/tags-remove",
             payload: tag
+        })
+    }
+
+    const onLocationClick = () => {
+        dispatch({
+            type: "filterMeet/location",
+            payload: null
         })
     }
 
@@ -66,6 +73,17 @@ const FiltersApplied = () => {
                                 />
                             </SwiperSlide>
                         ))
+                    }
+                    {
+                        filters.location &&
+                        <SwiperSlide
+                            key={v4()}
+                        >
+                            <FaBar
+                                filterText={filters.location}
+                                onClick={onLocationClick}
+                            />
+                        </SwiperSlide>
                     }
                 </Swiper>
             </div>

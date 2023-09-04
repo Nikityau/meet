@@ -7,7 +7,7 @@ export const useMonth = (month: number) => {
     const cntx = useContext(MonthPickerContext)
     const ref = useRef<HTMLDivElement>(null)
 
-    const {filters, date, setFilter} = useFilterMeet()
+    const {filters, date, dispatch} = useFilterMeet()
 
     useEffect(() => {
         if(filters == null) {
@@ -24,7 +24,7 @@ export const useMonth = (month: number) => {
 
     const onMonthClick = () => {
         onSetMonth(month)
-        setFilter({
+        dispatch({
             type: "filterMeet/dates-add",
             payload: DateG.createDate(month)
         })

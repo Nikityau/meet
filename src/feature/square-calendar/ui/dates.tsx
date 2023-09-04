@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {weekdays} from "../data/date";
 import Day from "./day";
-import {SqCalendarContext} from "../index";
+import {SqCalendarContext} from "../provider/sq-context";
 
 
 const Dates = () => {

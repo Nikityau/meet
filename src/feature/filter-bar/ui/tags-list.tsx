@@ -3,13 +3,40 @@ import {useSelector} from "react-redux";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Selection from "../../../entities/selection";
 import {tagsSelector} from "../../../redux/tags-store/tags-selector";
+import {useFilterBarStore} from "../zustand";
 
 const TagsList = () => {
 
     const tags = useSelector(tagsSelector)
 
-    const onTagClick = (tag: string) => {
+    const {filters, dispatch} = useFilterBarStore()
 
+    const isChosen = (tag: string): boolean => {
+        if(filters != null && filters.tags != null) {
+            for(let t of filters.tags) {
+                if(t == tag) {
+                    return true
+                }
+            }
+        }
+
+        return false
+    }
+
+    const onTagClick = (tag: string, isChosen: boolean) => {
+        if(isChosen) {
+            dispatch({
+                type: "filterMeet/tags-remove",
+                payload: tag
+            })
+
+            return
+        }
+
+        dispatch({
+            type: "filterMeet/tags-add",
+            payload: tag
+        })
     }
 
     return (
@@ -23,8 +50,8 @@ const TagsList = () => {
                             <div className={'filter-bar__tag'}>
                                 <Selection
                                     text={d.tag}
-                                    isChosen={false}
-                                    onClick={() => onTagClick(d.tag)}
+                                    isChosen={isChosen(d.tag)}
+                                    onClick={onTagClick}
                                 />
                             </div>
                         </SwiperSlide>

@@ -16,7 +16,8 @@ export enum SqActionTypes {
     MONTH_NEXT = "sqCal/monthNext",
     MONTH_PREV = "sqCal/monthPrev",
     CHOSEN_ADD = "sqCal/chosenAdd",
-    CHOSEN_REMOVE = "sqCal/chosenRemove"
+    CHOSEN_REMOVE = "sqCal/chosenRemove",
+    CLEAR = "sqCal/clear"
 }
 
 export type SqAction = {
@@ -56,6 +57,12 @@ export const sqReducer = (state: SqState, action: SqAction): SqState => {
 
                     return true
                 })
+
+                return draft
+            })
+        case SqActionTypes.CLEAR:
+            return produce(state, draft => {
+                state.chosenDates = []
 
                 return draft
             })
