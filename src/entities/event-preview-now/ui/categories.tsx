@@ -7,6 +7,8 @@ type CategoriesProps = {
 const Categories = ({categories}:CategoriesProps) => {
 
     const getC = (c: string[]): string => {
+        if(c.length == 0) return null
+
         return categories.reduce((p, c) => {
             return p + ' · ' + c
         })

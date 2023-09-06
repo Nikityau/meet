@@ -1,13 +1,14 @@
 import React from 'react';
 
-import {eventsTodayData} from "../data/events-data";
 import EventPreviewNow from "../../../entities/event-preview-now";
 import SwipeEvents from "../../../entities/swipe-events";
 import {useFilterMeet} from "../../../local-states/filter-meet";
 import TodayFiltersEv from "./today-filters-ev";
+import {useTodayEvents} from "../helpers/hooks/use-today-events";
 
 const TodayEventList = () => {
     const {filters} = useFilterMeet()
+    const events = useTodayEvents()
 
     return (
         <>
@@ -15,7 +16,7 @@ const TodayEventList = () => {
                 filters != null
                     ? <TodayFiltersEv/>
                     : <SwipeEvents
-                        data={eventsTodayData}
+                        data={events}
                         Event={EventPreviewNow}
                     />
             }

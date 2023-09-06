@@ -22,21 +22,23 @@ const AppRouter = () => {
 
                     <Route path={''} element={<Navigate to={AppRoutes.AFFICHE}/>}/>
 
-                    <Route path={AppRoutes.SETTINGS} element={<Settings/>}>
+                    {/*<Route path={AppRoutes.SETTINGS} element={<Settings/>}>
                         <Route path={'profile'} element={<SettingsProfile/>}/>
                         <Route path={'security'}/>
                         <Route path={'view'} element={<SettingsView/>}/>
                         <Route path={'notification'}/>
 
                         <Route path={''} element={<Navigate to={'profile'}/>}/>
-                    </Route>
+                    </Route>*/}
                 </Route>
 
 
                 <Route path={''} element={<Navigate to={'in'}/>}/>
+                <Route path={'*'} element={<Navigate to={'in'}/>}/>
             </Route>
 
             <Route path="/" element={<Navigate to={AppRoutes.MEET}/>}></Route>
+            <Route path={'*'} element={<Navigate to={AppRoutes.MEET}/>}/>
         </Routes>
     )
 }

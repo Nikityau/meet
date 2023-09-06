@@ -10,12 +10,16 @@ import LikeEvent from "../../../feature/like-event";
 import ShareEvent from "../../../feature/share-event";
 import CommentsEvent from "../../../feature/comments-event";
 import EventComments from "../../../widgets/comments";
+import {useArchiveStore} from "../zustand";
 
 const EventsList = () => {
+
+    const {data} = useArchiveStore()
+
     return (
         <div className={'events-list'}>
             {
-                archiveResData.map(d => (
+                data && data.map(d => (
                     <ArchiveEvent
                         key={d.id}
                         id={d.id}
@@ -24,64 +28,60 @@ const EventsList = () => {
                                 {
                                     d.tags.map(t => (
                                         <EventTag
-                                            key={v4()}
+                                            key={t.id}
                                             id={d.id}
-                                            tag={t}
+                                            tag={t.tag}
                                         />
                                     ))
                                 }
                             </>
                         }
                         LikeBtn={
-                            <MiniInfo>
+                            /*<MiniInfo>
                                 <LikeEvent
                                     event_id={d.id}
                                     likeCount={d.likesCount}
                                 />
-                            </MiniInfo>
+                            </MiniInfo>*/
+                            null
                         }
                         ShareBtn={
-                            <MiniInfo>
+                            /*<MiniInfo>
                                 <ShareEvent
                                     eventId={d.id}
                                     shareCount={d.sharesCount}
                                 />
-                            </MiniInfo>
+                            </MiniInfo>*/
+                            null
                         }
                         CommentBtn={
                             <MiniInfo>
                                 <CommentsEvent
                                     eventId={d.id}
-                                    commentsCount={d.commentsCount}
+                                    commentsCount={d.comments.length}
                                 />
                             </MiniInfo>
                         }
                         Comments={
-                            <>
-                                {
-                                    d.commentsCount > 0
-                                        ?
-                                        <EventComments
-                                            eventId={d.id}
-                                            list={d.comments}
-                                        />
-                                        : null
-                                }
-                            </>
-                        }
-                        Views={
-                            <ViewsCount
-                                id={d.id}
-                                count={d.viewCount}
+                            <EventComments
+                                eventId={d.id}
+                                list={d.comments}
                             />
                         }
-                        orgImage={d.orgImage}
+                        Views={
+                            /*<ViewsCount
+                                id={d.id}
+                                count={d.viewCount}
+                            />*/
+                            null
+                        }
+                        orgImage={d.organizers[0]?.avatar}
                         title={d.title}
-                        date={d.date}
-                        time={d.time}
+                        date={new Date(d.startDate)}
+                        time={d.startTime.slice(0, 5)}
                         location={d.location}
                         description={d.description}
-                        images={d.images}
+                        images={d.gallery}
                     />
                 ))
             }

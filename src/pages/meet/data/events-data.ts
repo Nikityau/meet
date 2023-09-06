@@ -1,8 +1,8 @@
 import {v4} from "uuid";
 import {EventPreviewNowProps} from "../../../entities/event-preview-now";
+import {EventPreviewSoonProps} from "../../../entities/event-preview-soon";
 
 import rstu_img from '../assets/rstu.png'
-import {EventPreviewSoonProps} from "../../../entities/event-preview-soon";
 
 export const eventsTodayData: EventPreviewNowProps[] = [
     {

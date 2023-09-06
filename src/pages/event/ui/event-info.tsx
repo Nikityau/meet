@@ -12,8 +12,8 @@ const EventInfo = () => {
             <div className={'event-info__block'}>
                 <InfoOrg/>
                 <Gallery/>
-                <Buttons/>
-                <Stats/>
+               {/* <Buttons/>*/}
+               {/* <Stats/>*/}
             </div>
             <Comments/>
             <Tags/>

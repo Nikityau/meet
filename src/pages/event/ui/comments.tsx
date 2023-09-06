@@ -1,11 +1,14 @@
 import React from 'react';
-import {event} from "../data/event";
 import CommentsList from "./comments-list";
+import {useEventStore} from "../zustand";
 
 const CommentsTitle = () => {
+
+    const {data} = useEventStore()
+
     return (
         <div className={'event-comments__title'}>
-            <span>{event.comments.length} комментария</span>
+            <span>{data && data.comments.length} комментария</span>
         </div>
     )
 }

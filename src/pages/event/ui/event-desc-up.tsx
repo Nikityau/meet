@@ -1,12 +1,16 @@
 import React from 'react';
 import {event} from "../data/event";
 import {DateG} from "../../../shared/helpers/date-g";
+import {useEventStore} from "../zustand";
 
 const EventDescUp = () => {
+
+    const {data} = useEventStore()
+
     return (
         <div className={'event-descr-up'}
             style={{
-                backgroundImage: `url(${event.img})`
+                backgroundImage: `url(${data && data.preview})`
             }}
         >
             <div className={'event-descr-up__blackout'}/>
@@ -14,7 +18,7 @@ const EventDescUp = () => {
                 <div className={'event-descr-up__tags'}>
                     <span>
                         {
-                            event.tags.reduce((p, c) => p + ' · ' + c)
+                            data && data.tags.length > 0 &&  data.tags?.map(t => t.tag)?.reduce((p, c) => p + ' · ' + c)
                         }
                     </span>
                 </div>
@@ -25,16 +29,16 @@ const EventDescUp = () => {
                     <div className={'event-descr-up__other'}>
                         <span>
                             {
-                                event.date.getDate() + ' '
+                               data && new Date(data.startDate).getDate()  + ' '
                             }
                             {
-                                DateG.getMonthNameRu(event.date.getMonth()) + ', '
+                                data && DateG.getMonthNameRu(new Date(data.startDate).getMonth()) + ', '
                             }
                             {
-                                event.time + ' · '
+                                data && data.startTime.slice(0, 5) + ' · '
                             }
                             {
-                                event.location
+                                data && data.location
                             }
                         </span>
                     </div>

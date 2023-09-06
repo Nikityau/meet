@@ -6,6 +6,6 @@ export interface ArchiveData {
     time: string,
     location: string,
     description: string,
-    images: string[],
+    images: any[],
 }
 

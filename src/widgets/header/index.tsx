@@ -11,10 +11,10 @@ const Header = () => {
     <div className='meet-header'>
       <div className='meet-header__container app-container'>
         <MeetLogo />
-        <SearchBar />
+       {/* <SearchBar />
         <div className='meet-header__user-bar'>
           <UserBar />
-        </div>
+        </div>*/}
       </div>
     </div>
   )

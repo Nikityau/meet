@@ -3,7 +3,7 @@ import React from 'react';
 import './style/index.scss'
 
 type AdBannerProps = {
-    ad: React.ReactNode
+    ad: React.ReactNode,
 }
 
 const AdBanner = ({ad}:AdBannerProps) => {

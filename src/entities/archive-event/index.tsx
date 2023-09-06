@@ -56,7 +56,7 @@ const ArchiveEvent = (
             />
             {
                 Comment
-                    ? <div className={'archive-event__container'}>
+                    ? <div className={'archive-event__container archive-comments'}>
                         {
                             Comments
                         }

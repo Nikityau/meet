@@ -28,7 +28,7 @@ const ArchiveFilter = () => {
                 <div className={'archive-filter__btn archive-filter__btn_r'}>
                     <Button
                         children={
-                            <span>Выход</span>
+                            <span>Сбросить</span>
                         }
                         onClick={resetFilters}
                     />

@@ -1,8 +1,6 @@
 import React from 'react';
 
 import SoonEventsList from "./soon-events-list";
-import {eventsSoonData} from "../data/events-data";
-import EventPreviewSoon from "../../../entities/event-preview-soon";
 
 const SoonEvent = () => {
     return (
@@ -15,10 +13,7 @@ const SoonEvent = () => {
                     </svg>
                 </div>
             </div>
-            <SoonEventsList
-                Event={EventPreviewSoon}
-                data={eventsSoonData}
-            />
+            <SoonEventsList/>
         </div>
     );
 };

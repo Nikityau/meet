@@ -1,24 +1,33 @@
 import React from 'react';
 
-import {EventPreviewSoonProps} from "../../../entities/event-preview-soon";
+import EventPreviewSoon from "../../../entities/event-preview-soon";
+import {useSoonEvents} from "../helpers/hooks/use-soon-events";
 
 type SoonEventsListProps = {
-    Event: React.FunctionComponent<EventPreviewSoonProps>,
-    data: EventPreviewSoonProps[]
+
 }
 
-const SoonEventsList = ({Event, data}: SoonEventsListProps) => {
+const SoonEventsList = ({}: SoonEventsListProps) => {
+
+    const data = useSoonEvents()
+
     return (
         <div className={'soon-events__list'}>
             {
-                data.map(el => (
-                    <Event
-                        id={el.id}
+               data && data.map(el => (
+                    <EventPreviewSoon
                         key={el.id}
+                        id={el.id}
+                        preview={el.preview}
+                        startDate={el.startDate}
+                        endDate={el.endDate}
+                        organizers={el.organizers}
+                        startTime={el.startTime}
+                        gallery={el.gallery}
+                        location={el.location}
+                        tags={el.tags}
+                        description={el.description}
                         title={el.title}
-                        date={el.date}
-                        month={el.month}
-                        img={el.img}
                     />
                 ))
             }

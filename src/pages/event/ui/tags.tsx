@@ -1,9 +1,11 @@
 import React from 'react';
-import {event} from "../data/event";
 import EventTag from "../../../entities/event-tag";
-import {v4} from "uuid";
+import {useEventStore} from "../zustand";
 
 const Tags = () => {
+
+    const {data} = useEventStore()
+
     return (
         <div className={'event-tags'}>
             <div className={'event-tags__title'}>
@@ -11,14 +13,12 @@ const Tags = () => {
             </div>
             <div className={'event-tags__list'}>
                 {
-                    event.tags.map(d => {
-                        const id = v4()
-
+                    data && data.tags.map(d => {
                         return (
                             <EventTag
-                                key={id}
-                                id={id}
-                                tag={d}
+                                key={d.tag}
+                                id={d.tag}
+                                tag={d.tag}
                             />
                         )
                     })

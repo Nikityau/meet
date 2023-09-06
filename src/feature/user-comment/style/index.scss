@@ -1,7 +1,9 @@
 .user-comment {
+
   margin: 5px 0;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 45px auto;
   align-items: center;
   gap: 20px;
 
@@ -9,15 +11,25 @@
     width: 45px;
     height: 45px;
 
+    border-radius: 50%;
+
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 50%;
+    }
   }
 
   .user-comment__comment {
     position: relative;
 
-    width: 100%;
+    width: calc(100% - 24px);
 
     padding: 8px 12px;
 
@@ -25,7 +37,7 @@
     border: 1px solid rgba(177, 181, 189, 0.20);
 
     input {
-      color: #B1B5BD;
+      color: #75767a;
       font-family: Poppins, sans-serif;
       font-size: 14px;
       font-style: normal;

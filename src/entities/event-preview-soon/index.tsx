@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {Link} from "react-router-dom";
 
 import './style/index.scss'
-import {Link} from "react-router-dom";
+import {EventRes} from "../../pages/meet/helpers/hooks/use-today-events";
+import {DateG} from "../../shared/helpers/date-g";
 
 export type EventPreviewSoonProps = {
     id?: string
@@ -14,16 +16,23 @@ export type EventPreviewSoonProps = {
 const EventPreviewSoon = (
     {
         id,
-        img,
-        date,
+        preview,
+        location,
+        organizers,
+        gallery,
         title,
-        month
-    }: EventPreviewSoonProps) => {
+        endDate,
+        tags,
+        startTime,
+        description,
+        startDate
+    }: EventRes) => {
+
     return (
         <Link to={`/meet/in/event/${id}`}>
             <div className={'event-preview-soon'}
                  style={{
-                     backgroundImage: `url(${img})`
+                     backgroundImage: `url(${preview})`
                  }}
             >
                 <div className={'event-preview-soon__blackout_light'}></div>
@@ -32,7 +41,7 @@ const EventPreviewSoon = (
                         <span>{title}</span>
                     </div>
                     <div className={'event-preview-soon__date'}>
-                        <span>{date} {month}</span>
+                        <span>{new Date(startDate).getDate()} {DateG.getMonthNameRu(new Date(startDate).getMonth())}</span>
                     </div>
                 </div>
             </div>

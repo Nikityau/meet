@@ -22,7 +22,7 @@ const Images = ({images}: ImagesProps) => {
                         >
                             <div className={'archive-event-images__image'}
                                  style={{
-                                     backgroundImage: `url(${i})`
+                                     backgroundImage: `url(${i['img']})`
                                  }}
                             >
                             </div>
