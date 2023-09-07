@@ -11,10 +11,14 @@
   }
 
   .selections__list {
+    position: relative;
+    
     margin-top: 32px;
 
     display: grid;
     grid-template-columns: repeat(4, auto);
     gap: 20px;
+
+
   }
 }

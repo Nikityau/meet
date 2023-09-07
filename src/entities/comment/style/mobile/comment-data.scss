@@ -1,0 +1,13 @@
+@media screen and (max-width: 480px){
+  .comment__data {
+
+    .comment__user,
+    .comment__text {
+     font-size: 14px;
+    }
+
+    .comment__text {
+      font-size: 12px;
+    }
+  }
+}

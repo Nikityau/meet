@@ -20,3 +20,16 @@ input {
 body {
     background-color:  #F8F8F8;
 }
+
+
+@media screen and (max-width: 1500px){
+    .app-container {
+        max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .app-container {
+        //max-width: 670px;
+    }
+}

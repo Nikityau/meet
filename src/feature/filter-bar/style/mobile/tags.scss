@@ -1,0 +1,28 @@
+@media screen and (max-width: 480px){
+  .filter-bar__tags {
+    .filter-bar__tags-title {
+        font-size: 14px;
+    }
+
+    .filter-bar__tags-list {
+      .swiper {
+        height: 42px;
+
+        .swiper-slide {
+          height: 40px;
+
+          margin-right: 0;
+        }
+      }
+
+      .filter-bar__tag {
+        width: 120px;
+        height: 40px;
+
+        .selection {
+
+        }
+      }
+    }
+  }
+}

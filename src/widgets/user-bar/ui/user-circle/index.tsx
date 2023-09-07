@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import Dot3 from './dot'
 import {UserBarContext} from "../../provider/context";
 import {userSelector} from "../../../../redux/user-store/user-selector";
+import {isMobile} from "react-device-detect";
 
 type UserCircleProps = {}
 
@@ -20,7 +21,11 @@ const UserCircle = ({}: UserCircleProps) => {
                  }}
             >
             </div>
-            <Dot3/>
+            {
+                isMobile
+                    ? null
+                    : <Dot3/>
+            }
         </div>
     )
 }

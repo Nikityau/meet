@@ -5,6 +5,7 @@ import {useDatePicker} from "./helpers/hooks/use-date-picker";
 
 import './style/index.scss'
 import 'swiper/css'
+import {isMobile} from "react-device-detect";
 
 type DatePickerProps = {
 
@@ -17,7 +18,7 @@ const DatePicker = ({}: DatePickerProps) => {
     return (
         <div className={'date-picker'}>
             <Swiper
-                slidesPerView={'auto'}
+                slidesPerView={isMobile ? 8 : 'auto'}
             >
                 {
                     dates.map(d => (

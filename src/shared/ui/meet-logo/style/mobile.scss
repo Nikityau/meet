@@ -1,0 +1,13 @@
+@media screen and (max-width: 480px) {
+  .meet-logo {
+    .meet-logo__text {
+      font-size: 28px;
+    }
+
+    .meet-logo__line {
+      width: 42px;
+
+      //transform: translate(0, -10px);
+    }
+  }
+}

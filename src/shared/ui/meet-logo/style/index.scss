@@ -1,24 +1,2 @@
-.meet-logo {
-    position: relative;
-
-    .meet-logo__text {
-        color: #292929;
-        font-family: Poppins, sans-serif;
-        font-size: 36px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    .meet-logo__line {
-        position: relative;
-
-        width: 52px;
-        height: 3px;
-
-        transform: translate(0, -12px);
-
-        border-radius: 27px;
-        background: #5C4EFE;
-    }
-}
+@import "./desktop.scss";
+@import "./mobile.scss";

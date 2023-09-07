@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-
-import Route from "./ui/route";
-
+import React from 'react';
 import './style/index.scss'
-import PathPointer from "./ui/path-pointer";
-import {useAppNav} from "./helpers/useAppNav";
+
+import {isMobile} from "react-device-detect";
+import NavMobile from "./ui-mobile";
+import Nav from "./ui";
+import NavContextProvider from "./provider/nav-context";
 
 interface Path {
     id: string
@@ -17,31 +17,19 @@ type AppNavigationProps = {
 }
 
 const AppNavigation = ({routes}:AppNavigationProps) => {
-
-    const defPath = useAppNav()
-    const [leftOffset, setLeftOffset] = useState<number>(0)
-
-    const onCurrent = (l: number) => {
-        setLeftOffset(l - 4)
-    }
-
     return (
-        <div className={'app-navigation'}>
-            {
-                routes.map(r => (
-                    <Route
-                        key={r.id}
-                        path={r.route}
-                        name={r.name}
-                        defPath={defPath}
-                        onCurrent={onCurrent}
-                    />
-                ))
-            }
-            <PathPointer
-                offset={leftOffset}
-            />
-        </div>
+        <NavContextProvider routes={routes}>
+            <div className={'app-navigation'}>
+                {
+                    isMobile
+                        ? <NavMobile/>
+                        :
+                        <div className={'app-navigation__wrapper'}>
+                            <Nav/>
+                        </div>
+                }
+            </div>
+        </NavContextProvider>
     );
 };
 

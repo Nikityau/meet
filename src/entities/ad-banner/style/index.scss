@@ -34,3 +34,9 @@
     z-index: 3;
   }
 }
+
+@media screen and (max-width: 480px){
+  .ad-banner {
+    height: 113px;
+  }
+}

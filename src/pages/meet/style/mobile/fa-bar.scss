@@ -1,0 +1,24 @@
+.fa-bar {
+  cursor: pointer;
+
+  height: 48px;
+
+  padding: 0 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  background: #5C4EFE;
+  backdrop-filter: blur(9.5px);
+
+  span {
+    color: var(--grey-H1, #d7dee3);
+    font-family: Poppins, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

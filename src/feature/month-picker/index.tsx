@@ -1,4 +1,5 @@
 import React from 'react';
+import {isMobile} from "react-device-detect";
 
 import MonthPickerProvider from "./provider/context";
 import MonthList from "./ui/month-list";
@@ -11,7 +12,11 @@ const MonthPicker = () => {
         <MonthPickerProvider>
             <div className={'month-picker'}>
                 <MonthList/>
-                <MonthPointer/>
+                {
+                    isMobile
+                        ? null
+                        : <MonthPointer/>
+                }
             </div>
         </MonthPickerProvider>
     );

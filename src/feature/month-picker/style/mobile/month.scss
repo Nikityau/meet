@@ -1,0 +1,14 @@
+@media screen and (max-width: 480px){
+  .month-picker__month {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .month-picker__month_current {
+    color: #292929;
+    font-weight: 600;
+    //font-weight: 600; animation pzdc from 400 to 600
+  }
+
+
+}

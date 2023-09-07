@@ -1,6 +1,3 @@
-
-//width: 698px;
-
 .swiper {
   height: 420px;
 
@@ -32,6 +29,27 @@
 
       border-radius: 10px;
       background: #5C4EFE;
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .swiper {
+    height: 420px;
+
+    .swiper-wrapper {
+      height: 380px;
+    }
+    .swiper-slide {
+
+      margin-right: 10px;
+    }
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+      }
+      .swiper-pagination-bullet-active {
+
+      }
     }
   }
 }

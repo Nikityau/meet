@@ -19,5 +19,11 @@
 
 .month-picker__month_current {
   color: #292929;
+  font-weight: 600;
   //font-weight: 600; animation pzdc from 400 to 600
+}
+
+@media screen and (max-width: 1500px){
+  .month-picker__month {
+  }
 }

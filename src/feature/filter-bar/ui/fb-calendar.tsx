@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {debounce} from "../../../shared/helpers/debounce";
 import SquareCalendar from "../../square-calendar";
 import {SqState} from "../../square-calendar/react-reducer";

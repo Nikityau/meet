@@ -1,0 +1,48 @@
+.filter-box {
+  position: relative;
+
+  height: 40px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .filter-box__checkbox {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 3px;
+    border: 1px solid #DDD;
+
+    transition: all .3s ease-in;
+  }
+
+  .filter-box__checkbox_checked {
+    background: #5652F1;
+  }
+
+  .filter-box__text {
+    position: relative;
+
+    width: 100%;
+
+    color: #828282;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .filter-box__underline {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+    width: 90%;
+    height: 1px;
+    background: #DDD;
+  }
+}

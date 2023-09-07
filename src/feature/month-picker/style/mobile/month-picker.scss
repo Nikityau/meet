@@ -1,0 +1,32 @@
+@media screen and (max-width: 480px){
+  .month-picker {
+    position: relative;
+
+    width: 100%;
+    height: 56px;
+  }
+
+  .month-picker__month-list {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .swiper {
+      height: 56px;
+
+      .swiper-wrapper {
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+
+        .swiper-slide {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

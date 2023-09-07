@@ -1,0 +1,32 @@
+@media screen and (max-width: 480px) {
+  .square-calendar__month {
+    height: 55px;
+
+    .square-calendar__month-container {
+      padding: 0 10px;
+
+      .square-calendar__month-data {
+          font-size: 12px;
+      }
+
+      .square-calendar__month-btns {
+
+      }
+
+      .square-calendar__month-btn-l,
+      .square-calendar__month-btn-r {
+
+
+        svg {
+
+        }
+      }
+
+      .square-calendar__month-btn-r {
+        svg {
+
+        }
+      }
+    }
+  }
+}

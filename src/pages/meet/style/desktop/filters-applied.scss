@@ -3,7 +3,7 @@
 
   display: grid;
   align-items: center;
-  grid-template-columns: 30px calc(100% - 20px);
+  grid-template-columns: 30px calc(100% - 30px);
   gap: 20px;
 
   .filters-applied__btn {

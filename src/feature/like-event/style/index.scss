@@ -26,3 +26,21 @@
     line-height: normal;
   }
 }
+
+@media screen and (max-width: 480px){
+  .like-event {
+
+
+    .like-event__icon {
+
+      svg {
+        //width: 25px;
+      }
+    }
+
+    .like-event__count {
+
+    }
+  }
+
+}

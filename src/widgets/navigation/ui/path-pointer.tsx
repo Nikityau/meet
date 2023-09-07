@@ -11,7 +11,6 @@ const PathPointer = ({offset}: PathPointerProps) => {
                 transform: `translate(${offset}px, 0)`
             }}
         >
-
         </div>
     );
 };

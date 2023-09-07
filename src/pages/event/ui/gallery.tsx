@@ -14,9 +14,9 @@ const Gallery = () => {
             <div className={'event-gallery__list'}>
                 <Swiper
                     modules={[Pagination]}
-                    slidesPerView={1}
                     freeMode={true}
                     pagination={true}
+                    spaceBetween={10}
                 >
                     {
                         event.images.map((d, i)   => (

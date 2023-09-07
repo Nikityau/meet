@@ -1,0 +1,22 @@
+@media screen and (max-width: 480px){
+  .soon-events {
+    margin-top: 47px;
+
+    .soon-events__title {
+      font-size: 20px;
+
+      margin-bottom: 10px;
+
+      span {
+      }
+
+      .soon-events__arrow {
+      }
+    }
+
+    .soon-events__list {
+      grid-template-columns: repeat(2, auto);
+      gap: 15px;
+    }
+  }
+}

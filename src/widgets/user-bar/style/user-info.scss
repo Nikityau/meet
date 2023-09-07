@@ -2,7 +2,8 @@
     width: auto;
     height: 60px;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 44px auto;
     align-items: center;
     gap: 8px;
 

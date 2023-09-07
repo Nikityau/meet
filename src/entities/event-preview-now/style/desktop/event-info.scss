@@ -5,7 +5,9 @@
 
   z-index: 2;
 
-  transform: translate(25px, -25px);
+  padding: 25px;
+
+  //transform: translate(25px, -25px);
 
   .event-preview-now__title,
   .event-preview-now__remain-info {

@@ -1,0 +1,33 @@
+@media screen and (max-width: 480px){
+  .event-description {
+    grid-template-rows: auto;
+  }
+
+  .event-descr-up {
+    height: 280px;
+
+    .event-descr-up__blackout {
+
+    }
+
+    .event-descr-up__container {
+      height: calc(100% - 24px);
+
+      padding: 10px 10px;
+
+      .event-descr-up__tags {
+
+      }
+
+      .event-descr-up__title {
+        font-size: 14px;
+      }
+
+      .event-descr-up__other {
+        font-size: 12px;
+      }
+    }
+  }
+
+
+}
