@@ -1,4 +1,4 @@
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
   .selections {
     .selections__title {
     }
@@ -13,5 +13,29 @@
         font-size: 13px;
       }
     }
+  }
+}
+
+.selections-mob-wrapper {
+
+
+  .selections-mob-wrapper__list {
+    overflow: hidden;
+
+    transition: all .3s;
+  }
+
+  .selections-btn {
+    margin-top: 10px;
+  }
+}
+
+.selections-mob-wrapper_close {
+
+  .selections-mob-wrapper__list {
+  }
+}
+.selections-mob-wrapper_open {
+  .selections-mob-wrapper__list {
   }
 }

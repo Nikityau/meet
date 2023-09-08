@@ -1,9 +1,11 @@
-.search-bar {
-  width: 30px;
+@media screen and (max-width: 480px){
+  .search-bar {
+    width: 30px;
 
-  .search-bar__magnifier {
-    left: 50%;
+    .search-bar__magnifier {
+      left: 50%;
 
-    transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
   }
 }

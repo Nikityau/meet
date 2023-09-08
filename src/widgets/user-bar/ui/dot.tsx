@@ -1,8 +1,8 @@
 import React, {useContext } from 'react'
 import cn from 'classnames'
 
-import crs from '../../assets/crosshair.png'
-import {UserBarContext} from "../../provider/context";
+import crs from '../assets/crosshair.png'
+import {UserBarContext} from "../provider/context";
 
 const Dot3 = () => {
 

@@ -1,41 +1,13 @@
 import React from 'react';
+import {isMobile} from "react-device-detect";
+
 import Selection from "../../../entities/selection";
-import {useFilterMeet} from "../../../local-states/filter-meet";
-import {useSelector} from "react-redux";
-import {tagsSelector} from "../../../redux/tags-store/tags-selector";
+import MobileSelections from "../ui-mobile/mobile-selections";
+import {useSelections} from "../helpers/hooks/use-selections";
 
 const Selections = () => {
 
-    const {filters, dispatch} = useFilterMeet()
-    const tags = useSelector(tagsSelector)
-
-    const onClick = (tag: string, is: boolean) => {
-        if(is) {
-            dispatch({
-                type: "filterMeet/tags-remove",
-                payload: tag
-            })
-
-            return
-        }
-
-        dispatch({
-            type: "filterMeet/tags-add",
-            payload: tag
-        })
-    }
-
-    const isChosen = (tag: string): boolean => {
-        if(filters != null && filters.tags != null) {
-            for(let t of filters.tags) {
-                if(t == tag) {
-                    return true
-                }
-            }
-        }
-
-        return false
-    }
+   const {tags, onClick, isChosen} = useSelections()
 
 
     return (
@@ -43,19 +15,24 @@ const Selections = () => {
             <div className={'selections__title'}>
                 <span>Подборки</span>
             </div>
-            <div className={'selections__list'}>
-                {
-                    tags.map(data => (
-                        <Selection
-                            key={data.id}
-                            id={data.id}
-                            text={data.tag}
-                            onClick={onClick}
-                            isChosen={isChosen(data.tag)}
-                        />
-                    ))
-                }
-            </div>
+            {
+                isMobile
+                    ? <MobileSelections/>
+                    :
+                    <div className={'selections__list'}>
+                        {
+                            tags.map(data => (
+                                <Selection
+                                    key={data.id}
+                                    id={data.id}
+                                    text={data.tag}
+                                    onClick={onClick}
+                                    isChosen={isChosen(data.tag)}
+                                />
+                            ))
+                        }
+                    </div>
+            }
         </div>
     );
 };

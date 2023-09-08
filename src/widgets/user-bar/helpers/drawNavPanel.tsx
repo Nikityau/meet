@@ -1,6 +1,6 @@
 import {NavData} from "../data/nav-data";
 import NavPanel from "../ui/nav-panel";
-import SepLine from "../ui/user-nav/sep-line";
+import SepLine from "../ui/sep-line";
 import {v4} from "uuid";
 import React from "react";
 

@@ -2,9 +2,9 @@ import React from 'react';
 import {v4} from "uuid";
 import Month from "./month";
 import {isMobile} from "react-device-detect";
-import {Swiper, SwiperSlide} from "swiper/react";
+import MonthListMobile from "../ui-mobile/month-list-mobile";
 
-const months = Array.from({ length: 12 }, (_, i) => {
+export const months = Array.from({ length: 12 }, (_, i) => {
     _ = {}
     _['uid'] = v4()
 
@@ -16,22 +16,7 @@ const MonthList = () => {
         <div className={'month-picker__month-list'}>
             {
                 isMobile
-                    ?
-                    <Swiper
-                        slidesPerView={5}
-                    >
-                        {
-                            months.map((el, i) => (
-                                <SwiperSlide
-                                    key={el['uid']}
-                                >
-                                    <Month
-                                        month={i}
-                                    />
-                                </SwiperSlide>
-                            ))
-                        }
-                    </Swiper>
+                    ? <MonthListMobile/>
                     :
                     months.map((el, i) => (
                     <Month

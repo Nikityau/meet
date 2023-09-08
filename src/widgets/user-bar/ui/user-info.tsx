@@ -2,8 +2,10 @@ import React, {useEffect} from 'react'
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 
-import {AppRoutes} from "../../../../shared/app-routes";
-import {userSelector} from "../../../../redux/user-store/user-selector";
+import {AppRoutes} from "../../../shared/app-routes";
+import {userSelector} from "../../../redux/user-store/user-selector";
+
+import bg from '../assets/user-bg.png'
 
 type UserInfoProps = {}
 const UserInfo = ({}: UserInfoProps) => {
@@ -11,7 +13,11 @@ const UserInfo = ({}: UserInfoProps) => {
     const user = useSelector(userSelector)
 
     return (
-        <div className='user-info'>
+        <div className='user-info'
+            style={{
+                backgroundImage: `url(${bg})`
+            }}
+        >
             <div className='user-info__avatar'
                  style={{
                      backgroundImage: `url(${user?.avatar})`

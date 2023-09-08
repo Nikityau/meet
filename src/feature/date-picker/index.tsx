@@ -18,7 +18,13 @@ const DatePicker = ({}: DatePickerProps) => {
     return (
         <div className={'date-picker'}>
             <Swiper
-                slidesPerView={isMobile ? 8 : 'auto'}
+                slidesPerView={'auto'}
+                spaceBetween={isMobile ? 17 : 0}
+                onInit={(swiper) => {
+                    const date = new Date()
+
+                    swiper.slideTo(date.getDate() - 1)
+                }}
             >
                 {
                     dates.map(d => (

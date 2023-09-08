@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import cn from 'classnames'
-import {UserBarContext} from "../../provider/context";
+import {UserBarContext} from "../provider/context";
 
 
 type UserNavProps = {
